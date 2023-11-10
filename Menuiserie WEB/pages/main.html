@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <script src="https://itc-dev.kbmax.com/embed.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <title>Main</title>
+</head>
+<body>
+
+    <div id="titre">Personnaliser votre fenêtre! </div>
+
+    <div id="viewer"></div>
+
+    <div class="container">
+        <div id="viewer2"></div>
+    </div>  
+    <ul class="filArianne">
+        <li class="listeArianne" id="Dimensions">
+        <img src="../Images/wood05_col_256.jpg" alt="Dimensions">
+        <label>Dimensions</label>
+        </li>
+        <li class="listeArianne" id="Gammes">
+        <img src="../Images/wood05_col_256.jpg" alt="Gammes">
+        <label>Gammes</label>
+        </li>
+        <li class="listeArianne" id="Materiaux">
+        <img src="../Images/wood05_col_256.jpg" alt="Matériaux">
+        <label>Matériaux</label>
+        </li>
+        <li class="listeArianne" id="Couleurs">
+        <img src="../Images/wood05_col_256.jpg" alt="Couleurs">
+        <label>Couleurs</label>
+        </li>
+        <li class="listeArianne" id="Mise en situation">
+        <img src="../Images/wood05_col_256.jpg" alt="Mise en situation">
+        <label>Mise en situation</label>
+        </li>
+        <li class="listeArianne" id="Recapitulatif">
+        <img src="../Images/wood05_col_256.jpg" alt="Récapitulatif">
+        <label>Recapitulatif</label>
+        </li>
+    </ul>
+    <div class="line" id="line"></div>
+
+
+    <div class="box" id="CouleurBois">
+        <div class="boxTitre">Couleur bois</div>
+        <div class="boxMateriaux">
+            <input class="materiaux" id="CheneNaturel" type="image" src="../Images/wood05_col_256.jpg"/>
+            <input class="materiaux" id="NoyerFonce" type="image" src="../Images/wood06_col_256.jpg"/>
+            <input class="materiaux" id="MerisierFonce" type="image" src="../Images/wood09_col_256.jpg"/>
+            <input class="materiaux" id="Vert6018" type="image" src="../Images/bois_vert_clair.png"/>
+            <input class="materiaux" id="Bleu5010" type="image" src="../Images/bois_bleu_clair.png"/>
+            <input class="materiaux" id="Orange2004" type="image" src="../Images/bois_rouge_clair.png"/>
+        </div>
+        <div class="boxTitrePoignee">Couleur Poignée</div>
+            <input class="materiaux" id="Laiton" type="image" src="../Images/laiton.jpg"/>
+            <input class="materiaux" id="Inox" type="image" src="../Images/inox_tex.png"/>
+            <input class="materiaux" id="Pvc" type="image" src="../Images/pvc_blanc.png"/>
+        </div>
+    </div>
+
+
+    <div class="box" id="CouleurAlu">
+        <div class="boxTitre">Couleur aluminium</div>
+        <div class="boxMateriaux">
+            <input class="materiaux" id="Gris7035" type="image" src="../Images/alu_blanc.jpg"/>
+            <input class="materiaux" id="Gris7016" type="image" src="../Images/alu_gris.png"/>
+            <input class="materiaux" id="Noir9005" type="image" src="../Images/alu_noir.jpg"/>
+            <input class="materiaux" id="Bleu5012" type="image" src="../Images/alu_bleu_clair.png"/>
+            <input class="materiaux" id="Bleu5002" type="image" src="../Images/alu_bleu_fonce.png"/>
+            <input class="materiaux" id="VertFonceAlu" type="image" src="../Images/alu_vert_clair.png"/>
+            <input class="materiaux" id="Vert6005" type="image" src="../Images/alu_vert_fonce.png"/>
+            <input class="materiaux" id="OrangeAlu" type="image" src="../Images/alu_rouge.png"/>
+            <input class="materiaux" id="Jaune1018" type="image" src="../Images/alu_marron.png"/>
+        </div>
+        <div class="boxTitrePoignee">Couleur Poignée</div>
+            <input class="materiaux" id="Laiton" type="image" src="../Images/laiton.jpg"/>
+            <input class="materiaux" id="Inox" type="image" src="../Images/inox_tex.png"/>
+            <input class="materiaux" id="Pvc" type="image" src="../Images/pvc_blanc.png"/>
+        </div>
+    </div>
+
+  
+    <div class="box" id="CouleurPVC">
+        <div class="boxTitre">Couleur PVC</div>
+        <div class="boxMateriaux">
+            <input class="materiaux" id="Blanc" type="image" src="../Images/pvc_blanc.png"/>
+            <input class="materiaux" id="Bordeaux" type="image" src="../Images/pvc_bordeaux.png"/>
+            <input class="materiaux" id="Noir" type="image" src="../Images/pvc_gris_anthracite.png"/>
+            <input class="materiaux" id="Bleu" type="image" src="../Images/pvc_bleu.png"/>
+            <input class="materiaux" id="Vert" type="image" src="../Images/pvc_vert.png"/>
+        </div>
+        <div class="boxTitrePoignee">Couleur Poignée</div>
+            <input class="materiaux" id="Laiton" type="image" src="../Images/laiton.jpg"/>
+            <input class="materiaux" id="Inox" type="image" src="../Images/inox_tex.png"/>
+            <input class="materiaux" id="Pvc" type="image" src="../Images/pvc_blanc.png"/>
+        </div>
+    </div>
+    
+  
+    <div class="box" id="Materiaux">
+        <div class="boxTitre">Type de matériaux</div>
+        <div class="boxMateriaux">
+            <input class="materiaux" id="MatPvc" type="image" src="../Images/pvc_blanc.png"/>
+            <input class="materiaux" id="MatBois" type="image" src="../Images/wood05_col_256.jpg"/>
+            <input class="materiaux" id="MatAlu" type="image" src="../Images/alu_blanc.jpg"/>
+        </div>
+    </div>
+
+    <!--
+    <div class="box" id="boxMateriaux">
+        <div class="boxTitre">Dimensions</div>
+        <div class="boxMateriaux">
+
+            <label for="sliderLength">Hauteur (mm) :</label>
+            <input type="range" id="sliderLength" name="sliderLength" min="550" max="2200" value="1600">
+            <input type="text" id="sliderLengthInput" min="550" max="2200" value="1600 mm">
+
+            <label for="sliderWidth">Largeur (mm) :</label>
+            <input type="range" id="sliderWidth" name="sliderWidth" min="1000" max="1600" value="1200">
+            <input type="text" id="sliderWidthInput" min="1000" max="1600" value="1200 mm">
+
+        </div>
+    </div>
+-->
+<!--
+<div>Gamme</div>
+<div id="economique">Economique</div>
+<div id="confort">Confort</div>
+<div id="luxe">Luxe</div>
+
+<div>Type de pose</div>
+<div id="renovation">Pose en rénovation</div>
+<div id="totale">Dépose totale</div>
+<div id="neuf">Pose ne neuf</div>
+
+<div>Mise en situation</div>
+<div id="oui">oui</div>
+<div id="non">non</div>
+-->
+
+</body>
+<script src="../JS/epicor.js"></script>
+<script src="../JS/animation.js"></script>
+</html>

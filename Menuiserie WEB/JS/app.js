@@ -1,0 +1,3 @@
+barba.init({
+    sync: true 
+ })
