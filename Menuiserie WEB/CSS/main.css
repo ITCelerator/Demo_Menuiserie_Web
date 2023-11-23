@@ -1,13 +1,18 @@
 html{
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: #FCFCFC;
+    /* background-color: #FCFCFC; */
 }
+
+/* header {
+    border: 3px solid aqua;
+} */
+
 #titre{
     font-family: "effra-cc", sans-serif;
     font-size: 40px;
     color: black;
-    background-color: #E2E2E2;
+    /* background-color: #E2E2E2; */
     z-index: 1;
     position: absolute;
     top: 2%;
@@ -15,24 +20,49 @@ html{
     width: auto;
     padding:10px;
 }
+
 #viewer{
     height: 100%;
     width:100%;
-    position:absolute;
+    /* height: 450px;
+    width:300px; */
+    position:relative;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 #viewer2{
     height: 450px;
     width:300px;
+    top:0px;
+    left:0px;
     position:relative;
-    z-index: 1;
-    border: solid 1px transparent;
+    z-index: 0;
+    /* border: solid 1px black; */
     /* border-radius: 50px; le border raduis ne focntionne pas sur l'embed */
+    
 }
-.container{
-    padding-left: 150px;
-    padding-top: 300px;
+
+/* Display des boxs */
+
+#boxDimensions, #boxMateriaux, #boxGammes, #boxCouleurs, #boxSituation {
+    display: none;
 }
+
+/* Display des boxs couleurs */
+
+#CouleurBois, #CouleurAlu, #CouleurPVC {
+    display: none;
+}
+
+
+/* .container{
+    padding-left: 0vw;
+    padding-top: 0vh;
+} */
+
 .materiaux{
     position:relative;
     z-index: 1;
@@ -53,9 +83,10 @@ html{
     align-items: center;
     padding: 0;
     margin: 20px 0;
-    top: 10%;
+    top: 16vh;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* border: 3px solid violet; */
 }
 
 .listeArianne {
@@ -70,7 +101,7 @@ html{
     height: 50px; /* Ajustez la taille de l'image selon vos besoins */
     border-radius: 50%;
     margin-bottom: 5px;
-    border: solid 1px black;
+    border: solid 3px black;
 }
 
 .listeArianne label {
@@ -80,41 +111,38 @@ html{
 /* -------------FIN CSS fil d'arianne --------------*/
 
 .box{
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
-    top: 50%;
+    top: 100%;
     left: 50%;
-    transform: translate(120%, -50%);
+    /* transform: translate(1vw); */
+    padding: 10px;
     border: 1px solid black;
-    padding: 20px;
     text-align: center;
     font-family: "effra-cc", sans-serif;
 }
+
 .boxTitre{
     border-bottom: 1px solid black;
     top:0;
     left: 0;
-    position: absolute;
+    margin-bottom: 1vh;
+    /* position: absolute; */
     width: 100%;
     text-align: center;
     font-family: "effra-cc", sans-serif;
     font-size: 22px;
 }
-.boxMateriaux{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-    grid-gap: 10px; /* Espacement entre les éléments */
-    padding-top:20px;
-}
+
 .boxTitrePoignee{
     margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     top:0;
-    left: -20px;
+    /* left: 20px; */
     position: relative;
-    width: 119%;
+    width: 100%;
     text-align: center;
     font-family: "effra-cc", sans-serif;
     font-size: 22px;
@@ -126,4 +154,77 @@ html{
     border: 2px solid black;
     transition: all 2s ease; /* Ajoute une transition de 1 seconde pour un effet fluide */
     opacity: 0;
+}
+
+.boxDimensions{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
+    grid-gap: 10px; /* Espacement entre les éléments */
+    padding-top:20px;
+}
+
+#MatPvc {
+    border: solid 3px black;
+}
+
+#MatBois {
+    border: solid 3px black;
+}
+
+#MatAlu {
+    border: solid 3px black;
+}
+
+/* les parties de div */
+
+#mainDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
+    grid-column:1/4;
+    grid-row: 2;
+    /* border: 3px solid green; */
+}
+
+.leftDiv {
+    padding-left: 10vw;
+    padding-top: 5vh;
+    grid-column: 1;
+    grid-row: 3/5;
+    /* border: solid 3px black; */
+    z-index: 1;
+    background-color: white;
+}
+
+.middleDiv {
+    grid-column: 2;
+    grid-row: 3/5;
+    /* border: solid 3px blue; */
+}
+
+.rightDiv {
+    grid-column: 3;
+    grid-row: 3/5;
+    /* border: solid 3px red; */
+}
+
+/* .listRecap {
+    align-items: center; 
+} */
+
+#recap {
+    font-size: 30px;
+}
+
+label {
+    font-family: "Gill Sans", sans-serif;
+    font-weight:bold;
 }
