@@ -121,7 +121,11 @@
           <!-- <div id="economique">Economique</div>
                 <div id="confort">Confort</div>
                 <div id="luxe">Luxe</div> -->
-          <select name="Gamme" multiple>
+          <select
+            name="Gamme"
+            onChange="recapManager.updateDormant(this.value)"
+            multiple
+          >
             <option id="economique" value="economique">Economique</option>
             <option id="confort" value="confort">Confort</option>
             <option id="luxe" value="luxe">Luxe</option>
@@ -131,7 +135,11 @@
           <!-- <div id="renovation">Pose en rénovation</div>
                 <div id="totale">Dépose totale</div>
                 <div id="neuf">Pose ne neuf</div> -->
-          <select name="Gamme" multiple>
+          <select
+            name="Gamme"
+            onChange="recapManager.updatePose(this.value)"
+            multiple
+          >
             <option id="renovation" value="renovation">Rénovation</option>
             <option id="totale" value="totale">Totale</option>
             <option id="neuf" value="neuf">Neuf</option>
@@ -421,6 +429,16 @@
             <div class="recapIcon" id="recapQuincaillerieIcon">
               <img src="" />
             </div>
+          </div>
+          <hr />
+          <div class="recapTitle">Dormant</div>
+          <div class="recapContainer">
+            <div id="recapDormant"></div>
+          </div>
+          <hr />
+          <div class="recapTitle">Type de pose</div>
+          <div class="recapContainer">
+            <div id="recapPose"></div>
           </div>
         </div>
       </div>

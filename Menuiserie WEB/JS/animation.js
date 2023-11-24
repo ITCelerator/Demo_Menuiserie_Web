@@ -182,10 +182,6 @@ function Choix_Mat(mat) {
   }
 }
 
-function Choix_Couleur(couleur, image) {
-  console.log("couleur: " + couleur + ". image: " + image);
-}
-
 // Module lié au récap des choix utilisateur. Toutes les méthodes et intéractions avec la partie récap se trouvent à l'intérieur.
 const recapManager = (() => {
   // Matériau
@@ -214,10 +210,24 @@ const recapManager = (() => {
     quincaillerieRecapIcon.src = image;
   };
 
+  // Dormant
+  const dormantRecapDiv = document.getElementById("recapDormant");
+  const updateDormant = (dormant) => {
+    dormantRecapDiv.textContent = dormant;
+  };
+
+  // Type de pose
+  const poseRecapDiv = document.getElementById("recapPose");
+  const updatePose = (pose) => {
+    poseRecapDiv.textContent = pose;
+  };
+
   return {
     updateMat,
     updateFinition,
     updateQuincaillerie,
+    updateDormant,
+    updatePose,
   };
 })();
 
