@@ -6,7 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
         finition.getAttribute("couleur"),
         finition.src
       );
-      Choix_Couleur(finition.getAttribute("couleur"), finition.src);
+    });
+  });
+
+  const quincailleries = document.querySelectorAll(".quincaillerie");
+  quincailleries.forEach((quincaillerie) => {
+    quincaillerie.addEventListener("click", () => {
+      recapManager.updateQuincaillerie(
+        quincaillerie.getAttribute("couleur"),
+        quincaillerie.src
+      );
     });
   });
 });
@@ -196,10 +205,19 @@ const recapManager = (() => {
   };
 
   // Quincaillerie
+  const quincaillerieRecapDiv = document.getElementById("recapQuincaillerie");
+  const quincaillerieRecapIcon = document.querySelector(
+    "#recapQuincaillerieIcon img"
+  );
+  const updateQuincaillerie = (finition, image) => {
+    quincaillerieRecapDiv.textContent = finition;
+    quincaillerieRecapIcon.src = image;
+  };
 
   return {
     updateMat,
     updateFinition,
+    updateQuincaillerie,
   };
 })();
 
