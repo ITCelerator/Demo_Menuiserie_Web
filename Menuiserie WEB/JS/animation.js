@@ -1,118 +1,118 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     var materiaux = document.getElementById("#Materiaux");
-//     var Bois = document.getElementById("#CouleurBois");
-//     var Alu = document.getElementById("#CouleurAlu");
-//     var PVC = document.getElementById("#CouleurPVC");
-//     $("#Couleurs").click(function(){
-
-//     });
-
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  const finitions = document.querySelectorAll(".finition");
+  finitions.forEach((finition) => {
+    finition.addEventListener("click", () => {
+      recapManager.updateFinition(
+        finition.getAttribute("couleur"),
+        finition.src
+      );
+      Choix_Couleur(finition.getAttribute("couleur"), finition.src);
+    });
+  });
+});
 
 //fonctions pour gérer l'affichage des boxs selon la box choisie
 
 function Dimensions() {
-    // alert("Vous avez cliqué sur dimensions !");
-    // Vous pouvez ajouter d'autres actions à exécuter ici
-    var div = document.getElementById('boxDimensions');
-    if (div.style.display === 'none') {
-        div.style.display = 'block';
-    } else {
-        div.style.display = 'none';
-    }
-    
-    var div = document.getElementById('boxGammes');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxMateriaux');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxCouleurs');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxSituation');
-    div.style.display = 'none'
+  // alert("Vous avez cliqué sur dimensions !");
+  // Vous pouvez ajouter d'autres actions à exécuter ici
+  var div = document.getElementById("boxDimensions");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
 
-    var div = document.getElementById('boxRecap');
-    div.style.display = 'none'
+  var div = document.getElementById("boxGammes");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxMateriaux");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxCouleurs");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxSituation");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxRecap");
+  div.style.display = "none";
 }
 
 function Gammes() {
-    // alert("Vous avez cliqué sur gammes !");
-    // Vous pouvez ajouter d'autres actions à exécuter ici
-    var div = document.getElementById('boxGammes');
-    if (div.style.display === 'none') {
-        div.style.display = 'block';
-    } else {
-        div.style.display = 'none';
-    }
-    
-    var div = document.getElementById('boxDimensions');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxMateriaux');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxCouleurs');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxSituation');
-    div.style.display = 'none'
+  // alert("Vous avez cliqué sur gammes !");
+  // Vous pouvez ajouter d'autres actions à exécuter ici
+  var div = document.getElementById("boxGammes");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
 
-    var div = document.getElementById('boxRecap');
-    div.style.display = 'none'
+  var div = document.getElementById("boxDimensions");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxMateriaux");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxCouleurs");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxSituation");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxRecap");
+  div.style.display = "none";
 }
 
 function Materiaux() {
-    // alert("Vous avez cliqué sur matériaux !");
-    var div = document.getElementById('boxMateriaux');
-    if (div.style.display === 'none') {
-        div.style.display = 'block';
-    } else {
-        div.style.display = 'none';
-    }
-    
-    var div = document.getElementById('boxGammes');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxDimensions');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxCouleurs');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxSituation');
-    div.style.display = 'none'
+  // alert("Vous avez cliqué sur matériaux !");
+  var div = document.getElementById("boxMateriaux");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
 
-    var div = document.getElementById('boxRecap');
-    div.style.display = 'none'
-    
+  var div = document.getElementById("boxGammes");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxDimensions");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxCouleurs");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxSituation");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxRecap");
+  div.style.display = "none";
 }
 
 function Couleurs() {
-    // alert("Vous avez cliqué sur couleurs !");
-    var div = document.getElementById('boxCouleurs');
-    if (div.style.display === 'none') {
-        div.style.display = 'block';
-    } else {
-        div.style.display = 'none';
-    }
-    
-    var div = document.getElementById('boxDimensions');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxMateriaux');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxGammes');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxSituation');
-    div.style.display = 'none'
+  // alert("Vous avez cliqué sur couleurs !");
+  var div = document.getElementById("boxCouleurs");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
 
-    var div = document.getElementById('boxRecap');
-    div.style.display = 'none'
-    
+  var div = document.getElementById("boxDimensions");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxMateriaux");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxGammes");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxSituation");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxRecap");
+  div.style.display = "none";
 }
 
 function MiseEnSituation() {
@@ -121,69 +121,87 @@ function MiseEnSituation() {
 }
 
 function Recapitulatif() {
-    // alert("Vous avez cliqué sur récapitulatif !")
-    // Vous pouvez ajouter d'autres actions à exécuter ici
-    var div = document.getElementById('boxRecap');
-    if (div.style.display === 'none') {
-        div.style.display = 'block';
-    } else {
-        div.style.display = 'none';
-    }
-    
-    var div = document.getElementById('boxDimensions');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxMateriaux');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxGammes');
-    div.style.display = 'none'
-    
-    var div = document.getElementById('boxSituation');
-    div.style.display = 'none'
+  // alert("Vous avez cliqué sur récapitulatif !")
+  // Vous pouvez ajouter d'autres actions à exécuter ici
+  var div = document.getElementById("boxRecap");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
 
-    var div = document.getElementById('boxCouleurs');
-    div.style.display = 'none'
+  var div = document.getElementById("boxDimensions");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxMateriaux");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxGammes");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxSituation");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxCouleurs");
+  div.style.display = "none";
 }
 
-//fonction qui permet d'afficher la bonne box de couleur selon le matériau choisi
+// Cette fonction gère le changement de matériau
 function Choix_Mat(mat) {
-  const recapContainer = document.getElementById("recapMateriauContainer");
-  const recapDiv = document.getElementById("recapMateriau");
-  const recapIcon = document.querySelector("#recapMateriauIcon img");
   const couleurDiv_PVC = document.getElementById("CouleurPVC");
   const couleurDiv_Bois = document.getElementById("CouleurBois");
   const couleurDiv_Alu = document.getElementById("CouleurAlu");
   couleurDiv_Alu.style.display = "none";
   couleurDiv_Bois.style.display = "none";
   couleurDiv_PVC.style.display = "none";
-  recapContainer.style.display = "flex";
 
   switch (mat) {
     case "pvc":
       couleurDiv_PVC.style.display = "block";
-      recapDiv.textContent = "PVC";
-      recapIcon.src = "../Images/pvc_blanc.png";
+      recapManager.updateMat("PVC", "../Images/pvc_blanc.png");
       break;
 
     case "bois":
       couleurDiv_Bois.style.display = "block";
-      recapDiv.textContent = "Bois";
-      recapIcon.src = "../Images/wood05_col_256.jpg";
+      recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg");
       break;
 
     case "alu":
       couleurDiv_Alu.style.display = "block";
-      recapDiv.textContent = "Aluminium";
-      recapIcon.src = "../Images/texture_alu.jpg";
+      recapManager.updateMat("Aluminium", "../Images/texture_alu.jpg");
       break;
   }
 }
 
-function Choix_Couleur(couleur) {
-  switch (couleur) {
-  }
+function Choix_Couleur(couleur, image) {
+  console.log("couleur: " + couleur + ". image: " + image);
 }
+
+// Module lié au récap des choix utilisateur. Toutes les méthodes et intéractions avec la partie récap se trouvent à l'intérieur.
+const recapManager = (() => {
+  // Matériau
+  const matRecapDiv = document.getElementById("recapMateriau");
+  const matRecapIcon = document.querySelector("#recapMateriauIcon img");
+  const updateMat = (mat, image) => {
+    matRecapDiv.textContent = mat;
+    matRecapIcon.src = image;
+  };
+
+  // Finition
+  const couleurRecapDiv = document.getElementById("recapFinition");
+  const couleurRecapIcon = document.querySelector("#recapFinitionIcon img");
+  const updateFinition = (finition, image) => {
+    couleurRecapDiv.textContent = finition;
+    couleurRecapIcon.src = image;
+  };
+
+  // Quincaillerie
+
+  return {
+    updateMat,
+    updateFinition,
+  };
+})();
 
 //NE FONCTIONNE PAS
 /*
