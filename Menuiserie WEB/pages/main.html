@@ -75,15 +75,25 @@
             </div>
             
             <div class="box" id="boxGammes">
-                <div>Gamme</div>
-                <div id="economique">Economique</div>
+                <div class="boxTitre">Gamme</div>
+                <!-- <div id="economique">Economique</div>
                 <div id="confort">Confort</div>
-                <div id="luxe">Luxe</div>
+                <div id="luxe">Luxe</div> -->
+                <select name="Gamme" multiple>
+                    <option id="economique" value="economique">Economique</option>
+                    <option id="confort" value="confort">Confort</option>
+                    <option id="luxe" value="luxe">Luxe</option>
+                </select>
                 
-                <div>Type de pose</div>
-                <div id="renovation">Pose en rénovation</div>
+                <div class="boxTitre" id="typePose">Type de pose</div>
+                <!-- <div id="renovation">Pose en rénovation</div>
                 <div id="totale">Dépose totale</div>
-                <div id="neuf">Pose ne neuf</div>
+                <div id="neuf">Pose ne neuf</div> -->
+                <select name="Gamme" multiple>
+                    <option id="renovation" value="renovation">Rénovation</option>
+                    <option id="totale" value="totale">Totale</option>
+                    <option id="neuf" value="neuf">Neuf</option>
+                </select>
             </div>
             
             <div class="box" id="boxMateriaux">

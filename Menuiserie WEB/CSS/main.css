@@ -47,7 +47,7 @@ html{
 
 /* Display des boxs */
 
-#boxDimensions, #boxMateriaux, #boxGammes, #boxCouleurs, #boxSituation {
+#boxDimensions, #boxMateriaux, #boxGammes, #boxCouleurs, #boxSituation, #boxRecap {
     display: none;
 }
 
@@ -83,7 +83,7 @@ html{
     align-items: center;
     padding: 0;
     margin: 20px 0;
-    top: 16vh;
+    top: 20vh;
     left: 50%;
     transform: translate(-50%, -50%);
     /* border: 3px solid violet; */
@@ -227,4 +227,30 @@ html{
 label {
     font-family: "Gill Sans", sans-serif;
     font-weight:bold;
+}
+
+#typePose {
+    border-top: 2px solid black;
+}
+
+/* select {
+    border: 0;
+    overflow: hidden;
+    font-size: 15px;
+    
+} */
+
+select {
+    width: 100%;
+    /* padding: 10px; */
+    border: none;
+    outline: none;
+    overflow: hidden;
+    font-size: 17px;
+    text-align: center;
+}
+
+select:focus {
+    border: none;
+    box-shadow: none;
 }

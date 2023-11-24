@@ -34,6 +34,9 @@ function Dimensions() {
     
     var div = document.getElementById('boxSituation');
     div.style.display = 'none'
+
+    var div = document.getElementById('boxRecap');
+    div.style.display = 'none'
 }
 
 function Gammes() {
@@ -57,6 +60,9 @@ function Gammes() {
     
     var div = document.getElementById('boxSituation');
     div.style.display = 'none'
+
+    var div = document.getElementById('boxRecap');
+    div.style.display = 'none'
 }
 
 function Materiaux() {
@@ -78,6 +84,9 @@ function Materiaux() {
     div.style.display = 'none'
     
     var div = document.getElementById('boxSituation');
+    div.style.display = 'none'
+
+    var div = document.getElementById('boxRecap');
     div.style.display = 'none'
     
 }
@@ -102,6 +111,9 @@ function Couleurs() {
     
     var div = document.getElementById('boxSituation');
     div.style.display = 'none'
+
+    var div = document.getElementById('boxRecap');
+    div.style.display = 'none'
     
 }
 
@@ -111,8 +123,29 @@ function MiseEnSituation() {
 }
 
 function Recapitulatif() {
-    alert("Vous avez cliqué sur récapitulatif !");
+    // alert("Vous avez cliqué sur récapitulatif !")
     // Vous pouvez ajouter d'autres actions à exécuter ici
+    var div = document.getElementById('boxRecap');
+    if (div.style.display === 'none') {
+        div.style.display = 'block';
+    } else {
+        div.style.display = 'none';
+    }
+    
+    var div = document.getElementById('boxDimensions');
+    div.style.display = 'none'
+    
+    var div = document.getElementById('boxMateriaux');
+    div.style.display = 'none'
+    
+    var div = document.getElementById('boxGammes');
+    div.style.display = 'none'
+    
+    var div = document.getElementById('boxSituation');
+    div.style.display = 'none'
+
+    var div = document.getElementById('boxCouleurs');
+    div.style.display = 'none'
 }
 
 
