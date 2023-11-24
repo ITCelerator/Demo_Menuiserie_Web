@@ -1,219 +1,223 @@
-html{
-    overflow-y: hidden;
-    overflow-x: hidden;
-    /* background-color: #FCFCFC; */
+html {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* background-color: #FCFCFC; */
 }
 
 /* header {
     border: 3px solid aqua;
 } */
 
-#titre{
-    font-family: "effra-cc", sans-serif;
-    font-size: 40px;
-    color: black;
-    /* background-color: #E2E2E2; */
-    z-index: 1;
-    position: absolute;
-    top: 2%;
-    left: 2%;
-    width: auto;
-    padding:10px;
+#titre {
+  font-family: "effra-cc", sans-serif;
+  font-size: 40px;
+  color: black;
+  /* background-color: #E2E2E2; */
+  z-index: 1;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: auto;
+  padding: 10px;
 }
 
-#viewer{
-    height: 100%;
-    width:100%;
-    /* height: 450px;
+#viewer {
+  height: 100%;
+  width: 100%;
+  /* height: 450px;
     width:300px; */
-    position:relative;
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#viewer2{
-    height: 450px;
-    width:300px;
-    top:0px;
-    left:0px;
-    position:relative;
-    z-index: 0;
-    /* border: solid 1px black; */
-    /* border-radius: 50px; le border raduis ne focntionne pas sur l'embed */
-    
+#viewer2 {
+  height: 450px;
+  width: 300px;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  z-index: 0;
+  /* border: solid 1px black; */
+  /* border-radius: 50px; le border raduis ne focntionne pas sur l'embed */
 }
 
 /* Display des boxs */
 
-#boxDimensions, #boxMateriaux, #boxGammes, #boxCouleurs, #boxSituation {
-    display: none;
+#boxDimensions,
+#boxMateriaux,
+#boxGammes,
+#boxCouleurs,
+#boxSituation {
+  display: none;
 }
 
 /* Display des boxs couleurs */
 
-#CouleurBois, #CouleurAlu, #CouleurPVC {
-    display: none;
+#CouleurBois,
+#CouleurAlu,
+#CouleurPVC {
+  display: none;
 }
-
 
 /* .container{
     padding-left: 0vw;
     padding-top: 0vh;
 } */
 
-.materiaux{
-    position:relative;
-    z-index: 1;
-    margin-right: 1em;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: solid 1px black;
+.materiaux {
+  position: relative;
+  z-index: 1;
+  margin-right: 1em;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: solid 1px black;
 }
 
 /* -------------CSS fil d'arianne --------------*/
 .filArianne {
-    position: absolute;
-    z-index: 1;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 20px 0;
-    top: 16vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* border: 3px solid violet; */
+  position: absolute;
+  z-index: 1;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 20px 0;
+  top: 16vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 3px solid violet; */
 }
 
 .listeArianne {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
 }
 
 .listeArianne img {
-    width: 50px; /* Ajustez la taille de l'image selon vos besoins */
-    height: 50px; /* Ajustez la taille de l'image selon vos besoins */
-    border-radius: 50%;
-    margin-bottom: 5px;
-    border: solid 3px black;
+  width: 50px; /* Ajustez la taille de l'image selon vos besoins */
+  height: 50px; /* Ajustez la taille de l'image selon vos besoins */
+  border-radius: 50%;
+  margin-bottom: 5px;
+  border: solid 3px black;
 }
 
 .listeArianne label {
-    text-align: center;
+  text-align: center;
 }
 
 /* -------------FIN CSS fil d'arianne --------------*/
 
-.box{
-    /* position: absolute; */
-    z-index: 1;
-    top: 100%;
-    left: 50%;
-    /* transform: translate(1vw); */
-    padding: 10px;
-    border: 1px solid black;
-    text-align: center;
-    font-family: "effra-cc", sans-serif;
+.box {
+  /* position: absolute; */
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  /* transform: translate(1vw); */
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  font-family: "effra-cc", sans-serif;
 }
 
-.boxTitre{
-    border-bottom: 1px solid black;
-    top:0;
-    left: 0;
-    margin-bottom: 1vh;
-    /* position: absolute; */
-    width: 100%;
-    text-align: center;
-    font-family: "effra-cc", sans-serif;
-    font-size: 22px;
+.boxTitre {
+  border-bottom: 1px solid black;
+  top: 0;
+  left: 0;
+  margin-bottom: 1vh;
+  /* position: absolute; */
+  width: 100%;
+  text-align: center;
+  font-family: "effra-cc", sans-serif;
+  font-size: 22px;
 }
 
-.boxTitrePoignee{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    top:0;
-    /* left: 20px; */
-    position: relative;
-    width: 100%;
-    text-align: center;
-    font-family: "effra-cc", sans-serif;
-    font-size: 22px;
+.boxTitrePoignee {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  top: 0;
+  /* left: 20px; */
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-family: "effra-cc", sans-serif;
+  font-size: 22px;
 }
 
 .line {
-    position: absolute;
-    z-index: 1;
-    border: 2px solid black;
-    transition: all 2s ease; /* Ajoute une transition de 1 seconde pour un effet fluide */
-    opacity: 0;
+  position: absolute;
+  z-index: 1;
+  border: 2px solid black;
+  transition: all 2s ease; /* Ajoute une transition de 1 seconde pour un effet fluide */
+  opacity: 0;
 }
 
-.boxDimensions{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-    grid-gap: 10px; /* Espacement entre les éléments */
-    padding-top:20px;
+.boxDimensions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
+  grid-gap: 10px; /* Espacement entre les éléments */
+  padding-top: 20px;
 }
 
 #MatPvc {
-    border: solid 3px black;
+  border: solid 3px black;
 }
 
 #MatBois {
-    border: solid 3px black;
+  border: solid 3px black;
 }
 
 #MatAlu {
-    border: solid 3px black;
+  border: solid 3px black;
 }
 
 /* les parties de div */
 
 #mainDiv {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .menu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: minmax(auto, auto);
-    grid-column:1/4;
-    grid-row: 2;
-    /* border: 3px solid green; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(auto, auto);
+  grid-column: 1/4;
+  grid-row: 2;
+  /* border: 3px solid green; */
 }
 
 .leftDiv {
-    padding-left: 10vw;
-    padding-top: 5vh;
-    grid-column: 1;
-    grid-row: 3/5;
-    /* border: solid 3px black; */
-    z-index: 1;
-    background-color: white;
+  padding-left: 10vw;
+  padding-top: 5vh;
+  grid-column: 1;
+  grid-row: 3/5;
+  /* border: solid 3px black; */
+  z-index: 1;
+  background-color: white;
 }
 
 .middleDiv {
-    grid-column: 2;
-    grid-row: 3/5;
-    /* border: solid 3px blue; */
+  grid-column: 2;
+  grid-row: 3/5;
+  /* border: solid 3px blue; */
 }
 
 .rightDiv {
-    grid-column: 3;
-    grid-row: 3/5;
-    /* border: solid 3px red; */
+  grid-column: 3;
+  grid-row: 3/5;
+  /* border: solid 3px red; */
 }
 
 /* .listRecap {
@@ -221,10 +225,28 @@ html{
 } */
 
 #recap {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 label {
-    font-family: "Gill Sans", sans-serif;
-    font-weight:bold;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: bold;
+}
+
+#recapMateriauContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#recapMateriauIcon {
+  height: 20px;
+  width: 20px;
+  border-radius: 12px;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+#recapMateriauIcon img {
+  max-width: 100%;
 }
