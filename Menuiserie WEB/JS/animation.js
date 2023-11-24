@@ -222,12 +222,27 @@ const recapManager = (() => {
     poseRecapDiv.textContent = pose;
   };
 
+  // Dimensions
+  // Hauteur
+  const hauteurRecapDiv = document.getElementById("recapHeight");
+  const updateHauteur = (hauteur) => {
+    hauteurRecapDiv.textContent = hauteur + " mm";
+  };
+
+  // Largeur
+  const largeurRecapDiv = document.getElementById("recapWidth");
+  const updateLargeur = (largeur) => {
+    largeurRecapDiv.textContent = largeur + " mm";
+  };
+
   return {
     updateMat,
     updateFinition,
     updateQuincaillerie,
     updateDormant,
     updatePose,
+    updateHauteur,
+    updateLargeur,
   };
 })();
 
