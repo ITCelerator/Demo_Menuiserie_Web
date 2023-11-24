@@ -71,9 +71,17 @@ function jEvents(){
     $("#Bleu").click(function(){ setConfig("fTable_Texture", "#395878"); });
     $("#Vert").click(function(){ setConfig("fTable_Texture", "#316b44"); });
     // Boutons de textures poignée
-    $("#Laiton").click(function(){ setConfig("fChoix_Mat_poignee", "Laiton"); });
-    $("#Inox").click(function(){ setConfig("fChoix_Mat_poignee", "Inox"); });
-    $("#Pvc").click(function(){ setConfig("fChoix_Mat_poignee", "Pvc"); });
+    $("#LaitonBois").click(function(){ setConfig("fChoix_Mat_poignee", "Laiton"); });
+    $("#InoxBois").click(function(){ setConfig("fChoix_Mat_poignee", "Inox"); });
+    $("#PvcBois").click(function(){ setConfig("fChoix_Mat_poignee", "Pvc"); });
+
+    $("#LaitonAlu").click(function(){ setConfig("fChoix_Mat_poignee", "Laiton"); });
+    $("#InoxAlu").click(function(){ setConfig("fChoix_Mat_poignee", "Inox"); });
+    $("#PvcAlu").click(function(){ setConfig("fChoix_Mat_poignee", "Pvc"); });
+
+    $("#LaitonPvc").click(function(){ setConfig("fChoix_Mat_poignee", "Laiton"); });
+    $("#InoxPvc").click(function(){ setConfig("fChoix_Mat_poignee", "Inox"); });
+    $("#PvcPvc").click(function(){ setConfig("fChoix_Mat_poignee", "Pvc"); });
 
     // Boutons des matériaux
     $("#MatPvc").click(function(){ setConfig("fChoix_Mat", "PVC"); });
