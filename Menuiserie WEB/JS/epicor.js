@@ -41,6 +41,13 @@ function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configur
     else if (fieldName == "fPose/depose"){ config.setFields({ "fPose/depose" : fieldValue }); config2.setFields({ "fPose/depose" : fieldValue });}
     else if (fieldName == "fDormant"){ config.setFields({ "fDormant" : fieldValue }); config2.setFields({ "fDormant" : fieldValue });}
     else if (fieldName == "fAfficherPhoto"){ config.setFields({ "fAfficherPhoto" : fieldValue }); config2.setFields({ "fAfficherPhoto" : fieldValue });}
+    else if (fieldName == "fTexturePhoto"){ config.setFields({ "fTexturePhoto" : fieldValue }); config2.setFields({ "fTexturePhoto" : fieldValue });}
+    else if (fieldName == "fChoixCamera"){ config.setFields({ "fChoixCamera" : fieldValue });}
+    else if (fieldName == "fUpload"){ config.setFields({ "fUpload" : fieldValue });}
+    else if (fieldName == "fREDIM"){ config.setFields({ "fREDIM" : fieldValue });}
+    else if (fieldName == "fChoixAppliqueDimensions"){ config.setFields({ "fChoixAppliqueDimensions" : fieldValue });}
+
+    
     console.log(fieldName);
     console.log(fieldValue);
 }
@@ -103,8 +110,58 @@ function jEvents(){
     $("#neuf").click(function(){ setConfig("fPose/depose", "N"); });
 
     // Texte Type de pose
-    $("#oui").click(function(){ setConfig("fAfficherPhoto", true);  viewer.runAction("CameraPhoto");});
+    $("#oui").click(function(){ setConfig("fAfficherPhoto", true);  });
     $("#non").click(function(){ setConfig("fAfficherPhoto", false); });
+
+    //Mise en situation
+    //bouton afficher photo
+    $('#checkbox').click(affichePhoto())
+    //bouton redimmensionner la fenêtre
+    $('#appliquerDimensions').click(redimFenetre())
+    //Choix de la photo
+    $('#Maison1').click(function(){ setConfig("fTexturePhoto", "Maison_1");})
+    $('#Maison2').click(function(){ setConfig("fTexturePhoto", "Maison_2");})
+    $('#Maison3').click(function(){ setConfig("fTexturePhoto", "Maison_3");})
+    $('#Maison4').click(function(){ setConfig("fTexturePhoto", "Maison_4");})
+
+
+    $('#appliqueDimensions').click(function(){ setConfig("fChoixAppliqueDimensions", "Oui");  setConfig("fREDIM", false); document.getElementById("appliquerDimensions").checked=false })
+    
+}
+
+
+//fonction pour afficher la photo
+function affichePhoto(){
+    if(document.getElementById("checkbox").checked){
+        setConfig("fAfficherPhoto", true);
+        setConfig("fChoixCamera", "CameraPhoto")
+    }
+    else{
+        setConfig("fAfficherPhoto", false);
+        setConfig("fChoixCamera", "CameraAccueil")
+    }
+}
+
+//fonction pour afficher le redimensionnement
+function redimFenetre(){
+    if(document.getElementById("appliquerDimensions").checked){
+        setConfig("fREDIM", true);
+        
+    }
+    else{
+        setConfig("fREDIM", false);
+    }
+}
+
+
+
+
+//fonction pour l'upload
+function handleFileSelect(event){
+    var input = event.target;
+    setConfig("fUpload", input.files);
+    console.log("JE SUIS DEDANS")
+    console.log(input.files)
 }
 
 
@@ -164,3 +221,11 @@ function updateSliderValue(slider, input, unit, minValue, maxValue) {
 }
 
 // Vous pouvez maintenant utiliser lengthValue et widthValue dans d'autres fonctions selon vos besoins
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    setConfig("fChoix_Mat", "BOIS");
+    setConfig("fTable_Texture", "#ffd1a3");
+
+});

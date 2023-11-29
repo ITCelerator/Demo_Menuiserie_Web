@@ -13,10 +13,8 @@
     <header class="header">
       <h1 id="titre">Personnalisez votre fenêtre !</h1>
     </header>
-
-    <!-- <div class="listRecap">
-        <i id="recap" class="fa fa-bars"></i>
-    </div> -->
+    
+    <div id="viewer"></div>
 
     <div id="mainDiv">
       <div class="menu">
@@ -26,16 +24,18 @@
               src="../Images/icon_dimension.png"
               alt="Dimensions"
               onclick="Dimensions()"
+              id="DimensionsImg"
             />
-            <label>Dimension</label>
+            <label id="titreArianne">Dimensions</label>
           </li>
           <li class="listeArianne" id="Gammes">
             <img
               src="../Images/wood05_col_256.jpg"
               alt="Gammes"
               onclick="Gammes()"
+              id="GammesImg"
             />
-            <label>Gamme</label>
+            <label id="titreArianne">Gamme</label>
           </li>
           <li class="listeArianne" id="Materiaux">
             <img
@@ -43,7 +43,7 @@
               alt="Matériaux"
               onclick="Materiaux()"
             />
-            <label>Matériaux</label>
+            <label id="titreArianne">Matériau</label>
           </li>
           <li class="listeArianne" id="Couleurs">
             <img
@@ -51,19 +51,19 @@
               alt="Couleurs"
               onclick="Couleurs()"
             />
-            <label>Couleur</label>
+            <label id="titreArianne">Couleur</label>
           </li>
-          <!-- <li class="listeArianne" id="Situation">
-                    <img src="../Images/wood05_col_256.jpg" alt="Mise en situation" onclick="fMiseEnSituation()">
-                    <label>Mise en situation</label>
-                </li> -->
+          <li class="listeArianne" id="Situation">
+                    <img src="../Images/Maison1.png" alt="Mise en situation" onclick="MiseEnSituation()">
+                    <label id="titreArianne">Mise en situation</label>
+                </li>
           <li class="listeArianne" id="Recapitulatif">
             <img
               src="../Images/icon_liste.png"
               alt="Récapitulatif"
               onclick="Recapitulatif()"
             />
-            <label>Recapitulatif</label>
+            <label id="titreArianne">Recapitulatif</label>
           </li>
         </ul>
       </div>
@@ -73,14 +73,14 @@
       </div>
 
       <div class="middleDiv">
-        <div id="viewer"></div>
+        
       </div>
 
       <div class="rightDiv">
         <div class="box" id="boxDimensions">
           <div class="boxTitre">Dimensions</div>
           <div class="boxDimensions">
-            <label for="sliderLength">Hauteur (mm) :</label>
+            <label for="sliderLength" class="label">Hauteur (mm) :</label>
             <input
               type="range"
               id="sliderLength"
@@ -99,7 +99,7 @@
               onchange="recapManager.updateHauteur(this.value)"
             />
 
-            <label for="sliderWidth">Largeur (mm) :</label>
+            <label for="sliderWidth" class="label">Largeur (mm) :</label>
             <input
               type="range"
               id="sliderWidth"
@@ -122,37 +122,34 @@
 
         <div class="box" id="boxGammes">
           <div class="boxTitre">Gamme</div>
-          <!-- <div id="economique">Economique</div>
-                <div id="confort">Confort</div>
-                <div id="luxe">Luxe</div> -->
           <select
             name="Gamme"
             onChange="recapManager.updateDormant(this.value)"
             multiple
+            class="GammeBox"
           >
-            <option id="economique" value="economique">Economique</option>
-            <option id="confort" value="confort">Confort</option>
-            <option id="luxe" value="luxe">Luxe</option>
+            <option id="economique" value="economique" class="label" >Economique</option>
+            <option id="confort" value="confort" class="label" >Confort</option>
+            <option id="luxe" value="luxe" class="label" >Luxe</option>
           </select>
 
-          <div class="boxTitre" id="typePose">Type de pose</div>
-          <!-- <div id="renovation">Pose en rénovation</div>
-                <div id="totale">Dépose totale</div>
-                <div id="neuf">Pose ne neuf</div> -->
+          <div class="boxSousTitre" id="typePose">Type de pose</div>
           <select
             name="Gamme"
             onChange="recapManager.updatePose(this.value)"
             multiple
+            class="GammeBox"
           >
-            <option id="renovation" value="renovation">Rénovation</option>
-            <option id="totale" value="totale">Totale</option>
-            <option id="neuf" value="neuf">Neuf</option>
+            <option id="renovation" value="renovation" class="label" >Rénovation</option>
+            <option id="totale" value="totale" class="label" >Totale</option>
+            <option id="neuf" value="neuf" class="label" >Neuf</option>
           </select>
         </div>
 
         <div class="box" id="boxMateriaux">
           <div class="boxTitre">Type de matériaux</div>
           <div class="boxMateriaux">
+            <div id="survol">
             <input
               class="materiaux"
               id="MatPvc"
@@ -160,6 +157,9 @@
               src="../Images/pvc_blanc.png"
               onClick="Choix_Mat('pvc')"
             />
+            <div class="tooltip">PVC</div>
+          </div>
+          <div id="survol">
             <input
               class="materiaux"
               id="MatBois"
@@ -167,6 +167,9 @@
               src="../Images/wood05_col_256.jpg"
               onClick="Choix_Mat('bois')"
             />
+            <div class="tooltip">Bois</div>
+          </div>
+          <div id="survol">
             <input
               class="materiaux"
               id="MatAlu"
@@ -174,6 +177,8 @@
               src="../Images/alu_blanc.jpg"
               onClick="Choix_Mat('alu')"
             />
+            <div class="tooltip">Aluminium</div>
+          </div>
           </div>
         </div>
 
@@ -334,7 +339,7 @@
                 id="Noir9005"
                 type="image"
                 src="../Images/alu_noir.jpg"
-              />
+              /><br>
               <input
                 class="materiaux finition"
                 couleur="Bleu 5012"
@@ -355,7 +360,7 @@
                 id="VertFonceAlu"
                 type="image"
                 src="../Images/alu_vert_clair.png"
-              />
+              /><br>
               <input
                 class="materiaux finition"
                 couleur="Vert 6005"
@@ -404,9 +409,27 @@
         </div>
 
         <div class="box" id="boxSituation">
-          <div class="boxTitre">Mise en situation</div>
-          <div id="oui">oui</div>
-          <div id="non">non</div>
+          <div class="boxTitre">Pour tester avec une photo préchargé cliquez sur l'une d'elles</div>
+          <div class="MaisonSituation" id="MaisonSituation">
+            <label class="switch">
+              <input type="checkbox" id="checkbox" value="true">
+              <span class="slider round"></span>
+            </label>
+            <br>
+            <img class="ImageMainson" id="Maison1" src="../Images/Maison1.png" />
+            <img class="ImageMainson" id="Maison2" src="../Images/Maison2.png" />
+            <br>
+            <img class="ImageMainson" id="Maison3" src="../Images/Maison3.png" />
+            <img class="ImageMainson" id="Maison4" src="../Images/Maison4.png" />
+          </div>
+          <div class="boxSousTitre">Vous pouvez aussi importer une photo que vous souhaitez</div>
+          <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onchange="handleFileSelect(event)"/>
+          <div class="boxSousTitre">Redimensionnez votre fenêtre pour l'adapter à votre photo</div>
+          <label class="switch">
+            <input type="checkbox" id="appliquerDimensions" value="true">
+            <span class="slider round"></span>
+          </label>
+          <button id="appliqueDimensions">Appliquer les dimensions</button>
         </div>
 
         <div class="box" id="boxRecap">

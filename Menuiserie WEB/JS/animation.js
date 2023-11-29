@@ -1,3 +1,12 @@
+var dimensionsValide;
+var gammeValide;
+var poseValide;
+var materiauValide;
+var couleurValide;
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const finitions = document.querySelectorAll(".finition");
   finitions.forEach((finition) => {
@@ -18,7 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   });
+  Dimensions();
+  Dimensions();
 });
+
 
 //fonctions pour gérer l'affichage des boxs selon la box choisie
 
@@ -35,6 +47,9 @@ function Dimensions() {
   var div = document.getElementById("boxGammes");
   div.style.display = "none";
 
+  var div = document.getElementById("viewer2");
+  div.style.display = "none";
+
   var div = document.getElementById("boxMateriaux");
   div.style.display = "none";
 
@@ -49,16 +64,21 @@ function Dimensions() {
 }
 
 function Gammes() {
-  // alert("Vous avez cliqué sur gammes !");
+ // alert("Vous avez cliqué sur gammes !");
   // Vous pouvez ajouter d'autres actions à exécuter ici
   var div = document.getElementById("boxGammes");
   if (div.style.display === "none") {
     div.style.display = "block";
+    div = document.getElementById("GammesImg");
+    div.style.border = "3px solid rgb(58, 156, 58)";
   } else {
     div.style.display = "none";
   }
 
   var div = document.getElementById("boxDimensions");
+  div.style.display = "none";
+
+  var div = document.getElementById("viewer2");
   div.style.display = "none";
 
   var div = document.getElementById("boxMateriaux");
@@ -89,6 +109,9 @@ function Materiaux() {
   var div = document.getElementById("boxDimensions");
   div.style.display = "none";
 
+  var div = document.getElementById("viewer2");
+  div.style.display = "block";
+
   var div = document.getElementById("boxCouleurs");
   div.style.display = "none";
 
@@ -117,6 +140,9 @@ function Couleurs() {
   var div = document.getElementById("boxGammes");
   div.style.display = "none";
 
+  var div = document.getElementById("viewer2");
+  div.style.display = "block";
+
   var div = document.getElementById("boxSituation");
   div.style.display = "none";
 
@@ -125,8 +151,32 @@ function Couleurs() {
 }
 
 function MiseEnSituation() {
-  alert("Vous avez cliqué sur mise en situation !");
+  // alert("Vous avez cliqué sur mise en situation !");
   // Vous pouvez ajouter d'autres actions à exécuter ici
+  var div = document.getElementById("boxSituation");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
+
+  var div = document.getElementById("boxDimensions");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxMateriaux");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxGammes");
+  div.style.display = "none";
+
+  var div = document.getElementById("viewer2");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxCouleurs");
+  div.style.display = "none";
+
+  var div = document.getElementById("boxRecap");
+  div.style.display = "none";
 }
 
 function Recapitulatif() {
@@ -146,6 +196,9 @@ function Recapitulatif() {
   div.style.display = "none";
 
   var div = document.getElementById("boxGammes");
+  div.style.display = "none";
+
+  var div = document.getElementById("viewer2");
   div.style.display = "none";
 
   var div = document.getElementById("boxSituation");
@@ -246,55 +299,17 @@ const recapManager = (() => {
   };
 })();
 
-//NE FONCTIONNE PAS
 /*
 document.addEventListener("DOMContentLoaded", function () {
-    $("#Dimensions").click(function(){ 
-        var element1 = document.getElementById('Dimensions');
-        var element2 = document.getElementById('boxMateriaux');
-        var ligne = document.querySelector('.line');
-        
-        // Obtenir les positions des éléments
-        var posElement1 = element1.getBoundingClientRect();
-        var posElement2 = element2.getBoundingClientRect();
-        
-        var posIntermediaire1 = {
-            top: posElement1.top + posElement1.height,
-            left: posElement1.left + posElement1.width / 2
-        };
-        
-        var posIntermediaire2 = {
-            top: posElement1.top + posElement1.height,
-            left: posElement2.left + posElement2.width / 2
-        };
-        
-        var posIntermediaire3 = {
-            top: posElement2.top + posElement2.height,
-            left: posElement2.left + posElement2.width / 2
-        };
-        
-        // Définir la position et la longueur de la ligne
-        ligne.style.top = posIntermediaire1.top + 'px';
-        ligne.style.left = posIntermediaire1.left + 'px';
-        ligne.style.width = '2px';
-        ligne.style.height = '0';
-        
-        
-        // Déclencher la première partie de l'animation
-        setTimeout(function () {
-            // Ajouter une classe pour l'animation
-            ligne.classList.add('animate-line');
-            
-            // Mettre à jour la position et la hauteur de la ligne
-            ligne.style.top = posIntermediaire2.top + 'px';
-            ligne.style.left = posIntermediaire2.left + 'px';
-            ligne.style.height = posIntermediaire3.top - posIntermediaire2.top + 'px';
-        }, 50);
-        
-        // Réinitialiser la classe après l'animation pour permettre la répétition
-        setTimeout(function () {
-            ligne.classList.remove('animate-line');
-        }, 1000); // ajuster selon la durée de l'animation
-    })
+
+  recapManager.updateDormant("economique")
+  recapManager.updatePose("renovation")
+  recapManager.updateLargeur(1200)
+  recapManager.updateHauteur(1600)
+  recapManager.updateMat("bois")
+  recapManager.updateFinition("CheneNaturel")
+  recapManager.updateQuincaillerie("PvcBois")
+
 });
+
 */
