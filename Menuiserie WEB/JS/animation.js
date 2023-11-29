@@ -40,6 +40,8 @@ function Dimensions() {
   var div = document.getElementById("boxDimensions");
   if (div.style.display === "none") {
     div.style.display = "block";
+    div = document.getElementById("DimensionsImg");
+    div.style.border = "3px solid rgb(58, 156, 58)";
   } else {
     div.style.display = "none";
   }
@@ -99,6 +101,8 @@ function Materiaux() {
   var div = document.getElementById("boxMateriaux");
   if (div.style.display === "none") {
     div.style.display = "block";
+    div = document.getElementById("MateriauImg");
+    div.style.border = "3px solid rgb(58, 156, 58)";
   } else {
     div.style.display = "none";
   }
@@ -127,6 +131,8 @@ function Couleurs() {
   var div = document.getElementById("boxCouleurs");
   if (div.style.display === "none") {
     div.style.display = "block";
+    div = document.getElementById("CouleurImg");
+    div.style.border = "3px solid rgb(58, 156, 58)";
   } else {
     div.style.display = "none";
   }
@@ -156,6 +162,8 @@ function MiseEnSituation() {
   var div = document.getElementById("boxSituation");
   if (div.style.display === "none") {
     div.style.display = "block";
+    div = document.getElementById("SituationImg");
+    div.style.border = "3px solid rgb(58, 156, 58)";
   } else {
     div.style.display = "none";
   }
@@ -185,6 +193,8 @@ function Recapitulatif() {
   var div = document.getElementById("boxRecap");
   if (div.style.display === "none") {
     div.style.display = "block";
+    div = document.getElementById("RecapImg");
+    div.style.border = "3px solid rgb(58, 156, 58)";
   } else {
     div.style.display = "none";
   }
@@ -299,17 +309,16 @@ const recapManager = (() => {
   };
 })();
 
-/*
+
 document.addEventListener("DOMContentLoaded", function () {
 
-  recapManager.updateDormant("economique")
-  recapManager.updatePose("renovation")
+  recapManager.updateDormant("Économique", )
+  recapManager.updatePose("Rénovation")
   recapManager.updateLargeur(1200)
   recapManager.updateHauteur(1600)
-  recapManager.updateMat("bois")
-  recapManager.updateFinition("CheneNaturel")
-  recapManager.updateQuincaillerie("PvcBois")
+  recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg")
+  recapManager.updateFinition("Chêne Naturel", "../Images/wood05_col_256.jpg")
+  recapManager.updateQuincaillerie("PVC", "../Images/pvc_blanc.png")
 
 });
 
-*/

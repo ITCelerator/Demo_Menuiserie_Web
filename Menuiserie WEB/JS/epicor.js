@@ -1,6 +1,5 @@
 var config;
 var config2;
-var viewer;
 document.addEventListener("DOMContentLoaded", function() {
     config = new kbmax.ConfiguratorEmbed({
         kbmaxUrl: "https://itc-dev.kbmax.com",
@@ -10,11 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
         showHeader: false,
         showDrawer: false,
         showMove: false,
-        bindToFormSelector: "",
+        bindToFormSelector: "#myFormHauteur",
         loadStyle: "none",
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Perspective"},
     });
-    viewer = new kbmax.SceneEmbed({elementId: "viewer"});
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -96,8 +94,8 @@ function jEvents(){
     $("#MatAlu").click(function(){ setConfig("fChoix_Mat", "ALU"); });
 
     // Slider Hauteur et largeur
-    $("#sliderLength").click(function(){ setConfig("fHauteur", lengthValue); });
-    $("#sliderWidth").click(function(){ setConfig("fLargeur", lengthValue); });
+    //$("#sliderLength").click(function(){ setConfig("fHauteur", lengthValue); });
+    //$("#sliderWidth").click(function(){ setConfig("fLargeur", widthValue); });
 
     // Texte Dormant
     $("#economique").click(function(){ setConfig("fDormant", "Eco"); });
@@ -126,7 +124,6 @@ function jEvents(){
 
 
     $('#appliqueDimensions').click(function(){ setConfig("fChoixAppliqueDimensions", "Oui");  setConfig("fREDIM", false); document.getElementById("appliquerDimensions").checked=false })
-    
 }
 
 
@@ -134,11 +131,11 @@ function jEvents(){
 function affichePhoto(){
     if(document.getElementById("checkbox").checked){
         setConfig("fAfficherPhoto", true);
-        setConfig("fChoixCamera", "CameraPhoto")
+        setConfig("fChoixCamera", "CameraPhoto") //à changer pour un runaction
     }
     else{
         setConfig("fAfficherPhoto", false);
-        setConfig("fChoixCamera", "CameraAccueil")
+        setConfig("fChoixCamera", "CameraAccueil") //à changer pour un runaction
     }
 }
 

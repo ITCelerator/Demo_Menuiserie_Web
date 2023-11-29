@@ -2,8 +2,12 @@ html {
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: rgb(110, 110, 110);
+  height: 100%;
 }
 
+body{
+  height: 100% !important;
+}
 /* header {
     border: 3px solid aqua;
 } */
@@ -71,6 +75,7 @@ html {
   position: relative;
   z-index: 1;
   margin-right: 1em;
+  margin-bottom: 5px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -105,7 +110,7 @@ html {
   height: 50px; /* Ajustez la taille de l'image selon vos besoins */
   border-radius: 50%;
   margin-bottom: 5px;
-  border: solid 3px rgb(255, 255, 255);
+  border: solid 2px rgb(255, 255, 255);
 }
 
 .listeArianne label {
@@ -120,7 +125,6 @@ html {
   top: 100%;
   left: 50%;
   /* transform: translate(1vw); */
-  padding-top: 10px;
   padding-bottom: 10px;
   border: 1px solid rgb(255, 255, 255);
   text-align: center;
@@ -131,13 +135,17 @@ html {
   border-bottom: 1px solid rgb(255, 255, 255);
   top: 0;
   left: 0;
-  margin-bottom: 1vh;
-  /* position: absolute; */
   width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 1vh;
   text-align: center;
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
   color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .boxSousTitre {
@@ -145,6 +153,8 @@ html {
   border-top: 1px solid rgb(255, 255, 255);
   top: 0;
   left: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin-bottom: 1vh;
   margin-left: 0px;
   padding-left: 0px;
@@ -153,13 +163,17 @@ html {
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .boxTitrePoignee {
-  margin-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid rgb(255, 255, 255);
   border-top: 1px solid rgb(255, 255, 255);
+  padding-top: 5px;
+  padding-bottom: 5px;
   top: 0;
   /* left: 20px; */
   position: relative;
@@ -177,14 +191,13 @@ html {
   transition: all 2s ease; /* Ajoute une transition de 1 seconde pour un effet fluide */
   opacity: 0;
 }
-
+/*
 .boxDimensions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
-  grid-gap: 10px; /* Espacement entre les éléments */
-  padding-top: 20px;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 10px; 
 }
-
+*/
 #MatPvc {
   border: solid 3px rgb(255, 255, 255);
 }
@@ -204,6 +217,7 @@ html {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+
 }
 
 .menu {
@@ -226,10 +240,18 @@ html {
 }
 
 .middleDiv {
+  height: 100% !important;
+  z-index: 1;
   grid-column: 2;
   grid-row: 3/5;
   /* border: solid 3px blue; */
 }
+
+.middleDiv img{
+bottom: 0;
+}
+
+
 
 .rightDiv {
   grid-column: 3;
@@ -260,6 +282,7 @@ label {
   margin-right: auto;
   align-items: center;
   justify-content: center;
+  gap: 5px;
 }
 
 .recapIcon {
@@ -421,7 +444,55 @@ input:checked + .slider:before {
   display: block;
 }
 
-#DimensionsImg{
-  width: 50px;
-  height: 50px;
+.tooltipGamme {
+  display: none;
+  position: absolute;
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-60%);
+  font-size: 15px;
+}
+
+#survol:hover .tooltipGamme {
+  display: block;
+}
+
+
+#myFormHauteur{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+#containerSlider{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#boxDimensions{
+  display: flex;
+}
+
+#sliderDimension{
+max-width: 100%;
+
+}
+
+#imgInfo{
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }

@@ -30,7 +30,7 @@
           </li>
           <li class="listeArianne" id="Gammes">
             <img
-              src="../Images/wood05_col_256.jpg"
+              src="../Images/gammesNoir.png"
               alt="Gammes"
               onclick="Gammes()"
               id="GammesImg"
@@ -42,6 +42,7 @@
               src="../Images/wood05_col_256.jpg"
               alt="Matériaux"
               onclick="Materiaux()"
+              id="MateriauImg"
             />
             <label id="titreArianne">Matériau</label>
           </li>
@@ -50,11 +51,17 @@
               src="../Images/wood05_col_256.jpg"
               alt="Couleurs"
               onclick="Couleurs()"
+              id="CouleurImg"
             />
             <label id="titreArianne">Couleur</label>
           </li>
           <li class="listeArianne" id="Situation">
-                    <img src="../Images/Maison1.png" alt="Mise en situation" onclick="MiseEnSituation()">
+                    <img 
+                    src="../Images/Maison1.png" 
+                    alt="Mise en situation" 
+                    onclick="MiseEnSituation()" 
+                    id="SituationImg"
+                    />
                     <label id="titreArianne">Mise en situation</label>
                 </li>
           <li class="listeArianne" id="Recapitulatif">
@@ -62,6 +69,7 @@
               src="../Images/icon_liste.png"
               alt="Récapitulatif"
               onclick="Recapitulatif()"
+              id="RecapImg"
             />
             <label id="titreArianne">Recapitulatif</label>
           </li>
@@ -73,18 +81,21 @@
       </div>
 
       <div class="middleDiv">
-        
+        <!-- <img src="../Images/realite-augmentee.png" id="RA"/> -->
       </div>
 
       <div class="rightDiv">
         <div class="box" id="boxDimensions">
           <div class="boxTitre">Dimensions</div>
           <div class="boxDimensions">
-            <label for="sliderLength" class="label">Hauteur (mm) :</label>
-            <input
+            <form id="myFormHauteur">
+              <div id="containerSlider">
+              <label for="sliderLength" class="label">Hauteur (mm) :</label>
+              <input
+              class="sliderDimension"
               type="range"
               id="sliderLength"
-              name="sliderLength"
+              name="fHauteur"
               min="550"
               max="2200"
               value="1600"
@@ -98,12 +109,14 @@
               value="1600 mm"
               onchange="recapManager.updateHauteur(this.value)"
             />
-
+          </div>
+          <div id="containerSlider">
             <label for="sliderWidth" class="label">Largeur (mm) :</label>
             <input
+              class="sliderDimension"
               type="range"
               id="sliderWidth"
-              name="sliderWidth"
+              name="fLargeur"
               min="1000"
               max="1600"
               value="1200"
@@ -118,31 +131,33 @@
               onchange="recapManager.updateLargeur(this.value)"
             />
           </div>
+          </form>
+          </div>
         </div>
 
         <div class="box" id="boxGammes">
-          <div class="boxTitre">Gamme</div>
+          <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme">Confort = Isolation</div></div></div>
           <select
             name="Gamme"
             onChange="recapManager.updateDormant(this.value)"
             multiple
             class="GammeBox"
           >
-            <option id="economique" value="economique" class="label" >Economique</option>
-            <option id="confort" value="confort" class="label" >Confort</option>
-            <option id="luxe" value="luxe" class="label" >Luxe</option>
+            <option id="economique" value="Économique" class="label" >Economique</option>
+            <option id="confort" value="Confort" class="label" >Confort</option>
+            <option id="luxe" value="Luxe" class="label" >Luxe</option>
           </select>
 
-          <div class="boxSousTitre" id="typePose">Type de pose</div>
+          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme">La pose en rénovation : les parties ouvrantes de l'ancienne<br> dqdqd</div></div></div>
           <select
             name="Gamme"
             onChange="recapManager.updatePose(this.value)"
             multiple
             class="GammeBox"
           >
-            <option id="renovation" value="renovation" class="label" >Rénovation</option>
-            <option id="totale" value="totale" class="label" >Totale</option>
-            <option id="neuf" value="neuf" class="label" >Neuf</option>
+            <option id="renovation" value="Rénovation" class="label" >Rénovation</option>
+            <option id="totale" value="Totale" class="label" >Totale</option>
+            <option id="neuf" value="Neuf" class="label" >Neuf</option>
           </select>
         </div>
 
@@ -206,7 +221,7 @@
                 id="Noir"
                 type="image"
                 src="../Images/pvc_gris_anthracite.png"
-              />
+              /><br>
               <input
                 class="materiaux finition"
                 couleur="Bleu"
@@ -269,7 +284,7 @@
                 id="MerisierFonce"
                 type="image"
                 src="../Images/wood09_col_256.jpg"
-              />
+              /><br>
               <input
                 class="materiaux finition"
                 couleur="Vert 6018"
@@ -436,11 +451,11 @@
           <div class="boxTitre">Récapitulatif</div>
           <div class="recapTitle">Dimensions</div>
           <div class="recapContainer">
-            <div>Largeur:</div>
+            <div>Largeur :</div>
             <div id="recapWidth"></div>
           </div>
           <div class="recapContainer">
-            <div>Hauteur:</div>
+            <div>Hauteur :</div>
             <div id="recapHeight"></div>
           </div>
           <hr />
