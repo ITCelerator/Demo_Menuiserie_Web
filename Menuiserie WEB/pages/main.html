@@ -30,7 +30,7 @@
           </li>
           <li class="listeArianne" id="Gammes">
             <img
-              src="../Images/gammesNoir.png"
+              src="../Images/isolant1.png"
               alt="Gammes"
               onclick="Gammes()"
               id="GammesImg"
@@ -48,7 +48,7 @@
           </li>
           <li class="listeArianne" id="Couleurs">
             <img
-              src="../Images/wood05_col_256.jpg"
+              src="../Images/iconCouleurs.png"
               alt="Couleurs"
               onclick="Couleurs()"
               id="CouleurImg"
@@ -66,7 +66,7 @@
                 </li>
           <li class="listeArianne" id="Recapitulatif">
             <img
-              src="../Images/icon_liste.png"
+              src="../Images/menu.png"
               alt="Récapitulatif"
               onclick="Recapitulatif()"
               id="RecapImg"
@@ -136,26 +136,32 @@
         </div>
 
         <div class="box" id="boxGammes">
-          <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme">Confort = Isolation</div></div></div>
+          <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"> <b>Gamme Économique :</b> Le dormant de la gamme économique offre une solution budgétaire <br>compétitive tout en assurant une isolation thermique.<br> C'est un choix judicieux pour ceux qui recherchent une option économique<br> sans compromettre la qualité essentielle.<br><br>
+                                                                                                                                          <b>Gamme Confort :</b> Le dormant de la gamme confort offre des caractéristiques supplémentaires<br> pour améliorer l'efficacité énergétique.<br>Son isolation renforcée offre une expérience plus agréable<br> tout en maintenant une bon rapport qualité/prix.<br><br>
+                                                                                                                                          <b>Gamme Luxe :</b> Le dormant de la gamme luxe représente le summum de la qualité<br> et de la sophistication. Il est fabriqué à partir de matériaux <br>haut de gamme, offrant des performances<br> supérieures en termes d'isolation thermique, d'insonorisation et de durabilité. <br>En plus de ses caractéristiques techniques avancées, <br>il offre souvent des designs personnalisés <br>et une esthétique haut de gamme pour répondre aux attentes des clients les plus exigeants.</div></div></div>
           <select
             name="Gamme"
             onChange="recapManager.updateDormant(this.value)"
             multiple
             class="GammeBox"
+            
           >
-            <option id="economique" value="Économique" class="label" >Economique</option>
+            <option id="economique" value="Économique" class="label" selected>Economique</option>
             <option id="confort" value="Confort" class="label" >Confort</option>
             <option id="luxe" value="Luxe" class="label" >Luxe</option>
           </select>
 
-          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme">La pose en rénovation : les parties ouvrantes de l'ancienne<br> dqdqd</div></div></div>
+          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"><b>La pose en Rénovation :</b><br> Les parties ouvrantes de l'ancienne menuiserie sont démontées.<br> Un nouveau cadre est installé par dessus l'ancien dormant.<br><br>
+                                                                                                                                                                  <b>La pose en neuf :</b><br> La menuiserie est posée contre le mur intérieur de la maçonnerie.<br> La fenêtre est intégrée à l'isolant intérieur de votre mur.<br><br>
+                                                                                                                                                                  <b>La dépose totale :</b> <br>Consiste à enlever entièrement le dormant existant.<br> L’ancienne menuiserie est donc complètement retirée<br> pour poser une nouvelle menuiserie sur les maçonneries.
+          </div></div></div>
           <select
             name="Gamme"
             onChange="recapManager.updatePose(this.value)"
             multiple
             class="GammeBox"
           >
-            <option id="renovation" value="Rénovation" class="label" >Rénovation</option>
+            <option id="renovation" value="Rénovation" class="label" selected>Rénovation</option>
             <option id="totale" value="Totale" class="label" >Totale</option>
             <option id="neuf" value="Neuf" class="label" >Neuf</option>
           </select>
@@ -424,12 +430,15 @@
         </div>
 
         <div class="box" id="boxSituation">
-          <div class="boxTitre">Pour tester avec une photo préchargé cliquez sur l'une d'elles</div>
+          <div class="boxTitre">Tester avec une photo</div>
           <div class="MaisonSituation" id="MaisonSituation">
-            <label class="switch">
-              <input type="checkbox" id="checkbox" value="true">
-              <span class="slider round"></span>
-            </label>
+            <div id="containerToggle1">
+              <label class="switch">
+                <input type="checkbox" id="checkbox" value="true">
+                <span class="slider round"></span>
+              </label>
+              <div id="texteToggle1">Afficher la photo</div>
+            </div>
             <br>
             <img class="ImageMainson" id="Maison1" src="../Images/Maison1.png" />
             <img class="ImageMainson" id="Maison2" src="../Images/Maison2.png" />
@@ -437,15 +446,20 @@
             <img class="ImageMainson" id="Maison3" src="../Images/Maison3.png" />
             <img class="ImageMainson" id="Maison4" src="../Images/Maison4.png" />
           </div>
-          <div class="boxSousTitre">Vous pouvez aussi importer une photo que vous souhaitez</div>
-          <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onchange="handleFileSelect(event)"/>
-          <div class="boxSousTitre">Redimensionnez votre fenêtre pour l'adapter à votre photo</div>
-          <label class="switch">
-            <input type="checkbox" id="appliquerDimensions" value="true">
-            <span class="slider round"></span>
-          </label>
-          <button id="appliqueDimensions">Appliquer les dimensions</button>
-        </div>
+          <div class="boxSousTitre">Télécharger votre photo</div>
+          <div class="interBox">
+            <label for="boutonSituation" class="label-file">Choisir une image</label>
+            <input type="file" id="boutonSituation" class="input-file" name="photo" accept="image/png, image/jpeg" onchange="handleFileSelect(event)"/>
+          </div>
+          <div class="boxSousTitre">Redimensionnez votre fenêtre</div>
+          <div class="flexboxSituation"> 
+              <label class="switch">
+                <input type="checkbox" id="appliquerDimensions" value="true">
+                <span class="slider round"></span>
+              </label>
+              <button id="boutonSituation">Appliquer les dimensions</button>
+           </div>
+          </div>
 
         <div class="box" id="boxRecap">
           <div class="boxTitre">Récapitulatif</div>
@@ -457,6 +471,16 @@
           <div class="recapContainer">
             <div>Hauteur :</div>
             <div id="recapHeight"></div>
+          </div>
+          <hr />
+          <div class="recapTitle">Dormant</div>
+          <div class="recapContainer">
+            <div id="recapDormant"></div>
+          </div>
+          <hr />
+          <div class="recapTitle">Type de pose</div>
+          <div class="recapContainer">
+            <div id="recapPose"></div>
           </div>
           <hr />
           <div class="recapTitle">Matériau</div>
@@ -481,16 +505,6 @@
             <div class="recapIcon" id="recapQuincaillerieIcon">
               <img src="" />
             </div>
-          </div>
-          <hr />
-          <div class="recapTitle">Dormant</div>
-          <div class="recapContainer">
-            <div id="recapDormant"></div>
-          </div>
-          <hr />
-          <div class="recapTitle">Type de pose</div>
-          <div class="recapContainer">
-            <div id="recapPose"></div>
           </div>
         </div>
       </div>

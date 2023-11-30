@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
         loadStyle: "none",
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Perspective"},
     });
+    config.onLoaded(() => {
+        config.getConfiguredProduct((fields) => {
+          console.log(fields);
+        });
+      });
 });
 
 document.addEventListener("DOMContentLoaded", function() {

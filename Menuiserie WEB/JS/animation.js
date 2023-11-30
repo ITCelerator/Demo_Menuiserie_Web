@@ -34,6 +34,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //fonctions pour gérer l'affichage des boxs selon la box choisie
 
+function bulleDimension(height, width){
+  div = document.getElementById("DimensionsImg");
+  div.style.height = height + "px";
+  div.style.width =  width + "px";
+}
+
+function bulleGamme(height, width){
+  div = document.getElementById("GammesImg");
+  div.style.height = height + "px";
+  div.style.width =  width + "px";
+}
+
+function bulleMateriau(height, width){
+div = document.getElementById("MateriauImg");
+div.style.height = height + "px";
+div.style.width =  width + "px";
+}
+
+function bulleCouleur(height, width){
+  div = document.getElementById("CouleurImg");
+  div.style.height = height + "px";
+  div.style.width =  width + "px";
+}
+  
+function bulleSituation(height, width){
+  div = document.getElementById("SituationImg");
+  div.style.height = height + "px";
+  div.style.width =  width + "px";
+}
+  
+function bulleRecap(height, width){
+  div = document.getElementById("RecapImg");
+  div.style.height = height + "px";
+  div.style.width =  width + "px";
+}
+
+
 function Dimensions() {
   // alert("Vous avez cliqué sur dimensions !");
   // Vous pouvez ajouter d'autres actions à exécuter ici
@@ -41,7 +78,13 @@ function Dimensions() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("DimensionsImg");
-    div.style.border = "3px solid rgb(58, 156, 58)";
+    div.style.border = "2px solid rgb(0, 0, 0)";
+    bulleDimension(55, 55)
+    bulleGamme(50, 50)
+    bulleMateriau(50, 50)
+    bulleCouleur(50, 50)
+    bulleSituation(50, 50)
+    bulleRecap(50, 50)
   } else {
     div.style.display = "none";
   }
@@ -72,7 +115,13 @@ function Gammes() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("GammesImg");
-    div.style.border = "3px solid rgb(58, 156, 58)";
+    div.style.border = "2px solid rgb(0, 0, 0)";
+    bulleDimension(50, 50)
+    bulleGamme(55, 55)
+    bulleMateriau(50, 50)
+    bulleCouleur(50, 50)
+    bulleSituation(50, 50)
+    bulleRecap(50, 50)
   } else {
     div.style.display = "none";
   }
@@ -102,7 +151,13 @@ function Materiaux() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("MateriauImg");
-    div.style.border = "3px solid rgb(58, 156, 58)";
+    div.style.border = "2px solid rgb(0, 0, 0)";
+    bulleDimension(50, 50)
+    bulleGamme(50, 50)
+    bulleMateriau(55, 55)
+    bulleCouleur(50, 50)
+    bulleSituation(50, 50)
+    bulleRecap(50, 50)
   } else {
     div.style.display = "none";
   }
@@ -132,7 +187,13 @@ function Couleurs() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("CouleurImg");
-    div.style.border = "3px solid rgb(58, 156, 58)";
+    div.style.border = "2px solid rgb(0, 0, 0)";
+    bulleDimension(50, 50)
+    bulleGamme(50, 50)
+    bulleMateriau(50, 50)
+    bulleCouleur(55, 55)
+    bulleSituation(50, 50)
+    bulleRecap(50, 50)
   } else {
     div.style.display = "none";
   }
@@ -163,7 +224,13 @@ function MiseEnSituation() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("SituationImg");
-    div.style.border = "3px solid rgb(58, 156, 58)";
+    div.style.border = "2px solid rgb(0, 0, 0)";
+    bulleDimension(50, 50)
+    bulleGamme(50, 50)
+    bulleMateriau(50, 50)
+    bulleCouleur(50, 50)
+    bulleSituation(55, 55)
+    bulleRecap(50, 50)
   } else {
     div.style.display = "none";
   }
@@ -194,7 +261,13 @@ function Recapitulatif() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("RecapImg");
-    div.style.border = "3px solid rgb(58, 156, 58)";
+    div.style.border = "2px solid rgb(0, 0, 0)";
+    bulleDimension(50, 50)
+    bulleGamme(50, 50)
+    bulleMateriau(50, 50)
+    bulleCouleur(50, 50)
+    bulleSituation(50, 50)
+    bulleRecap(55, 55)
   } else {
     div.style.display = "none";
   }
