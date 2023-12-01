@@ -129,6 +129,7 @@ body{
   border: 1px solid rgb(255, 255, 255);
   text-align: center;
   font-family: "effra-cc", sans-serif;
+  border-radius: 15px;
 }
 
 .boxTitre {
@@ -142,10 +143,11 @@ body{
   text-align: center;
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
-  color:white;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #D4AF37 !important; /* Couleur dorée */
+
 }
 
 .boxSousTitre {
@@ -162,10 +164,11 @@ body{
   text-align: center;
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #D4AF37 !important; /* Couleur dorée */
+
 }
 
 .boxTitrePoignee {
@@ -181,7 +184,7 @@ body{
   text-align: center;
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
-  color: white;
+  color: #D4AF37 !important; /* Couleur dorée */
 }
 
 /*
@@ -220,7 +223,6 @@ body{
   grid-auto-rows: minmax(auto, auto);
   grid-column: 1/4;
   grid-row: 2;
-  /* border: 3px solid green; */
 }
 
 .leftDiv {
@@ -228,30 +230,23 @@ body{
   padding-top: 5vh;
   grid-column: 1;
   grid-row: 3/5;
-  /* border: solid 3px black; */
   z-index: 1;
 }
 
 .middleDiv {
   grid-column: 2;
   grid-row: 3/5;
-  /* border: solid 3px blue; */
 }
 
 
 .rightDiv {
   grid-column: 3;
   grid-row: 3/5;
-  /* border: solid 3px red; */
   z-index: 1;
-  width: 80%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
-
-/* .listRecap {
-    align-items: center; 
-} */
 
 #recap {
   font-size: 20px;
@@ -284,8 +279,9 @@ label {
 }
 
 .recapTitle {
-  font-weight: bold;
   margin-bottom: 8px;
+  font-weight: bold;
+
 }
 /*
 #typePose {
@@ -443,6 +439,8 @@ input:checked + .slider:before {
   transform: translateX(-60%);
   font-size: 15px;
   z-index: 2;
+  max-width: 300px;
+  max-height: 350px;
 }
 
 #survol:hover .tooltipGamme {
@@ -491,7 +489,7 @@ background: #000;
   gap: 10px;
 }
 
-#boutonSituation{
+.boutonSituation{
   border: #0000008f;
   border-radius: 20px;
   padding-left: 10px;
@@ -502,12 +500,12 @@ background: #000;
   color: white;
 }
 
-#boutonSituation:hover{
+.boutonSituation:hover{
   background-color: #7a7a7a;
   cursor: pointer;
 }
 
-.input-file {
+#boutonSituation1 {
   display: none;
 }
 
@@ -546,4 +544,36 @@ background: #000;
 
 #texteToggle1{
   color: white;
+}
+
+#sliderLengthInput,#sliderWidthInput{
+  width: 38%;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: white;
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+
+#leftArrow{
+height: 50px;
+width: 50px;
+
+}
+
+
+#rightArrow{
+  height: 50px;
+  width: 50px;
+}
+
+#left{
+  z-index: 2;
+  left: 1px;
+}
+
+#right{
+  z-index: 2;
+  right: 0px;
 }

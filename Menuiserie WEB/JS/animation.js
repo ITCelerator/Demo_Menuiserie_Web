@@ -78,7 +78,7 @@ function Dimensions() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("DimensionsImg");
-    div.style.border = "2px solid rgb(0, 0, 0)";
+    div.style.border = "2px solid #D4AF37";
     bulleDimension(55, 55)
     bulleGamme(50, 50)
     bulleMateriau(50, 50)
@@ -106,6 +106,8 @@ function Dimensions() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  desafficherPhoto()
 }
 
 function Gammes() {
@@ -115,7 +117,7 @@ function Gammes() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("GammesImg");
-    div.style.border = "2px solid rgb(0, 0, 0)";
+    div.style.border = "2px solid #D4AF37";
     bulleDimension(50, 50)
     bulleGamme(55, 55)
     bulleMateriau(50, 50)
@@ -143,6 +145,8 @@ function Gammes() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  desafficherPhoto()
 }
 
 function Materiaux() {
@@ -151,7 +155,7 @@ function Materiaux() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("MateriauImg");
-    div.style.border = "2px solid rgb(0, 0, 0)";
+    div.style.border = "2px solid #D4AF37";
     bulleDimension(50, 50)
     bulleGamme(50, 50)
     bulleMateriau(55, 55)
@@ -179,6 +183,8 @@ function Materiaux() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  desafficherPhoto()
 }
 
 function Couleurs() {
@@ -187,7 +193,7 @@ function Couleurs() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("CouleurImg");
-    div.style.border = "2px solid rgb(0, 0, 0)";
+    div.style.border = "2px solid #D4AF37";
     bulleDimension(50, 50)
     bulleGamme(50, 50)
     bulleMateriau(50, 50)
@@ -215,6 +221,8 @@ function Couleurs() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  desafficherPhoto()
 }
 
 function MiseEnSituation() {
@@ -224,7 +232,7 @@ function MiseEnSituation() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("SituationImg");
-    div.style.border = "2px solid rgb(0, 0, 0)";
+    div.style.border = "2px solid #D4AF37";
     bulleDimension(50, 50)
     bulleGamme(50, 50)
     bulleMateriau(50, 50)
@@ -252,6 +260,8 @@ function MiseEnSituation() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  desafficherPhoto()
 }
 
 function Recapitulatif() {
@@ -261,7 +271,7 @@ function Recapitulatif() {
   if (div.style.display === "none") {
     div.style.display = "block";
     div = document.getElementById("RecapImg");
-    div.style.border = "2px solid rgb(0, 0, 0)";
+    div.style.border = "2px solid #D4AF37";
     bulleDimension(50, 50)
     bulleGamme(50, 50)
     bulleMateriau(50, 50)
@@ -289,6 +299,8 @@ function Recapitulatif() {
 
   var div = document.getElementById("boxCouleurs");
   div.style.display = "none";
+
+  desafficherPhoto()
 }
 
 // Cette fonction gère le changement de matériau
@@ -382,6 +394,10 @@ const recapManager = (() => {
   };
 })();
 
+function desafficherPhoto(){
+  document.getElementById("appliquerDimensions").checked=false
+  document.getElementById("checkbox").checked=false
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 

@@ -101,15 +101,13 @@
               value="1600"
               onchange="recapManager.updateHauteur(this.value)"
             />
-            <input
-              type="text"
-              id="sliderLengthInput"
-              min="550"
-              max="2200"
-              value="1600 mm"
-              onchange="recapManager.updateHauteur(this.value)"
-            />
           </div>
+          <input
+          type="text"
+          id="sliderLengthInput"
+          value="1600 "
+          onchange="recapManager.updateHauteur(this.value)"
+        />
           <div id="containerSlider">
             <label for="sliderWidth" class="label">Largeur (mm) :</label>
             <input
@@ -122,15 +120,14 @@
               value="1200"
               onchange="recapManager.updateLargeur(this.value)"
             />
-            <input
+            
+          </div>
+          <input
               type="text"
               id="sliderWidthInput"
-              min="1000"
-              max="1600"
-              value="1200 mm"
+              value="1200 "
               onchange="recapManager.updateLargeur(this.value)"
             />
-          </div>
           </form>
           </div>
         </div>
@@ -446,10 +443,11 @@
             <img class="ImageMainson" id="Maison3" src="../Images/Maison3.png" />
             <img class="ImageMainson" id="Maison4" src="../Images/Maison4.png" />
           </div>
+          <div id="part2">
           <div class="boxSousTitre">Télécharger votre photo</div>
           <div class="interBox">
-            <label for="boutonSituation" class="label-file">Choisir une image</label>
-            <input type="file" id="boutonSituation" class="input-file" name="photo" accept="image/png, image/jpeg" onchange="handleFileSelect(event)"/>
+            <label for="boutonSituation1" class="label-file">Choisir une image</label>
+            <input type="file" id="boutonSituation1" class="boutonSituation" name="photo" accept="image/png, image/jpeg" onchange="handleFileSelect(event)"/>
           </div>
           <div class="boxSousTitre">Redimensionnez votre fenêtre</div>
           <div class="flexboxSituation"> 
@@ -457,20 +455,21 @@
                 <input type="checkbox" id="appliquerDimensions" value="true">
                 <span class="slider round"></span>
               </label>
-              <button id="boutonSituation">Appliquer les dimensions</button>
+              <button id="appliqueDimensions" class="boutonSituation">Appliquer les dimensions</button>
            </div>
           </div>
+        </div>
 
         <div class="box" id="boxRecap">
           <div class="boxTitre">Récapitulatif</div>
           <div class="recapTitle">Dimensions</div>
           <div class="recapContainer">
-            <div>Largeur :</div>
-            <div id="recapWidth"></div>
-          </div>
-          <div class="recapContainer">
             <div>Hauteur :</div>
             <div id="recapHeight"></div>
+          </div>
+          <div class="recapContainer">
+            <div>Largeur :</div>
+            <div id="recapWidth"></div>
           </div>
           <hr />
           <div class="recapTitle">Dormant</div>
@@ -510,7 +509,17 @@
       </div>
       <!-- <div class="line" id="line"></div> -->
     </div>
+
+
+
   </body>
+  <div id="left">
+    <img src="../Images/left-arrow.png" id="leftArrow">
+  </div>
+  <div id="right">
+    <img src="../Images/right-arrow.png" id="rightArrow">
+  </div>
+
   <script src="../JS/epicor.js"></script>
   <script src="../JS/animation.js"></script>
 </html>

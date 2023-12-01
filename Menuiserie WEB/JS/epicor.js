@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", function() {
         loadStyle: "none",
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Perspective"},
     });
-    config.onLoaded(() => {
-        config.getConfiguredProduct((fields) => {
-          console.log(fields);
-        });
-      });
+    /*
+    config.getFields((fields) => {
+        var dormantDesc = fields.fDormantDesc
+        var div = document.getElementById("texteGammes1");
+        div.textContent = dormantDesc;
+    });
+    */
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -33,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Zoom"},
     });
 });
+
+
 
 
 function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configurateur KBMax
@@ -98,10 +102,6 @@ function jEvents(){
     $("#MatBois").click(function(){ setConfig("fChoix_Mat", "BOIS"); });
     $("#MatAlu").click(function(){ setConfig("fChoix_Mat", "ALU"); });
 
-    // Slider Hauteur et largeur
-    //$("#sliderLength").click(function(){ setConfig("fHauteur", lengthValue); });
-    //$("#sliderWidth").click(function(){ setConfig("fLargeur", widthValue); });
-
     // Texte Dormant
     $("#economique").click(function(){ setConfig("fDormant", "Eco"); });
     $("#confort").click(function(){ setConfig("fDormant", "Conf"); });
@@ -119,15 +119,17 @@ function jEvents(){
     //Mise en situation
     //bouton afficher photo
     $('#checkbox').click(affichePhoto())
+
     //bouton redimmensionner la fenêtre
     $('#appliquerDimensions').click(redimFenetre())
+
     //Choix de la photo
     $('#Maison1').click(function(){ setConfig("fTexturePhoto", "Maison_1");})
     $('#Maison2').click(function(){ setConfig("fTexturePhoto", "Maison_2");})
     $('#Maison3').click(function(){ setConfig("fTexturePhoto", "Maison_3");})
     $('#Maison4').click(function(){ setConfig("fTexturePhoto", "Maison_4");})
 
-
+     //bouton appliquer les dimensions
     $('#appliqueDimensions').click(function(){ setConfig("fChoixAppliqueDimensions", "Oui");  setConfig("fREDIM", false); document.getElementById("appliquerDimensions").checked=false })
 }
 
@@ -137,10 +139,14 @@ function affichePhoto(){
     if(document.getElementById("checkbox").checked){
         setConfig("fAfficherPhoto", true);
         setConfig("fChoixCamera", "CameraPhoto") //à changer pour un runaction
+        var div = document.getElementById("part2");
+        div.style.display = "block";
     }
     else{
         setConfig("fAfficherPhoto", false);
         setConfig("fChoixCamera", "CameraAccueil") //à changer pour un runaction
+        var div = document.getElementById("part2");
+        div.style.display = "none";
     }
 }
 
@@ -148,12 +154,14 @@ function affichePhoto(){
 function redimFenetre(){
     if(document.getElementById("appliquerDimensions").checked){
         setConfig("fREDIM", true);
-        
+            
     }
     else{
         setConfig("fREDIM", false);
     }
+
 }
+
 
 
 
@@ -183,25 +191,25 @@ var sliderLengthInput = document.getElementById("sliderLengthInput");
 var sliderWidthInput = document.getElementById("sliderWidthInput");
 
 // Mettre à jour la valeur du slider de la longueur lorsque l'input de texte change
-sliderLengthInput.addEventListener("input", function() {
-    updateSliderValue(sliderLength, sliderLengthInput, "mm", 550, 2200);
+sliderLengthInput.addEventListener("change", function() {
+    updateSliderValue(sliderLength, sliderLengthInput, "", 550, 2200);
 });
 
 // Mettre à jour la valeur du texte de la longueur lorsque le slider change
 sliderLength.oninput = function() {
-    sliderLengthInput.value = this.value + " mm";
+    sliderLengthInput.value = this.value + "";
     lengthValue = parseInt(this.value);
     // Appeler d'autres fonctions ici avec lengthValue si nécessaire
 }
 
 // Mettre à jour la valeur du slider de la largeur lorsque l'input de texte change
-sliderWidthInput.addEventListener("input", function() {
-    updateSliderValue(sliderWidth, sliderWidthInput, "mm", 1000, 1600);
+sliderWidthInput.addEventListener("change", function() {
+    updateSliderValue(sliderWidth, sliderWidthInput, "", 1000, 1600);
 });
 
 // Mettre à jour la valeur du texte de la largeur lorsque le slider change
 sliderWidth.oninput = function() {
-    sliderWidthInput.value = this.value + " mm";
+    sliderWidthInput.value = this.value + "";
     widthValue = parseInt(this.value);
     // Appeler d'autres fonctions ici avec widthValue si nécessaire
 }
@@ -219,7 +227,7 @@ function updateSliderValue(slider, input, unit, minValue, maxValue) {
         value = maxValue;
     }
     slider.value = value;
-    input.value = value + " " + unit;
+    input.value = value + "" + unit;
 }
 
 // Vous pouvez maintenant utiliser lengthValue et widthValue dans d'autres fonctions selon vos besoins
