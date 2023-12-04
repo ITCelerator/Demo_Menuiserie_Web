@@ -15,7 +15,7 @@ html{
     left: 50%;
     transform: translate(0%, -50%);
     z-index: 1;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
     font-family: "effra-cc", sans-serif;
@@ -24,21 +24,27 @@ html{
 #societe::placeholder,#nom::placeholder,#email::placeholder,#button,#societe,#nom,#email {
     font-family: "effra-cc", sans-serif;
     font-size: 20px;
-    color: black;
+    color: rgb(87, 87, 87);
+    padding-left: 10px;
 }
 
 #societe,#nom,#email{
     width:80%;
-    height:50px;
+    height:40px;
     background-color: #E2E2E2;
     border:none;
 }
 
 #button{
-    background-color: #444444;
-    color: white;
-    border-radius: 30px;
     width: 50%;
+    border: #0000008f;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #0000008f;
+    color: white;
 }
 
 /* Cible le bouton radio avec l'ID "RGPD" */
@@ -67,16 +73,15 @@ html{
     margin-top: 10px;
 }
 
-#titre{
+#titre {
     font-family: "effra-cc", sans-serif;
     font-size: 40px;
-    color: black;
-    background-color: #E2E2E2;
+    color: rgb(255, 255, 255);
+    /* background-color: #E2E2E2; */
     z-index: 1;
     position: absolute;
-    top: 2%;
-    left: 2%;
+    top: 1%;
+    left: 1%;
     width: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+    padding: 5px;
+  }

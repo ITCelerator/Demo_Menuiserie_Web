@@ -28,8 +28,6 @@ body{
 #viewer {
   height: 100%;
   width: 100%;
-  /* height: 450px;
-    width:300px; */
   position: absolute;
   z-index: 0;
   display: flex;
@@ -45,9 +43,20 @@ body{
   position: relative;
   z-index: 0;
   display: none;
-  /* border: solid 1px black; 
-  /* border-radius: 50px; le border raduis ne focntionne pas sur l'embed */
+  border-radius: 50px;
 }
+
+
+#containerViewer2{
+  display: inline-block;
+  border-radius: 50px;
+  border: 3px solid #ffffff;
+}
+
+.leftDiv iframe {
+  border-radius: 50px; 
+}
+
 
 /* Display des boxs */
 
@@ -79,7 +88,7 @@ body{
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: solid 1px rgb(255, 254, 254);
+  border: solid 2px rgb(255, 254, 254);
 }
 
 /* -------------CSS fil d'arianne --------------*/
@@ -130,6 +139,7 @@ body{
   text-align: center;
   font-family: "effra-cc", sans-serif;
   border-radius: 15px;
+  margin-top: 50px;
 }
 
 .boxTitre {
@@ -146,7 +156,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #D4AF37 !important; /* Couleur dorée */
+  color: #FFFFFF !important; /* Couleur dorée */
 
 }
 
@@ -167,7 +177,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #D4AF37 !important; /* Couleur dorée */
+  color: #FFFFFF !important; /* Couleur dorée */
 
 }
 
@@ -184,16 +194,9 @@ body{
   text-align: center;
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
-  color: #D4AF37 !important; /* Couleur dorée */
+  color: #ffffff !important; /* Couleur dorée */
 }
 
-/*
-.boxDimensions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-gap: 10px; 
-}
-*/
 #MatPvc {
   border: solid 3px rgb(255, 255, 255);
 }
@@ -283,17 +286,6 @@ label {
   font-weight: bold;
 
 }
-/*
-#typePose {
-  border-top: 2px solid rgb(255, 255, 255);
-}
-*/
-/* select {
-    border: 0;
-    overflow: hidden;
-    font-size: 15px;
-    
-} */
 
 select {
   width: 100%;
@@ -315,7 +307,6 @@ select:focus {
   background-color: #56565600;
   color:white;
 }
-
 
 .ImageMainson{
   height: 20%;
@@ -439,8 +430,6 @@ input:checked + .slider:before {
   transform: translateX(-60%);
   font-size: 15px;
   z-index: 2;
-  max-width: 300px;
-  max-height: 350px;
 }
 
 #survol:hover .tooltipGamme {
@@ -467,10 +456,75 @@ input:checked + .slider:before {
   display: flex;
 }
 
-#sliderDimension{
-max-width: 100%;
-background: #000;
+.custom-slider-container {
+  position: relative;
 }
+
+/* SLIDER DIMENSIONS */
+
+/* Cacher le curseur par défaut */
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  width: 90%;
+  background: transparent; /* Rendre le fond transparent */
+}
+
+/* Styles pour la piste (track) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+/* Styles pour le pouce (thumb) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+/* Styles pour Firefox */
+input[type="range"]::-moz-range-track {
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  border: none;
+}
+
+/* Styles pour Edge (Chromium) */
+input[type="range"]::-ms-track {
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  border: none;
+}
+
+.sliderDimension{
+  padding-top: 10px;
+}
+
+/* FIN SLIDER DIMENSIONS */
+
 
 #imgInfo{
   height: 20px;
@@ -577,3 +631,4 @@ width: 50px;
   z-index: 2;
   right: 0px;
 }
+

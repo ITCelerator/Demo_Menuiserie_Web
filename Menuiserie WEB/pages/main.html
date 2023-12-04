@@ -77,7 +77,9 @@
       </div>
 
       <div class="leftDiv">
-        <div id="viewer2"></div>
+        <div id="containerViewer2">
+          <div id="viewer2"></div>
+        </div>  
       </div>
 
       <div class="middleDiv">
@@ -86,56 +88,61 @@
 
       <div class="rightDiv">
         <div class="box" id="boxDimensions">
-          <div class="boxTitre">Dimensions</div>
+          <div class="boxTitre">Dimensions Fenêtre</div>
           <div class="boxDimensions">
             <form id="myFormHauteur">
-              <div id="containerSlider">
-              <label for="sliderLength" class="label">Hauteur (mm) :</label>
-              <input
-              class="sliderDimension"
-              type="range"
-              id="sliderLength"
-              name="fHauteur"
-              min="550"
-              max="2200"
-              value="1600"
-              onchange="recapManager.updateHauteur(this.value)"
-            />
-          </div>
-          <input
-          type="text"
-          id="sliderLengthInput"
-          value="1600 "
-          onchange="recapManager.updateHauteur(this.value)"
-        />
-          <div id="containerSlider">
-            <label for="sliderWidth" class="label">Largeur (mm) :</label>
-            <input
-              class="sliderDimension"
-              type="range"
-              id="sliderWidth"
-              name="fLargeur"
-              min="1000"
-              max="1600"
-              value="1200"
-              onchange="recapManager.updateLargeur(this.value)"
-            />
-            
-          </div>
-          <input
-              type="text"
-              id="sliderWidthInput"
-              value="1200 "
-              onchange="recapManager.updateLargeur(this.value)"
-            />
-          </form>
+              <div class="dimensionContainer">
+                <label for="sliderLength" class="label">Hauteur (mm) :</label>
+                <input
+                type="text"
+                id="sliderLengthInput"
+                value="1600 "
+                onchange="recapManager.updateHauteur(this.value)"
+              />
+                <div class="inputSliderContainer">
+                  <input
+                    class="sliderDimension"
+                    type="range"
+                    id="sliderLength"
+                    name="fHauteur"
+                    min="550"
+                    max="2200"
+                    value="1600"
+                    onchange="recapManager.updateHauteur(this.value)"
+                  />
+                  <div id="custom-thumb"></div>
+                </div>
+              </div>
+          
+              <div class="dimensionContainer">
+                <label for="sliderWidth" class="label">Largeur (mm) :</label>
+                <input
+                type="text"
+                id="sliderWidthInput"
+                value="1200 "
+                onchange="recapManager.updateLargeur(this.value)"
+              />
+                <div class="inputSliderContainer">
+                  <input
+                    class="sliderDimension"
+                    type="range"
+                    id="sliderWidth"
+                    name="fLargeur"
+                    min="1000"
+                    max="1600"
+                    value="1200"
+                    onchange="recapManager.updateLargeur(this.value)"
+                  />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
 
         <div class="box" id="boxGammes">
-          <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"> <b>Gamme Économique :</b> Le dormant de la gamme économique offre une solution budgétaire <br>compétitive tout en assurant une isolation thermique.<br> C'est un choix judicieux pour ceux qui recherchent une option économique<br> sans compromettre la qualité essentielle.<br><br>
-                                                                                                                                          <b>Gamme Confort :</b> Le dormant de la gamme confort offre des caractéristiques supplémentaires<br> pour améliorer l'efficacité énergétique.<br>Son isolation renforcée offre une expérience plus agréable<br> tout en maintenant une bon rapport qualité/prix.<br><br>
-                                                                                                                                          <b>Gamme Luxe :</b> Le dormant de la gamme luxe représente le summum de la qualité<br> et de la sophistication. Il est fabriqué à partir de matériaux <br>haut de gamme, offrant des performances<br> supérieures en termes d'isolation thermique, d'insonorisation et de durabilité. <br>En plus de ses caractéristiques techniques avancées, <br>il offre souvent des designs personnalisés <br>et une esthétique haut de gamme pour répondre aux attentes des clients les plus exigeants.</div></div></div>
+          <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"> <b>Gamme Économique :</b><br> Le dormant de la gamme économique offre une solution budgétaire <br>compétitive tout en assurant une isolation thermique. C'est un choix judicieux pour <br>ceux qui recherchent une option économique sans compromettre la qualité essentielle.<br><br>
+                                                                                                                                          <b>Gamme Confort :</b><br> Le dormant de la gamme confort offre des caractéristiques supplémentaires<br> pour améliorer l'efficacité énergétique. Son isolation renforcée offre une expérience<br> plus agréable tout en maintenant une bon rapport qualité/prix.<br><br>
+                                                                                                                                          <b>Gamme Luxe :</b><br> Le dormant de la gamme luxe représente le summum de la qualité et de la<br> sophistication. Il est fabriqué à partir de matériaux haut de gamme, offrant<br> des performances supérieures en termes d'isolation thermique, d'insonorisation et<br> de durabilité. En plus de ses caractéristiques techniques avancées, il offre<br> souvent des designs personnalisés et une esthétique haut de gamme pour répondre<br> aux attentes des clients les plus exigeants.</div></div></div>
           <select
             name="Gamme"
             onChange="recapManager.updateDormant(this.value)"
@@ -513,12 +520,15 @@
 
 
   </body>
+  <!--
   <div id="left">
     <img src="../Images/left-arrow.png" id="leftArrow">
   </div>
   <div id="right">
     <img src="../Images/right-arrow.png" id="rightArrow">
   </div>
+  -->
+
 
   <script src="../JS/epicor.js"></script>
   <script src="../JS/animation.js"></script>

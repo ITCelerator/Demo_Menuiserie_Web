@@ -70,6 +70,10 @@ function bulleRecap(height, width){
   div.style.width =  width + "px";
 }
 
+function borderViewer(styleBorder){
+  div = document.getElementById("containerViewer2");
+  div.style.border = styleBorder;
+}
 
 function Dimensions() {
   // alert("Vous avez cliqué sur dimensions !");
@@ -108,6 +112,7 @@ function Dimensions() {
   div.style.display = "none";
 
   desafficherPhoto()
+  borderViewer("none")
 }
 
 function Gammes() {
@@ -147,6 +152,7 @@ function Gammes() {
   div.style.display = "none";
 
   desafficherPhoto()
+  borderViewer("none")
 }
 
 function Materiaux() {
@@ -185,6 +191,7 @@ function Materiaux() {
   div.style.display = "none";
 
   desafficherPhoto()
+  borderViewer("3px solid #ffffff")
 }
 
 function Couleurs() {
@@ -223,6 +230,7 @@ function Couleurs() {
   div.style.display = "none";
 
   desafficherPhoto()
+  borderViewer("3px solid #ffffff")
 }
 
 function MiseEnSituation() {
@@ -262,6 +270,7 @@ function MiseEnSituation() {
   div.style.display = "none";
 
   desafficherPhoto()
+  borderViewer("none")
 }
 
 function Recapitulatif() {
@@ -301,6 +310,7 @@ function Recapitulatif() {
   div.style.display = "none";
 
   desafficherPhoto()
+  borderViewer("none")
 }
 
 // Cette fonction gère le changement de matériau
@@ -411,3 +421,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.getElementById('sliderLength');
+  const customThumb = document.getElementById('custom-thumb');
+
+  slider.addEventListener('input', function () {
+    updateCustomThumbPosition();
+  });
+
+  // Met à jour la position du curseur personnalisé en fonction de la valeur du curseur de plage
+  function updateCustomThumbPosition() {
+    const percent = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+    const thumbWidth = parseFloat(getComputedStyle(customThumb).width);
+    const thumbPosition = (percent / 100) * (slider.offsetWidth - thumbWidth);
+    customThumb.style.left = thumbPosition + 'px';
+  }
+
+  // Met à jour la position initiale du curseur personnalisé
+  updateCustomThumbPosition();
+});
