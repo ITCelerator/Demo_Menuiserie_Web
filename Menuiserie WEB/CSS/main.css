@@ -1,28 +1,12 @@
 html {
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(170, 170, 170);
   height: 100%;
 }
 
 body{
   height: 100% !important;
-}
-/* header {
-    border: 3px solid aqua;
-} */
-
-#titre {
-  font-family: "effra-cc", sans-serif;
-  font-size: 40px;
-  color: rgb(255, 255, 255);
-  /* background-color: #E2E2E2; */
-  z-index: 1;
-  position: absolute;
-  top: 1%;
-  left: 1%;
-  width: auto;
-  padding: 5px;
 }
 
 #viewer {
@@ -47,7 +31,7 @@ body{
 }
 
 
-#containerViewer2{
+#containerViewer2{ /* contour du 2ème viewer */
   display: inline-block;
   border-radius: 50px;
   border: 3px solid #ffffff;
@@ -75,10 +59,6 @@ body{
   display: none;
 }
 
-/* .container{
-    padding-left: 0vw;
-    padding-top: 0vh;
-} */
 
 .materiaux {
   position: relative;
@@ -91,39 +71,111 @@ body{
   border: solid 2px rgb(255, 254, 254);
 }
 
-/* -------------CSS fil d'arianne --------------*/
-.filArianne {
+/*
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(auto, auto);
+  grid-column: 1/4;
+  grid-row: 2;
+}
+
+
+.titreMenu{
+  z-index: 1;
+}
+
+
+#titre {
+  font-family: "effra-cc", sans-serif;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  z-index: 1;
   position: absolute;
+  top: 1%;
+  left: 1%;
+  width: auto;
+  padding: 5px;
+  left: 50%
+}
+*/
+
+.menu {
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+
+#titre {
+  font-family: "effra-cc", sans-serif;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  width: 55%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  background-color: #962727;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -------------CSS fil d'arianne --------------*/
+.Arianne{
+  width: 100%;
+  height: auto;
+}
+
+.filArianne {
   z-index: 1;
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  margin: 20px 0;
-  top: 16vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 55%;
+  background-color: #af6c6c;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -27px;
 }
 
 .listeArianne {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-.listeArianne img {
+.listeArianne div {
   width: 50px; /* Ajustez la taille de l'image selon vos besoins */
   height: 50px; /* Ajustez la taille de l'image selon vos besoins */
   border-radius: 50%;
   margin-bottom: 5px;
-  border: solid 2px rgb(255, 255, 255);
-  margin: 5px 40px;
+  margin: 5px 50px;
 }
 
 .listeArianne label {
   text-align: center;
+}
+
+.numero{
+border: 2px solid #000000;
+border-radius: 50%;
+padding: 10px;
+font-size: 30px;
+width: 30px;
+height: 30px;
+text-align: center;
+background-color: #ffffff;
+font-family: 'Bebas Neue', sans-serif;
 }
 
 /* -------------FIN CSS fil d'arianne --------------*/
@@ -219,15 +271,6 @@ body{
 
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(auto, auto);
-  grid-column: 1/4;
-  grid-row: 2;
-}
-
 .leftDiv {
   padding-left: 10vw;
   padding-top: 5vh;
@@ -250,6 +293,8 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Recapitulatif */
 
 #recap {
   font-size: 20px;
@@ -287,6 +332,8 @@ label {
 
 }
 
+/* Select de gammes */
+
 select {
   width: 100%;
   border: none;
@@ -321,6 +368,7 @@ select:focus {
 
 #titreArianne{
   color:white;
+  font-size: 20px;
 }
 
 .label{
@@ -394,6 +442,9 @@ input:checked + .slider:before {
 }
 
 /* FIN TOGGLE */
+
+
+/* INFOBULLE */
 
 #survol {
   position: relative;
@@ -600,6 +651,8 @@ input[type="range"]::-ms-thumb {
   color: white;
 }
 
+
+/* INPUT HAUTEUR/LARGEUR */
 #sliderLengthInput,#sliderWidthInput{
   width: 38%;
   background-color: transparent;
@@ -608,6 +661,18 @@ input[type="range"]::-ms-thumb {
   margin-right: 10px;
   margin-left: auto;
 }
+
+
+/* REGLE DE LARGEUR ALERTE */
+.alerte{
+  font-size: 12px;
+  color: #be0000;
+  margin-top: 10px;
+}
+
+
+
+/*
 
 
 #leftArrow{
@@ -622,6 +687,9 @@ width: 50px;
   width: 50px;
 }
 
+
+
+
 #left{
   z-index: 2;
   left: 1px;
@@ -631,4 +699,7 @@ width: 50px;
   z-index: 2;
   right: 0px;
 }
+
+
+*/
 

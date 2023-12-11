@@ -11,12 +11,17 @@
   </head>
   <body>
     <header class="header">
-      <h1 id="titre">Personnalisez votre fenêtre !</h1>
+      
     </header>
     
+    <!-- Le viewer de fond -->
     <div id="viewer"></div>
 
     <div id="mainDiv">
+
+      <!-- LE MENU DU FIL D'ARIANNE-->
+<!-- 
+
       <div class="menu">
         <ul class="filArianne">
           <li class="listeArianne" id="Dimensions">
@@ -75,18 +80,76 @@
           </li>
         </ul>
       </div>
+-->
+
+    <div class="menu">
+      <div class="titreMenu">
+        <h1 id="titre"></h1>
+      </div>
+      <div class="Arianne">
+      <ul class="filArianne">
+        <li class="listeArianne" id="Dimensions" onclick="Dimensions()">
+          <div class="numero" id="numDimensions"> 1 </div>
+          <label id="titreArianne">Dimensions</label>
+        </li>
+        <li class="listeArianne" id="Gammes" onclick="Gammes()">
+          <div class="numero" id="numGammes"> 2 </div>
+          <label id="titreArianne">Gamme</label>
+        </li>
+        <li class="listeArianne" id="Materiaux" onclick="Materiaux()">
+          <div class="numero" id="numMateriaux"> 3 </div>
+          <label id="titreArianne">Matériau</label>
+        </li>
+        <li class="listeArianne" id="Couleurs" onclick="Couleurs()">
+          <div class="numero" id="numCouleurs"> 4 </div>
+          <label id="titreArianne">Couleur</label>
+        </li>
+        <li class="listeArianne" id="Situation" onclick="MiseEnSituation()">
+          <div class="numero" id="numSituation"> 5 </div>      
+          <label id="titreArianne">Mise en situation</label>
+        </li>
+        <li class="listeArianne" id="Recapitulatif" onclick="Recapitulatif()">
+          <div class="numero" id="numRecapitulatif"> 6 </div>
+          <label id="titreArianne">Recapitulatif</label>
+        </li>
+      </ul>
+    </div>
+    </div>
+    
+
+
+
+
+
+
+      <!-- FIN DU MENU -->
+
+
+      <!-- PARTIE GAUCHE -->
 
       <div class="leftDiv">
-        <div id="containerViewer2">
-          <div id="viewer2"></div>
+        <div id="containerViewer2"> <!-- cette div sert à mettre un border-raduis -->
+          <div id="viewer2"></div> <!-- LE VIEWER DE LA VU ZOOMÉ-->
         </div>  
       </div>
 
+
+
+      <!-- PARTIE CENTRE -->
+
       <div class="middleDiv">
-        <!-- <img src="../Images/realite-augmentee.png" id="RA"/> -->
+        <!-- Cette partie est vide on y voit la fenêtre du premier viewer au travers -->
       </div>
 
+
+
+
+      <!-- PARTIE DROITE -->
+
       <div class="rightDiv">
+
+        <!-- CONTAINER DIMENSION -->
+
         <div class="box" id="boxDimensions">
           <div class="boxTitre">Dimensions Fenêtre</div>
           <div class="boxDimensions">
@@ -136,8 +199,12 @@
                 </div>
               </div>
             </form>
+            <div class="alerte" id="AlertLargeur"></div>
           </div>
         </div>
+
+
+        <!-- CONTAINER GAMMES -->
 
         <div class="box" id="boxGammes">
           <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"> <b>Gamme Économique :</b><br> Le dormant de la gamme économique offre une solution budgétaire <br>compétitive tout en assurant une isolation thermique. C'est un choix judicieux pour <br>ceux qui recherchent une option économique sans compromettre la qualité essentielle.<br><br>
@@ -170,6 +237,10 @@
             <option id="neuf" value="Neuf" class="label" >Neuf</option>
           </select>
         </div>
+
+
+        <!-- CONTAINER DU CHOIX DES MATERIAUX -->
+
 
         <div class="box" id="boxMateriaux">
           <div class="boxTitre">Type de matériaux</div>
@@ -207,7 +278,14 @@
           </div>
         </div>
 
+
+        <!-- CONTAINER DU CHOIX DES COULEURS -->
+
+
         <div id="boxCouleurs">
+
+        <!-- CONTAINER COULEUR PVC -->
+
           <div class="box" id="CouleurPVC">
             <div class="boxTitre">Couleur PVC</div>
             <div class="boxMateriaux">
@@ -270,6 +348,10 @@
               src="../Images/pvc_blanc.png"
             />
           </div>
+
+
+        <!-- CONTAINER COULEUR BOIS -->
+
 
           <div class="box" id="CouleurBois">
             <div class="boxTitre">Couleur bois</div>
@@ -340,6 +422,10 @@
               src="../Images/pvc_blanc.png"
             />
           </div>
+
+
+        <!-- CONTAINER COULEUR ALU -->
+
 
           <div class="box" id="CouleurAlu">
             <div class="boxTitre">Couleur aluminium</div>
@@ -433,6 +519,8 @@
           </div>
         </div>
 
+        <!-- CONTAINER MISE EN SITUATION -->
+
         <div class="box" id="boxSituation">
           <div class="boxTitre">Tester avec une photo</div>
           <div class="MaisonSituation" id="MaisonSituation">
@@ -466,6 +554,10 @@
            </div>
           </div>
         </div>
+
+
+        <!-- CONTAINER COULEUR RECAPITULATIF -->
+
 
         <div class="box" id="boxRecap">
           <div class="boxTitre">Récapitulatif</div>
@@ -512,9 +604,12 @@
               <img src="" />
             </div>
           </div>
+          <hr />
+          <div class="recapContainer">
+            <input type="button" id="envoyerQuote" class="boutonSituation" value="Envoyer" onclick="fieldsConf()"></button>
+          </div>
         </div>
       </div>
-      <!-- <div class="line" id="line"></div> -->
     </div>
 
 
@@ -529,6 +624,9 @@
   </div>
   -->
 
+
+
+  <!-- IMPORT DES SCRIPTS -->
 
   <script src="../JS/epicor.js"></script>
   <script src="../JS/animation.js"></script>

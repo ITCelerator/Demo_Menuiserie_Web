@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     config = new kbmax.ConfiguratorEmbed({
         kbmaxUrl: "https://itc-dev.kbmax.com",
         elementId: "viewer",
-        configuratorId: 535,
-        sceneId: 220,
+        configuratorId: 575,
+        sceneId: 240,
         showHeader: false,
         showDrawer: false,
         showMove: false,
@@ -13,20 +13,18 @@ document.addEventListener("DOMContentLoaded", function() {
         loadStyle: "none",
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Perspective"},
     });
-    /*
-    config.getFields((fields) => {
-        var dormantDesc = fields.fDormantDesc
-        var div = document.getElementById("texteGammes1");
-        div.textContent = dormantDesc;
-    });
-    */
+
+    // config.getFields((fields) => {
+         //console.log(fields);
+    // });
+    
 });
 
 document.addEventListener("DOMContentLoaded", function() {
     config2 = new kbmax.ConfiguratorEmbed({
         kbmaxUrl: "https://itc-dev.kbmax.com",
         elementId: "viewer2",
-        configuratorId: 535,
+        configuratorId: 575,
         showHeader: false,
         showDrawer: false,
         showMove: false,
@@ -35,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Zoom"},
     });
 });
-
-
 
 
 function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configurateur KBMax
@@ -55,8 +51,8 @@ function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configur
     else if (fieldName == "fChoixAppliqueDimensions"){ config.setFields({ "fChoixAppliqueDimensions" : fieldValue });}
 
     
-    console.log(fieldName);
-    console.log(fieldValue);
+    //console.log(fieldName);
+    //console.log(fieldValue);
 }
 
 
@@ -130,7 +126,7 @@ function jEvents(){
     $('#Maison4').click(function(){ setConfig("fTexturePhoto", "Maison_4");})
 
      //bouton appliquer les dimensions
-    $('#appliqueDimensions').click(function(){ setConfig("fChoixAppliqueDimensions", "Oui");  setConfig("fREDIM", false); document.getElementById("appliquerDimensions").checked=false })
+    $('#appliqueDimensions').click(function(){ setConfig("fChoixAppliqueDimensions", "Oui");  setConfig("fREDIM", false); document.getElementById("appliquerDimensions").checked=false;})
 }
 
 
@@ -147,6 +143,7 @@ function affichePhoto(){
         setConfig("fChoixCamera", "CameraAccueil") //à changer pour un runaction
         var div = document.getElementById("part2");
         div.style.display = "none";
+        document.getElementById("appliquerDimensions").checked=false;
     }
 }
 
@@ -154,24 +151,28 @@ function affichePhoto(){
 function redimFenetre(){
     if(document.getElementById("appliquerDimensions").checked){
         setConfig("fREDIM", true);
-            
     }
     else{
         setConfig("fREDIM", false);
+
     }
 
 }
 
 
 
-
+const upload = document.getElementById("boutonSituation1");
 
 //fonction pour l'upload
 function handleFileSelect(event){
     var input = event.target;
     setConfig("fUpload", input.files);
-    console.log("JE SUIS DEDANS")
-    console.log(input.files)
+    config.getFields((fields) => {
+        console.log(fields);
+    });
+
+    //console.log("JE SUIS DEDANS")
+    //console.log(input.files)
 }
 
 
@@ -204,12 +205,52 @@ sliderLength.oninput = function() {
 
 // Mettre à jour la valeur du slider de la largeur lorsque l'input de texte change
 sliderWidthInput.addEventListener("change", function() {
-    updateSliderValue(sliderWidth, sliderWidthInput, "", 1000, 1600);
+    config.getFields((fields) => {
+        var Mat = fields.fChoix_Mat
+        console.log(Mat)
+        if (Mat == "BOIS"){
+            updateSliderValue(sliderWidth, sliderWidthInput, "", 1000, 1500);
+        }
+        else if (Mat == "ALU"){
+            updateSliderValue(sliderWidth, sliderWidthInput, "", 1000, 1550);
+        }
+        else if (Mat == "PVC"){
+            updateSliderValue(sliderWidth, sliderWidthInput, "", 1000, 1600);
+        }
+    });
 });
 
 // Mettre à jour la valeur du texte de la largeur lorsque le slider change
 sliderWidth.oninput = function() {
-    sliderWidthInput.value = this.value + "";
+    config.getFields((fields) => {
+        var alert = document.getElementById("AlertLargeur")
+
+        var Mat = fields.fChoix_Mat
+        console.log(Mat)
+        if (Mat == "BOIS"){
+           if(sliderWidthInput.value>1500){
+            sliderWidthInput.value = 1500;
+            sliderWidth.value = 1500;
+            alert.textContent = "La largeur doit être inférieur à 1500mm avec du bois"
+           }
+        }
+        else if (Mat == "ALU"){
+            if(sliderWidthInput.value>1550){
+                sliderWidthInput.value = 1550;
+                sliderWidth.value = 1550;
+                alert.textContent = "La largeur doit être inférieur à 1550mm avec de l'ALU"
+            }
+        }
+        else if (Mat == "PVC"){
+            if(sliderWidthInput.value>1600){
+                sliderWidthInput.value = 1600;
+                sliderWidth.value = 1600;
+                alert.textContent = "La largeur doit être inférieur à 1600mm avec du PVC"
+            }
+        }
+    });
+
+    sliderWidthInput.value = this.value + "";   
     widthValue = parseInt(this.value);
     // Appeler d'autres fonctions ici avec widthValue si nécessaire
 }
@@ -234,8 +275,27 @@ function updateSliderValue(slider, input, unit, minValue, maxValue) {
 
 
 
+function fieldsConf(){
+    console.log("Je suis dans le click")
+    config.runAction("getFields")
+    getFieldsConf()
+}
+
+
+function getFieldsConf(){
+    config.getFields((fields) => {
+        console.log(fields)
+        console.log("LAAAAAAAAA DANS VSCODE : ")
+        console.log(fields.fJSONFields);
+        console.log("FIN VSCODE : ")
+        var JSONFields = fields.fJSONFields;
+    });
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     setConfig("fChoix_Mat", "BOIS");
     setConfig("fTable_Texture", "#ffd1a3");
 
 });
+

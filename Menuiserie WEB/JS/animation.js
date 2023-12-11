@@ -35,39 +35,44 @@ document.addEventListener("DOMContentLoaded", function () {
 //fonctions pour gérer l'affichage des boxs selon la box choisie
 
 function bulleDimension(height, width){
-  div = document.getElementById("DimensionsImg");
+  div = document.getElementById("numDimensions");
   div.style.height = height + "px";
   div.style.width =  width + "px";
 }
 
 function bulleGamme(height, width){
-  div = document.getElementById("GammesImg");
+  div = document.getElementById("numGammes");
   div.style.height = height + "px";
   div.style.width =  width + "px";
+
 }
 
 function bulleMateriau(height, width){
-div = document.getElementById("MateriauImg");
+div = document.getElementById("numMateriaux");
 div.style.height = height + "px";
 div.style.width =  width + "px";
+
 }
 
 function bulleCouleur(height, width){
-  div = document.getElementById("CouleurImg");
+  div = document.getElementById("numCouleurs");
   div.style.height = height + "px";
   div.style.width =  width + "px";
+
 }
   
 function bulleSituation(height, width){
-  div = document.getElementById("SituationImg");
+  div = document.getElementById("numSituation");
   div.style.height = height + "px";
   div.style.width =  width + "px";
+
 }
   
 function bulleRecap(height, width){
-  div = document.getElementById("RecapImg");
+  div = document.getElementById("numRecapitulatif");
   div.style.height = height + "px";
   div.style.width =  width + "px";
+
 }
 
 function borderViewer(styleBorder){
@@ -76,19 +81,18 @@ function borderViewer(styleBorder){
 }
 
 function Dimensions() {
-  // alert("Vous avez cliqué sur dimensions !");
   // Vous pouvez ajouter d'autres actions à exécuter ici
   var div = document.getElementById("boxDimensions");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("DimensionsImg");
-    div.style.border = "2px solid #D4AF37";
-    bulleDimension(55, 55)
-    bulleGamme(50, 50)
-    bulleMateriau(50, 50)
-    bulleCouleur(50, 50)
-    bulleSituation(50, 50)
-    bulleRecap(50, 50)
+    div = document.getElementById("numDimensions");
+    div.style.border = "2px solid #000000";
+    bulleDimension(40, 40)
+    bulleGamme(30, 30)
+    bulleMateriau(30, 30)
+    bulleCouleur(30, 30)
+    bulleSituation(30, 30)
+    bulleRecap(30, 30)
   } else {
     div.style.display = "none";
   }
@@ -110,25 +114,27 @@ function Dimensions() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  var div = document.getElementById("titre");
+  div.innerHTML = "Redimensionnez votre fenêtre !"
 
   desafficherPhoto()
   borderViewer("none")
 }
 
 function Gammes() {
- // alert("Vous avez cliqué sur gammes !");
   // Vous pouvez ajouter d'autres actions à exécuter ici
   var div = document.getElementById("boxGammes");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("GammesImg");
-    div.style.border = "2px solid #D4AF37";
-    bulleDimension(50, 50)
-    bulleGamme(55, 55)
-    bulleMateriau(50, 50)
-    bulleCouleur(50, 50)
-    bulleSituation(50, 50)
-    bulleRecap(50, 50)
+    div = document.getElementById("numGammes");
+    div.style.border = "2px solid #000000";
+    bulleDimension(30, 30)
+    bulleGamme(40, 40)
+    bulleMateriau(30, 30)
+    bulleCouleur(30, 30)
+    bulleSituation(30, 30)
+    bulleRecap(30, 30)
   } else {
     div.style.display = "none";
   }
@@ -151,23 +157,25 @@ function Gammes() {
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
 
+  var div = document.getElementById("titre");
+  div.innerHTML = "Choisissez votre gamme et votre type de pose !"
+  
   desafficherPhoto()
   borderViewer("none")
 }
 
 function Materiaux() {
-  // alert("Vous avez cliqué sur matériaux !");
   var div = document.getElementById("boxMateriaux");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("MateriauImg");
-    div.style.border = "2px solid #D4AF37";
-    bulleDimension(50, 50)
-    bulleGamme(50, 50)
-    bulleMateriau(55, 55)
-    bulleCouleur(50, 50)
-    bulleSituation(50, 50)
-    bulleRecap(50, 50)
+    div = document.getElementById("numMateriaux");
+    div.style.border = "2px solid #000000";
+    bulleDimension(30, 30)
+    bulleGamme(30, 30)
+    bulleMateriau(40, 40)
+    bulleCouleur(30, 30)
+    bulleSituation(30, 30)
+    bulleRecap(30, 30)
   } else {
     div.style.display = "none";
   }
@@ -189,24 +197,26 @@ function Materiaux() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  var div = document.getElementById("titre");
+  div.innerHTML = "Personnalisez votre fenêtre !"
 
   desafficherPhoto()
   borderViewer("3px solid #ffffff")
 }
 
 function Couleurs() {
-  // alert("Vous avez cliqué sur couleurs !");
   var div = document.getElementById("boxCouleurs");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("CouleurImg");
-    div.style.border = "2px solid #D4AF37";
-    bulleDimension(50, 50)
-    bulleGamme(50, 50)
-    bulleMateriau(50, 50)
-    bulleCouleur(55, 55)
-    bulleSituation(50, 50)
-    bulleRecap(50, 50)
+    div = document.getElementById("numCouleurs");
+    div.style.border = "2px solid #000000";
+    bulleDimension(30, 30)
+    bulleGamme(30, 30)
+    bulleMateriau(30, 30)
+    bulleCouleur(40, 40)
+    bulleSituation(30, 30)
+    bulleRecap(30, 30)
   } else {
     div.style.display = "none";
   }
@@ -229,24 +239,26 @@ function Couleurs() {
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
 
+  var div = document.getElementById("titre");
+  div.innerHTML = "Personnalisez votre fenêtre !"
+
   desafficherPhoto()
   borderViewer("3px solid #ffffff")
 }
 
 function MiseEnSituation() {
-  // alert("Vous avez cliqué sur mise en situation !");
   // Vous pouvez ajouter d'autres actions à exécuter ici
   var div = document.getElementById("boxSituation");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("SituationImg");
-    div.style.border = "2px solid #D4AF37";
-    bulleDimension(50, 50)
-    bulleGamme(50, 50)
-    bulleMateriau(50, 50)
-    bulleCouleur(50, 50)
-    bulleSituation(55, 55)
-    bulleRecap(50, 50)
+    div = document.getElementById("numSituation");
+    div.style.border = "2px solid #000000";
+    bulleDimension(30, 30)
+    bulleGamme(30, 30)
+    bulleMateriau(30, 30)
+    bulleCouleur(30, 30)
+    bulleSituation(40, 40)
+    bulleRecap(30, 30)
   } else {
     div.style.display = "none";
   }
@@ -268,25 +280,27 @@ function MiseEnSituation() {
 
   var div = document.getElementById("boxRecap");
   div.style.display = "none";
+
+  var div = document.getElementById("titre");
+  div.innerHTML = "Testez la mise en situation de votre fenêtre !"
 
   desafficherPhoto()
   borderViewer("none")
 }
 
 function Recapitulatif() {
-  // alert("Vous avez cliqué sur récapitulatif !")
   // Vous pouvez ajouter d'autres actions à exécuter ici
   var div = document.getElementById("boxRecap");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("RecapImg");
-    div.style.border = "2px solid #D4AF37";
-    bulleDimension(50, 50)
-    bulleGamme(50, 50)
-    bulleMateriau(50, 50)
-    bulleCouleur(50, 50)
-    bulleSituation(50, 50)
-    bulleRecap(55, 55)
+    div = document.getElementById("numRecapitulatif");
+    div.style.border = "2px solid #000000";
+    bulleDimension(30, 30)
+    bulleGamme(30, 30)
+    bulleMateriau(30, 30)
+    bulleCouleur(30, 30)
+    bulleSituation(30, 30)
+    bulleRecap(40, 40)
   } else {
     div.style.display = "none";
   }
@@ -308,6 +322,9 @@ function Recapitulatif() {
 
   var div = document.getElementById("boxCouleurs");
   div.style.display = "none";
+
+  var div = document.getElementById("titre");
+  div.innerHTML = "Récapitulatif"
 
   desafficherPhoto()
   borderViewer("none")
