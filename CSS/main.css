@@ -1,7 +1,7 @@
 html {
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: rgb(170, 170, 170);
+  background-color: rgb(255, 228, 224);
   height: 100%;
 }
 
@@ -120,9 +120,12 @@ body{
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-  background-color: #962727;
+  background-color: #E6896B;
   margin-left: auto;
   margin-right: auto;
+  border-top: 4px solid #FFFFFF;
+  border-left: 4px solid #FFFFFF;
+  border-right: 4px solid #FFFFFF;
 }
 
 /* -------------CSS fil d'arianne --------------*/
@@ -142,10 +145,13 @@ body{
   padding-left: 0;
   padding-right: 0;
   width: 55%;
-  background-color: #af6c6c;
+  background-color: #FFBE98;
   margin-left: auto;
   margin-right: auto;
   margin-top: -27px;
+  border-bottom: 4px solid #FFFFFF;
+  border-left: 4px solid #FFFFFF;
+  border-right: 4px solid #FFFFFF;
 }
 
 .listeArianne {
@@ -176,6 +182,7 @@ height: 30px;
 text-align: center;
 background-color: #ffffff;
 font-family: 'Bebas Neue', sans-serif;
+
 }
 
 /* -------------FIN CSS fil d'arianne --------------*/
@@ -187,11 +194,12 @@ font-family: 'Bebas Neue', sans-serif;
   left: 50%;
   /* transform: translate(1vw); */
   padding-bottom: 10px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
   text-align: center;
   font-family: "effra-cc", sans-serif;
   border-radius: 15px;
   margin-top: 50px;
+  background-color: #FFBE98;
 }
 
 .boxTitre {
@@ -209,7 +217,9 @@ font-family: 'Bebas Neue', sans-serif;
   justify-content: center;
   align-items: center;
   color: #FFFFFF !important; /* Couleur dorée */
-
+  background-color: #E6896B;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .boxSousTitre {
@@ -230,6 +240,7 @@ font-family: 'Bebas Neue', sans-serif;
   justify-content: center;
   align-items: center;
   color: #FFFFFF !important; /* Couleur dorée */
+  background-color: #E6896B;
 
 }
 
@@ -247,18 +258,19 @@ font-family: 'Bebas Neue', sans-serif;
   font-family: "effra-cc", sans-serif;
   font-size: 20px;
   color: #ffffff !important; /* Couleur dorée */
+  background-color: #E6896B;
 }
 
 #MatPvc {
-  border: solid 3px rgb(255, 255, 255);
+  border: solid 4px rgb(255, 255, 255);
 }
 
 #MatBois {
-  border: solid 3px rgb(255, 255, 255);
+  border: solid 4px #A0445D;
 }
 
 #MatAlu {
-  border: solid 3px rgb(255, 255, 255);
+  border: solid 4px rgb(255, 255, 255);
 }
 
 /* les parties de div */
@@ -335,6 +347,14 @@ label {
 /* Select de gammes */
 
 select {
+  -webkit-appearance: none; /* Safari et Chrome */
+  -moz-appearance: none; /* Firefox */
+  appearance: none;
+  /* Autres styles ici */
+}
+
+
+select {
   width: 100%;
   border: none;
   outline: none;
@@ -350,10 +370,18 @@ select:focus {
   box-shadow: none;
 }
 
+
+
 .GammeBox{
-  background-color: #56565600;
-  color:white;
+  background-color: #FFBE98;
 }
+
+/* Style pour l'option sélectionnée */
+.GammeBox option:checked {
+  background-color: #A0445D; /* Couleur de fond de l'option sélectionnée */
+  color: #FFFFFF; /* Couleur du texte de l'option sélectionnée */
+}
+
 
 .ImageMainson{
   height: 20%;
@@ -367,7 +395,7 @@ select:focus {
 }
 
 #titreArianne{
-  color:white;
+  color: white;
   font-size: 20px;
 }
 
@@ -419,11 +447,11 @@ select:focus {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #A0445D;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #A0445D;
 }
 
 input:checked + .slider:before {
@@ -526,7 +554,7 @@ input[type="range"] {
 /* Styles pour la piste (track) */
 input[type="range"]::-webkit-slider-runnable-track {
   height: 10px;
-  background: #ddd;
+  background: #FFFFFF;
   border-radius: 5px;
 }
 
@@ -535,7 +563,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: red;
+  background: #A0445D;
   border-radius: 50%;
   margin-top: -5px;
 }
@@ -543,14 +571,14 @@ input[type="range"]::-webkit-slider-thumb {
 /* Styles pour Firefox */
 input[type="range"]::-moz-range-track {
   height: 10px;
-  background: #ddd;
+  background: #FFFFFF;
   border-radius: 5px;
 }
 
 input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: red;
+  background: #A0445D;
   border-radius: 50%;
   border: none;
 }
@@ -558,14 +586,14 @@ input[type="range"]::-moz-range-thumb {
 /* Styles pour Edge (Chromium) */
 input[type="range"]::-ms-track {
   height: 10px;
-  background: #ddd;
+  background: #FFFFFF;
   border-radius: 5px;
 }
 
 input[type="range"]::-ms-thumb {
   width: 20px;
   height: 20px;
-  background: red;
+  background: #A0445D;
   border-radius: 50%;
   border: none;
 }
@@ -601,7 +629,7 @@ input[type="range"]::-ms-thumb {
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #0000008f;
+  background-color: #A0445D;
   color: white;
 }
 
@@ -618,9 +646,9 @@ input[type="range"]::-ms-thumb {
   cursor: pointer;
   color: #ffffff;
   font-weight: bold;
-  border: #0000008f;
+  border: #A0445D;
   border-radius: 20px;
-  background-color: #0000008f;
+  background-color: #A0445D;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -702,4 +730,3 @@ width: 50px;
 
 
 */
-
