@@ -15,10 +15,11 @@ html{
     left: 50%;
     transform: translate(0%, -50%);
     z-index: 1;
-    border: 1px solid rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
     font-family: "effra-cc", sans-serif;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 15px;
 }
 
 #societe::placeholder,#nom::placeholder,#email::placeholder,#button,#societe,#nom,#email {
@@ -45,7 +46,13 @@ html{
     padding-bottom: 5px;
     background-color: #A0445D;
     color: white;
+    cursor: pointer;
 }
+
+#button:hover{
+    background-color: #9c5e6f;
+}
+
 
 /* Cible le bouton radio avec l'ID "RGPD" */
 #RGPD[type="radio"] {
@@ -96,3 +103,4 @@ html{
     height: auto;
     position: absolute;
   }
+
