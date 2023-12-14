@@ -487,8 +487,8 @@ input:checked + .slider:before {
 .tooltip {
   display: none;
   position: absolute;
-  background: #000;
-  color: #fff;
+  background: #e3d5ca;
+  color: #000000;
   padding: 5px;
   border-radius: 5px;
   top: 100%;
