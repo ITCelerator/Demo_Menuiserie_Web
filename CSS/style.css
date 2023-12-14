@@ -1,111 +1,170 @@
-html{
-    overflow-y: hidden;
-    overflow-x: hidden;
+html {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
 }
-body{
-    height: 100% !important;
-    width: 100%;
-    padding: 0;
-    margin:0;
-  }
-#viewer{
-    height: 100%;
-    width:100%;
-    position:absolute;
-    z-index: 0;
+body {
+  height: 100% !important;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-#formAccueil{
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(0%, -50%);
-    z-index: 1;
-    padding: 20px;
-    text-align: center;
-    font-family: "effra-cc", sans-serif;
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 15px;
+#viewer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
 }
 
-#societe::placeholder,#nom::placeholder,#email::placeholder,#button,#societe,#nom,#email {
-    font-family: "effra-cc", sans-serif;
-    font-size: 20px;
-    color: #FFFFFF;
-    padding-left: 10px;
+#formAccueil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border: 1px solid rgb(211, 211, 211);
+  background-color: white;
+  width: 460px;
 }
 
-#societe,#nom,#email{
-    width:80%;
-    height:40px;
-    background-color: #FFBE98;
-    border:none;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-#button{
-    width: 50%;
-    border: #A0445D;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: #A0445D;
-    color: white;
-    cursor: pointer;
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-#button:hover{
-    background-color: #9c5e6f;
+input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 36px;
+  padding: 4px;
+  outline: none;
+  border: none;
+  border: 1px solid rgb(167, 167, 167);
+  border-radius: 6px;
+  margin-bottom: 12px;
 }
 
+input:focus {
+  outline: 2px solid #9c5e6f;
+  border: 1px solid white;
+}
+
+.radioGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+button {
+  background-color: #9c5e6f;
+  border: none;
+  height: 32px;
+  border-radius: 8px;
+  color: white;
+}
+
+button:hover {
+  background-color: #915364;
+  cursor: pointer;
+}
+
+#button {
+  width: 50%;
+  border: #a0445d;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #a0445d;
+  color: white;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #9c5e6f;
+}
 
 /* Cible le bouton radio avec l'ID "RGPD" */
 #RGPD[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #A0445D;
-    border-radius: 50%;
-    background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #a0445d;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0;
 }
 
 /* Cible le bouton radio lorsqu'il est coché */
 #RGPD[type="radio"]:checked {
-    background-color: #A0445D;
-    box-shadow: inset 0 0 0 4px white; /* Ajoute une bordure blanche à l'intérieur du bouton */
+  background-color: #a0445d;
+  box-shadow: inset 0 0 0 4px white; /* Ajoute une bordure blanche à l'intérieur du bouton */
 }
 
-#RGPD{
-    justify-content: center;
-    vertical-align:sub;
+#RGPD {
+  justify-content: center;
+  vertical-align: sub;
 }
 
-#nom,#email,#button,#RGPD{
-    margin-top: 10px;
+/* .container {
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+} */
+
+.titreWidth {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.titreContainer {
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  border: 1px solid rgb(211, 211, 211);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 24px;
 }
 
 #titre {
-    font-family: "effra-cc", sans-serif;
-    font-size: 40px;
-    color: rgb(255, 255, 255);
-    z-index: 1;
-    width: 55%;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    background-color: #E6896B;
-    margin-left: auto;
-    margin-right: auto;
-    border: 4px solid #FFFFFF;
-  }
+}
 
-  .menu {
-    z-index: 1;
-    width: 100%;
-    height: auto;
-    position: absolute;
-  }
-
+.menu {
+}

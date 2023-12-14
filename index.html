@@ -1,57 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/vyl6nnu.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/vyl6nnu.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <title>Accueil</title>
-</head>
-<body>
+  </head>
+  <body>
     <script src="https://itc-dev.kbmax.com/embed.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var config = new kbmax.ConfiguratorEmbed({
-                kbmaxUrl: "https://itc-dev.kbmax.com",
-                elementId: "viewer",
-                configuratorId: 575,
-                sceneId: 240,
-                showHeader: false,
-                showDrawer: false,
-                showMove: false,
-                bindToFormSelector: "",
-                loadStyle: "none",
-                parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Accueil"},
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        var config = new kbmax.ConfiguratorEmbed({
+          kbmaxUrl: "https://itc-dev.kbmax.com",
+          elementId: "viewer",
+          configuratorId: 575,
+          sceneId: 240,
+          showHeader: false,
+          showDrawer: false,
+          showMove: false,
+          bindToFormSelector: "",
+          loadStyle: "none",
+          parameters: { param1: "Particulier", Web: "oui", Camera: "Accueil" },
         });
+      });
     </script>
-
-
-    <div class="menu">
-        <div class="titreMenu">
-          <h1 id="titre">Bienvenue sur le configurateur de fenêtre!</h1>
-        </div>
-    </div>
 
     <div id="viewer"></div>
 
-
-    <div id="formAccueil">
-        <form action="pages/main.html">
-            <input type="text" id="societe" name="societe" placeholder="Société" required><br><br>
-
-
-            <input type="text" id="nom" name="nom" placeholder="Nom et Prénom" required pattern="^[A-Za-z]+ [A-Za-z]+$"><br><br>
-
-
-            <input type="email" id="email" name="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|fr)"><br><br>
-           
-            <input type="radio" id="RGPD" name="RGPD" value="oui" required>
-            <label for="consent">Je consens à l'utilisation de mes données personnelles.</label><br><br>
-
-            <input type="submit" id="button" value="Confirmer">
-        </form>
+    <div class="titreWidth">
+      <div class="titreContainer">
+        <h1 id="titre">Bienvenue sur le configurateur de fenêtre!</h1>
+      </div>
     </div>
 
-</body>
+    <div id="formAccueil">
+      <h2>Identifiez vous</h2>
+      <form action="pages/main.html">
+        <div class="inputGroup">
+          <label for="societe">Société</label>
+          <input
+            type="text"
+            id="societe"
+            name="societe"
+            placeholder=""
+            required
+          />
+        </div>
+
+        <div class="inputGroup">
+          <label for="nom">Nom et Prénom</label>
+          <input
+            type="text"
+            id="nom"
+            name="nom"
+            placeholder=""
+            required
+            pattern="^[A-Za-z]+ [A-Za-z]+$"
+          />
+        </div>
+
+        <div class="inputGroup">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=""
+            required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|fr)"
+          />
+        </div>
+
+        <div class="radioGroup">
+          <input type="radio" id="RGPD" name="RGPD" value="oui" required />
+          <label for="consent"
+            >Je consens à l'utilisation de mes données personnelles.</label
+          >
+        </div>
+
+        <button type="submit">Confirmer</button>
+        <!-- <input type="submit" id="button" value="Confirmer" /> -->
+      </form>
+    </div>
+  </body>
 </html>
