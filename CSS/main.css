@@ -220,7 +220,6 @@ color: #FFFFFF;
   margin-top: 50px;
   background-color: #FFFFFF;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  overflow: hidden;
 }
 
 .boxTitre {
@@ -239,6 +238,8 @@ color: #FFFFFF;
   color: #000000 !important; /* Couleur dorée */
   background-color: #FFFFFF;
   border-bottom: 1px solid #EEEEEE;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .boxSousTitre {
@@ -503,8 +504,8 @@ input:checked + .slider:before {
 .tooltipGamme {
   display: none;
   position: absolute;
-  background: #000;
-  color: #fff;
+  background: #e3d5ca;
+  color: #000000;
   padding: 10px;
   border-radius: 5px;
   top: 100%;
@@ -512,7 +513,7 @@ input:checked + .slider:before {
   transform: translateX(-60%);
   font-size: 15px;
   z-index: 2;
-  min-width: 300px;
+  min-width: 500px;
 }
 
 #survol:hover .tooltipGamme {

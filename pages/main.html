@@ -155,7 +155,7 @@
           <div class="boxTitre">
             <span>Gamme</span>
             <div id="survol">
-              <img id="imgInfo" src="../Images/info.png"/>
+              <img id="imgInfo" src="../Images/infoNoir.png"/>
               <div class="tooltipGamme" id="texteGammes1"></div>
             </div>
           </div>
@@ -170,7 +170,13 @@
             <option id="luxe" value="Luxe" class="label" >Luxe</option>
           </select>
 
-          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme" id="textePose1"></div></div></div>
+          <div class="boxSousTitre" id="typePose">
+            <span>Type de pose</span>
+            <div id="survol">
+              <img id="imgInfo" src="../Images/infoNoir.png"/>
+              <div class="tooltipGamme" id="textePose1"></div>
+            </div>
+          </div>
           <select
             name="Gamme"
             onChange="recapManager.updatePose(this.value)"

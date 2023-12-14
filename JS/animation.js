@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
   Dimensions();
   document.getElementById("numDimensions").classList.add("selected");
   document.getElementById("MatBois").classList.add("matSelected");
+  document.getElementById("CheneNaturel").classList.add("matSelected");
+  document.getElementById("PvcBois").classList.add("matSelected");
 });
 
 // Cette fonction gère le changement de matériau
