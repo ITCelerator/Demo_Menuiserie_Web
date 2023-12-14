@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
   Dimensions();
   Dimensions();
   document.getElementById("numDimensions").classList.add("selected");
-  document.getElementById("MatBois").classList.add("matSelected");
-  document.getElementById("CheneNaturel").classList.add("matSelected");
-  document.getElementById("PvcBois").classList.add("matSelected");
+  document.getElementById("MatAlu").classList.add("matSelected");
+  document.getElementById("Bleu5012").classList.add("matSelected");
+  document.getElementById("LaitonAlu").classList.add("matSelected");
 });
 
 // Cette fonction gère le changement de matériau
@@ -504,9 +504,9 @@ document.addEventListener("DOMContentLoaded", function () {
   recapManager.updatePose("Rénovation")
   recapManager.updateLargeur(1200)
   recapManager.updateHauteur(1600)
-  recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg")
-  recapManager.updateFinition("Chêne Naturel", "../Images/wood05_col_256.jpg")
-  recapManager.updateQuincaillerie("PVC", "../Images/pvc_blanc.png")
+  recapManager.updateMat("ALU", "../Images/alu_blanc.jpg")
+  recapManager.updateFinition("Bleu 5012", "../Images/alu_bleu_clair.png")
+  recapManager.updateQuincaillerie("Laiton", "../Images/laiton.jpg")
 
 });
 

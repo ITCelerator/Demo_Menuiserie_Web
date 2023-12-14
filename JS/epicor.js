@@ -304,8 +304,8 @@ function getFieldsConf(){
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    setConfig("fChoix_Mat", "BOIS");
-    setConfig("fTable_Texture", "#ffd1a3");
-
+    setConfig("fChoix_Mat", "ALU");
+    setConfig("fTable_Texture", "#71a1d2");
+    setConfig("fChoix_Mat_poignee", "Laiton");
 });
 
