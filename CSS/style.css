@@ -53,6 +53,9 @@ input {
   border: 1px solid rgb(167, 167, 167);
   border-radius: 6px;
   margin-bottom: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 input:focus {
