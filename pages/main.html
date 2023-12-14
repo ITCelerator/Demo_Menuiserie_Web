@@ -36,7 +36,7 @@
             <label id="titreArianne">Dimensions</label>
           </li>
           <li class="listeArianne" id="Gammes" >
-            <div class="numero" id="numGammes" onclick="ChangerArianne(event)"> 2 </div>
+            <div class="numero" id="numGammes" onclick="ChangerArianne(event), setInfoBulleTXT()"> 2 </div>
             <label id="titreArianne">Gamme</label>
           </li>
           <li class="listeArianne" id="Materiaux">
@@ -155,7 +155,7 @@
           <div class="boxTitre">
             <span>Gamme</span>
             <div id="survol">
-              <img id="imgInfo" src="../Images/info.png"/>
+              <img id="imgInfo" src="../Images/infoNoir.png"/>
               <div class="tooltipGamme" id="texteGammes1"></div>
             </div>
           </div>
@@ -170,7 +170,13 @@
             <option id="luxe" value="Luxe" class="label" >Luxe</option>
           </select>
 
-          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme" id="textePose1"></div></div></div>
+          <div class="boxSousTitre" id="typePose">
+            <span>Type de pose</span>
+            <div id="survol">
+              <img id="imgInfo" src="../Images/infoNoir.png"/>
+              <div class="tooltipGamme" id="textePose1"></div>
+            </div>
+          </div>
           <select
             name="Gamme"
             onChange="recapManager.updatePose(this.value)"
@@ -196,7 +202,7 @@
               id="MatPvc"
               type="image"
               src="../Images/pvc_blanc.png"
-              onClick="Choix_Mat('pvc')"
+              onclick="Choix_Mat('pvc',event)"
             />
             <div class="tooltip">PVC</div>
           </div>
@@ -206,7 +212,7 @@
               id="MatBois"
               type="image"
               src="../Images/wood05_col_256.jpg"
-              onClick="Choix_Mat('bois')"
+              onclick="Choix_Mat('bois', event)"
             />
             <div class="tooltip">Bois</div>
           </div>
@@ -216,7 +222,7 @@
               id="MatAlu"
               type="image"
               src="../Images/alu_blanc.jpg"
-              onClick="Choix_Mat('alu')"
+              onclick="Choix_Mat('alu',event)"
             />
             <div class="tooltip">Aluminium</div>
           </div>
@@ -240,6 +246,7 @@
                 id="Blanc"
                 type="image"
                 src="../Images/pvc_blanc.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -247,6 +254,7 @@
                 id="Bordeaux"
                 type="image"
                 src="../Images/pvc_bordeaux.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -254,6 +262,7 @@
                 id="Noir"
                 type="image"
                 src="../Images/pvc_gris_anthracite.png"
+                onclick="changeBorderColor(event)"
               /><br>
               <input
                 class="materiaux finition"
@@ -261,6 +270,7 @@
                 id="Bleu"
                 type="image"
                 src="../Images/pvc_bleu.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -268,6 +278,7 @@
                 id="Vert"
                 type="image"
                 src="../Images/pvc_vert.png"
+                onclick="changeBorderColor(event)"
               />
             </div>
             <div class="boxTitrePoignee">Couleur Poignée</div>
@@ -277,6 +288,7 @@
               id="LaitonPvc"
               type="image"
               src="../Images/laiton.jpg"
+              onclick="changeBorderPoignee(event)"
             />
             <input
               class="materiaux quincaillerie"
@@ -284,6 +296,7 @@
               id="InoxPvc"
               type="image"
               src="../Images/inox_tex.png"
+              onclick="changeBorderPoignee(event)"
             />
             <input
               class="materiaux quincaillerie"
@@ -291,6 +304,7 @@
               id="PvcPvc"
               type="image"
               src="../Images/pvc_blanc.png"
+              onclick="changeBorderPoignee(event)"
             />
           </div>
 
@@ -307,6 +321,7 @@
                 id="CheneNaturel"
                 type="image"
                 src="../Images/wood05_col_256.jpg"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -314,6 +329,7 @@
                 id="NoyerFonce"
                 type="image"
                 src="../Images/wood06_col_256.jpg"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -321,6 +337,7 @@
                 id="MerisierFonce"
                 type="image"
                 src="../Images/wood09_col_256.jpg"
+                onclick="changeBorderColor(event)"
               /><br>
               <input
                 class="materiaux finition"
@@ -328,6 +345,7 @@
                 id="Vert6018"
                 type="image"
                 src="../Images/bois_vert_clair.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -335,6 +353,7 @@
                 id="Bleu5010"
                 type="image"
                 src="../Images/bois_bleu_clair.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -342,6 +361,7 @@
                 id="Orange2004"
                 type="image"
                 src="../Images/bois_rouge_clair.png"
+                onclick="changeBorderColor(event)"
               />
             </div>
             <div class="boxTitrePoignee">Couleur Poignée</div>
@@ -351,6 +371,7 @@
               id="LaitonBois"
               type="image"
               src="../Images/laiton.jpg"
+              onclick="changeBorderPoignee(event)"
             />
             <input
               class="materiaux quincaillerie"
@@ -358,6 +379,7 @@
               id="InoxBois"
               type="image"
               src="../Images/inox_tex.png"
+              onclick="changeBorderPoignee(event)"
             />
             <input
               class="materiaux quincaillerie"
@@ -365,6 +387,7 @@
               id="PvcBois"
               type="image"
               src="../Images/pvc_blanc.png"
+              onclick="changeBorderPoignee(event)"
             />
           </div>
 
@@ -381,6 +404,7 @@
                 id="Gris7035"
                 type="image"
                 src="../Images/alu_blanc.jpg"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -388,6 +412,7 @@
                 id="Gris7016"
                 type="image"
                 src="../Images/alu_gris.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -395,6 +420,7 @@
                 id="Noir9005"
                 type="image"
                 src="../Images/alu_noir.jpg"
+                onclick="changeBorderColor(event)"
               /><br>
               <input
                 class="materiaux finition"
@@ -402,6 +428,7 @@
                 id="Bleu5012"
                 type="image"
                 src="../Images/alu_bleu_clair.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -409,6 +436,7 @@
                 id="Bleu5002"
                 type="image"
                 src="../Images/alu_bleu_fonce.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -416,6 +444,7 @@
                 id="VertFonceAlu"
                 type="image"
                 src="../Images/alu_vert_clair.png"
+                onclick="changeBorderColor(event)"
               /><br>
               <input
                 class="materiaux finition"
@@ -423,6 +452,7 @@
                 id="Vert6005"
                 type="image"
                 src="../Images/alu_vert_fonce.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -430,6 +460,7 @@
                 id="OrangeAlu"
                 type="image"
                 src="../Images/alu_rouge.png"
+                onclick="changeBorderColor(event)"
               />
               <input
                 class="materiaux finition"
@@ -437,6 +468,7 @@
                 id="Jaune1018"
                 type="image"
                 src="../Images/alu_marron.png"
+                onclick="changeBorderColor(event)"
               />
             </div>
             <div class="boxTitrePoignee">Couleur Poignée</div>
@@ -446,6 +478,7 @@
               id="LaitonAlu"
               type="image"
               src="../Images/laiton.jpg"
+              onclick="changeBorderPoignee(event)"
             />
             <input
               class="materiaux quincaillerie"
@@ -453,6 +486,7 @@
               id="InoxAlu"
               type="image"
               src="../Images/inox_tex.png"
+              onclick="changeBorderPoignee(event)"
             />
             <input
               class="materiaux quincaillerie"
@@ -460,6 +494,7 @@
               id="PvcAlu"
               type="image"
               src="../Images/pvc_blanc.png"
+              onclick="changeBorderPoignee(event)"
             />
           </div>
         </div>

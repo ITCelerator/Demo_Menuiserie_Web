@@ -12,20 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         bindToFormSelector: "#myFormHauteur",
         loadStyle: "none",
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Perspective"},
-    });
-
-    config.getFields((fields) => {
-        console.log(fields);
-        var dormantDesc = fields.fDormantDesc
-        var div = document.getElementById("texteGammes1");
-        div.innerHTML = dormantDesc;
-
-        var poseDesc = fields.fPoseDesc
-        var div = document.getElementById("textePose1");
-        div.textContent = poseDesc;
-
-    });
-    
+    });    
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -136,6 +123,21 @@ function jEvents(){
      //bouton appliquer les dimensions
     $('#appliqueDimensions').click(function(){ setConfig("fChoixAppliqueDimensions", "Oui");  setConfig("fREDIM", false); document.getElementById("appliquerDimensions").checked=false;})
 }
+
+
+function setInfoBulleTXT(){
+    config.getFields((fields) => {
+        console.log(fields);
+        var dormantDesc = fields.fDormantDesc
+        var div = document.getElementById("texteGammes1");
+        div.innerHTML = dormantDesc;
+
+        var poseDesc = fields.fPoseDesc
+        var div = document.getElementById("textePose1");
+        div.textContent = poseDesc;
+    });
+}
+
 
 
 //fonction pour afficher la photo
@@ -302,8 +304,8 @@ function getFieldsConf(){
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    setConfig("fChoix_Mat", "BOIS");
-    setConfig("fTable_Texture", "#ffd1a3");
-
+    setConfig("fChoix_Mat", "ALU");
+    setConfig("fTable_Texture", "#71a1d2");
+    setConfig("fChoix_Mat_poignee", "Laiton");
 });
 

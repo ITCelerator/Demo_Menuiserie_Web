@@ -27,84 +27,157 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   });
+
+
   Dimensions();
   Dimensions();
+  document.getElementById("numDimensions").classList.add("selected");
+  document.getElementById("MatAlu").classList.add("matSelected");
+  document.getElementById("Bleu5012").classList.add("matSelected");
+  document.getElementById("LaitonAlu").classList.add("matSelected");
 });
 
+// Cette fonction gère le changement de matériau
+function Choix_Mat(mat, event) {
+  const couleurDiv_PVC = document.getElementById("CouleurPVC");
+  const couleurDiv_Bois = document.getElementById("CouleurBois");
+  const couleurDiv_Alu = document.getElementById("CouleurAlu");
+  couleurDiv_Alu.style.display = "none";
+  couleurDiv_Bois.style.display = "none";
+  couleurDiv_PVC.style.display = "none";
 
-//fonctions pour gérer l'affichage des boxs selon la box choisie
-/*
-function bulleDimension(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
-  div = document.getElementById("numDimensions");
-  div.style.height = height + "px";
-  div.style.width =  width + "px";
-  div.style.border =  borderpx + "px solid "+ couleur;
-  div.style.fontSize =  fontSize + "px";
-  div.style.color =  fontColor;
-  div.style.backgroundColor =  backgroundColor;
+  switch (mat) {
+    case "pvc":
+      couleurDiv_PVC.style.display = "block";
+      recapManager.updateMat("PVC", "../Images/pvc_blanc.png");
+      break;
 
+    case "bois":
+      couleurDiv_Bois.style.display = "block";
+      recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg");
+      break;
+
+    case "alu":
+      couleurDiv_Alu.style.display = "block";
+      recapManager.updateMat("Aluminium", "../Images/texture_alu.jpg");
+      break;
+  }
+  changeBorderMat(event)
 }
 
-function bulleGamme(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
-  div = document.getElementById("numGammes");
-  div.style.height = height + "px";
-  div.style.width =  width + "px";
-  div.style.border =  borderpx + "px solid "+ couleur;
-  div.style.fontSize =  fontSize + "px";
-  div.style.color =  fontColor;
-  div.style.backgroundColor =  backgroundColor;
-}
 
-function bulleMateriau(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
-  div = document.getElementById("numMateriaux");
-  div.style.height = height + "px";
-  div.style.width =  width + "px";
-  div.style.border =  borderpx + "px solid "+ couleur;
-  div.style.fontSize =  fontSize + "px";
-  div.style.color =  fontColor;
-  div.style.backgroundColor =  backgroundColor;
-}
 
-function bulleCouleur(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
-  div = document.getElementById("numCouleurs");
-  div.style.height = height + "px";
-  div.style.width =  width + "px";
-  div.style.border =  borderpx + "px solid "+ couleur;
-  div.style.fontSize =  fontSize + "px";
-  div.style.color =  fontColor;
-  div.style.backgroundColor =  backgroundColor;
-}
+tabPoignee = [];
+tabPoignee.push(document.getElementById('LaitonPvc'));
+tabPoignee.push(document.getElementById('InoxPvc'));
+tabPoignee.push(document.getElementById('PvcPvc'));
+tabPoignee.push(document.getElementById('LaitonBois'));
+tabPoignee.push(document.getElementById('InoxBois'));
+tabPoignee.push(document.getElementById('PvcBois'));
+tabPoignee.push(document.getElementById('LaitonAlu'));
+tabPoignee.push(document.getElementById('InoxAlu'));
+tabPoignee.push(document.getElementById('PvcAlu'));
+
+
+function changeBorderPoignee(event){
+  var found = false;
+  const target = event.target;
   
-function bulleSituation(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
-  div = document.getElementById("numSituation");
-  div.style.height = height + "px";
-  div.style.width =  width + "px";
-  div.style.border =  borderpx + "px solid "+ couleur;
-  div.style.fontSize =  fontSize + "px";
-  div.style.color =  fontColor;
-  div.style.backgroundColor =  backgroundColor;
+  for (var i = 0; i < tabPoignee.length; i++) {
+    var elem = tabPoignee[i];
+    elem.classList.remove("matSelected");
+
+    if(found==false){
+      if (target == tabPoignee[i]) {
+        target.classList.add("matSelected");
+        found = true;
+      }
+    }
+  }
+
 }
+
+
+
+
+
+
+
+tabMat = [];
+tabMat.push(document.getElementById('MatPvc'));
+tabMat.push(document.getElementById('MatBois'));
+tabMat.push(document.getElementById('MatAlu'));
+
+function changeBorderMat(event){
+  var found = false;
+  const target = event.target;
   
-function bulleRecap(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
-  div = document.getElementById("numRecapitulatif");
-  div.style.height = height + "px";
-  div.style.width =  width + "px";
-  div.style.border =  borderpx + "px solid "+ couleur;
-  div.style.fontSize =  fontSize + "px";
-  div.style.color =  fontColor;
-  div.style.backgroundColor =  backgroundColor;
+  for (var i = 0; i < tabMat.length; i++) {
+    var elem = tabMat[i];
+    elem.classList.remove("matSelected");
+
+    if(found==false){
+      if (target == tabMat[i]) {
+        target.classList.add("matSelected");
+        found = true;
+      }
+    }
+  }
+
 }
-*/
 
 
-var tableau = [];
-// Récupération des éléments par leur ID et ajout au tableau
-tableau.push(document.getElementById('numDimensions'));
-tableau.push(document.getElementById('numGammes'));
-tableau.push(document.getElementById('numMateriaux'));
-tableau.push(document.getElementById('numCouleurs'));
-tableau.push(document.getElementById('numSituation'));
-tableau.push(document.getElementById('numRecapitulatif'));
+var tabColor = [];
+
+
+tabColor.push(document.getElementById('Blanc'));
+tabColor.push(document.getElementById('Bordeaux'));
+tabColor.push(document.getElementById('Noir'));
+tabColor.push(document.getElementById('Bleu'));
+tabColor.push(document.getElementById('Vert'));
+tabColor.push(document.getElementById('CheneNaturel'));
+tabColor.push(document.getElementById('NoyerFonce'));
+tabColor.push(document.getElementById('MerisierFonce'));
+tabColor.push(document.getElementById('Vert6018'));
+tabColor.push(document.getElementById('Bleu5010'));
+tabColor.push(document.getElementById('Orange2004'));
+tabColor.push(document.getElementById('Gris7035'));
+tabColor.push(document.getElementById('Gris7016'));
+tabColor.push(document.getElementById('Noir9005'));
+tabColor.push(document.getElementById('Bleu5012'));
+tabColor.push(document.getElementById('Bleu5002'));
+tabColor.push(document.getElementById('VertFonceAlu'));
+tabColor.push(document.getElementById('Vert6005'));
+tabColor.push(document.getElementById('OrangeAlu'));
+tabColor.push(document.getElementById('Jaune1018'));
+
+function changeBorderColor(event){
+  var found = false;
+  const target = event.target;
+  
+  for (var i = 0; i < tabColor.length; i++) {
+    var elem = tabColor[i];
+    elem.classList.remove("matSelected");
+
+    if(found==false){
+      if (target == tabColor[i]) {
+        target.classList.add("matSelected");
+        found = true;
+      }
+    }
+  }
+
+}
+
+
+var tabArianne = [];
+// Récupération des éléments par leur ID et ajout au bulleArianne
+tabArianne.push(document.getElementById('numDimensions'));
+tabArianne.push(document.getElementById('numGammes'));
+tabArianne.push(document.getElementById('numMateriaux'));
+tabArianne.push(document.getElementById('numCouleurs'));
+tabArianne.push(document.getElementById('numSituation'));
+tabArianne.push(document.getElementById('numRecapitulatif'));
 
 
 
@@ -112,12 +185,12 @@ function ChangerArianne(event){
   var found = false;
   const target = event.target;
   
-  for (var i = 0; i < tableau.length; i++) {
-    var elem = tableau[i];
+  for (var i = 0; i < tabArianne.length; i++) {
+    var elem = tabArianne[i];
     elem.classList.remove("selected", "past");
 
     if(found==false){
-      if (target == tableau[i]) {
+      if (target == tabArianne[i]) {
         target.classList.add("selected");
         found = true;
       }
@@ -129,22 +202,22 @@ function ChangerArianne(event){
   }
 
 
-  if(target == tableau[0]){
+  if(target == tabArianne[0]){
     Dimensions();
   }
-  else if(target == tableau[1]){
+  else if(target == tabArianne[1]){
     Gammes();
   }
-  else if(target == tableau[2]){
+  else if(target == tabArianne[2]){
     Materiaux();
   }
-  else if(target == tableau[3]){
+  else if(target == tabArianne[3]){
     Couleurs();
   }
-  else if(target == tableau[4]){
+  else if(target == tabArianne[4]){
     MiseEnSituation();
   }
-  else if(target == tableau[5]){
+  else if(target == tabArianne[5]){
     Recapitulatif();
   }
 }
@@ -354,44 +427,7 @@ function Recapitulatif() {
   desafficherPhoto()
 }
 
-// Cette fonction gère le changement de matériau
-function Choix_Mat(mat) {
-  const couleurDiv_PVC = document.getElementById("CouleurPVC");
-  const couleurDiv_Bois = document.getElementById("CouleurBois");
-  const couleurDiv_Alu = document.getElementById("CouleurAlu");
-  const MatPvc = document.getElementById("MatPvc");
-  const MatBois = document.getElementById("MatBois");
-  const MatAlu = document.getElementById("MatAlu");
-  couleurDiv_Alu.style.display = "none";
-  couleurDiv_Bois.style.display = "none";
-  couleurDiv_PVC.style.display = "none";
 
-  switch (mat) {
-    case "pvc":
-      couleurDiv_PVC.style.display = "block";
-      recapManager.updateMat("PVC", "../Images/pvc_blanc.png");
-      MatPvc.style.border = "4px solid #A0445D"
-      MatBois.style.border = "4px solid #FFFFFF"
-      MatAlu.style.border = "4px solid #FFFFFF"
-      break;
-
-    case "bois":
-      couleurDiv_Bois.style.display = "block";
-      recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg");
-      MatPvc.style.border = "4px solid #FFFFFF"
-      MatBois.style.border = "4px solid #A0445D"
-      MatAlu.style.border = "4px solid #FFFFFF"
-      break;
-
-    case "alu":
-      couleurDiv_Alu.style.display = "block";
-      recapManager.updateMat("Aluminium", "../Images/texture_alu.jpg");
-      MatPvc.style.border = "4px solid #FFFFFF"
-      MatBois.style.border = "4px solid #FFFFFF"
-      MatAlu.style.border = "4px solid #A0445D"
-      break;
-  }
-}
 
 // Module lié au récap des choix utilisateur. Toutes les méthodes et intéractions avec la partie récap se trouvent à l'intérieur.
 const recapManager = (() => {
@@ -468,9 +504,9 @@ document.addEventListener("DOMContentLoaded", function () {
   recapManager.updatePose("Rénovation")
   recapManager.updateLargeur(1200)
   recapManager.updateHauteur(1600)
-  recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg")
-  recapManager.updateFinition("Chêne Naturel", "../Images/wood05_col_256.jpg")
-  recapManager.updateQuincaillerie("PVC", "../Images/pvc_blanc.png")
+  recapManager.updateMat("ALU", "../Images/alu_blanc.jpg")
+  recapManager.updateFinition("Bleu 5012", "../Images/alu_bleu_clair.png")
+  recapManager.updateQuincaillerie("Laiton", "../Images/laiton.jpg")
 
 });
 
