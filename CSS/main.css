@@ -71,7 +71,10 @@ body{
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: solid 2px rgb(255, 254, 254);
+}
+
+.materiaux.matSelected{
+  border: solid 2px #77716b !important;
 }
 
 .menu {
@@ -173,7 +176,7 @@ margin: 0;
 }
 
 .numero{
-border: 2px solid #000000;
+border: 2px solid #77716b;
 border-radius: 50%;
 padding: 10px;
 font-size: 30px;
@@ -188,7 +191,7 @@ color: #FFFFFF;
 }
 
 .numero.selected{
-  border: 3px solid #000000;
+  border: 3px solid #77716b;
   height: 40px;
   width: 40px;
   background-color: #b2967d;
@@ -197,7 +200,7 @@ color: #FFFFFF;
 }
 
 .numero.past{
-  background-color: #a7601a;
+  background-color: #77716b;
 }
 
 
@@ -239,8 +242,8 @@ color: #FFFFFF;
 }
 
 .boxSousTitre {
-  border-bottom: 1px solid rgb(255, 255, 255);
-  border-top: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid #EEEEEE;
+  border-top: 1px solid #EEEEEE;
   top: 0;
   left: 0;
   padding-top: 5px;
@@ -261,8 +264,8 @@ color: #FFFFFF;
 
 .boxTitrePoignee {
   margin-bottom: 10px;
-  border-bottom: 1px solid rgb(255, 255, 255);
-  border-top: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid #EEEEEE;
+  border-top: 1px solid #EEEEEE;
   padding-top: 5px;
   padding-bottom: 5px;
   top: 0;
@@ -273,18 +276,6 @@ color: #FFFFFF;
   font-size: 20px;
   color: #000000 !important; /* Couleur dorée */
   background-color: #FFFFFF;
-}
-
-#MatPvc {
-  border: solid 4px rgb(255, 255, 255);
-}
-
-#MatBois {
-  border: solid 2px #444444;
-}
-
-#MatAlu {
-  border: solid 4px rgb(255, 255, 255);
 }
 
 /* les parties de div */
@@ -460,11 +451,11 @@ select:focus {
 }
 
 input:checked + .slider {
-  background-color: #A0445D;
+  background-color: #e3d5ca;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #A0445D;
+  box-shadow: 0 0 1px #e3d5ca;
 }
 
 input:checked + .slider:before {
@@ -567,7 +558,7 @@ input[type="range"] {
 /* Styles pour la piste (track) */
 input[type="range"]::-webkit-slider-runnable-track {
   height: 10px;
-  background: #FFFFFF;
+  background: #e3d5ca;
   border-radius: 5px;
 }
 
@@ -576,7 +567,7 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: #A0445D;
+  background: #b2967d;
   border-radius: 50%;
   margin-top: -5px;
 }
@@ -584,14 +575,14 @@ input[type="range"]::-webkit-slider-thumb {
 /* Styles pour Firefox */
 input[type="range"]::-moz-range-track {
   height: 10px;
-  background: #FFFFFF;
+  background: #e3d5ca;
   border-radius: 5px;
 }
 
 input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #A0445D;
+  background: #b2967d;
   border-radius: 50%;
   border: none;
 }
@@ -599,14 +590,14 @@ input[type="range"]::-moz-range-thumb {
 /* Styles pour Edge (Chromium) */
 input[type="range"]::-ms-track {
   height: 10px;
-  background: #FFFFFF;
+  background: #e3d5ca;
   border-radius: 5px;
 }
 
 input[type="range"]::-ms-thumb {
   width: 20px;
   height: 20px;
-  background: #A0445D;
+  background: #b2967d;
   border-radius: 50%;
   border: none;
 }
@@ -642,12 +633,13 @@ input[type="range"]::-ms-thumb {
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #A0445D;
-  color: white;
+  background-color: #e3d5ca;
+  color: black;
 }
 
 .boutonSituation:hover{
-  background-color: #7a7a7a;
+  background-color: #b3a8a1;
+  color: white;
   cursor: pointer;
 }
 
@@ -658,22 +650,23 @@ input[type="range"]::-ms-thumb {
 .label-file {
   cursor: pointer;
   color: #000000;
-  font-weight: bold;
-  border: #A0445D;
+  border: #e3d5ca;
   border-radius: 20px;
-  background-color: #A0445D;
+  background-color: #e3d5ca;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-size: 13px;
+  font-size: 12px;
   margin-top: auto;
   margin-bottom: auto;
 }
 
 
 .label-file:hover {
-  color: #b4b4b4;
+  color: #FFFFFF;
+  background-color: #b3a8a1;
+  cursor: pointer;
 }
 
 .interBox{
@@ -711,4 +704,6 @@ input[type="range"]::-ms-thumb {
   margin-top: 10px;
 }
 
-.
+hr{
+  border: 1px solid #EEEEEE;
+}
