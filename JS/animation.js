@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //fonctions pour gérer l'affichage des boxs selon la box choisie
-
+/*
 function bulleDimension(height, width, borderpx, couleur, fontSize, fontColor, backgroundColor){
   div = document.getElementById("numDimensions");
   div.style.height = height + "px";
@@ -94,10 +94,63 @@ function bulleRecap(height, width, borderpx, couleur, fontSize, fontColor, backg
   div.style.color =  fontColor;
   div.style.backgroundColor =  backgroundColor;
 }
+*/
 
-function borderViewer(styleBorder){
-  div = document.getElementById("containerViewer2");
-  div.style.border = styleBorder;
+
+var tableau = [];
+// Récupération des éléments par leur ID et ajout au tableau
+tableau.push(document.getElementById('numDimensions'));
+tableau.push(document.getElementById('numGammes'));
+tableau.push(document.getElementById('numMateriaux'));
+tableau.push(document.getElementById('numCouleurs'));
+tableau.push(document.getElementById('numSituation'));
+tableau.push(document.getElementById('numRecapitulatif'));
+
+
+
+function ChangerArianne(event){
+  var found = false;
+  const target = event.target;
+  
+  for (var i = 0; i < tableau.length; i++) {
+    var elem = tableau[i];
+    elem.classList.remove("selected", "past");
+
+    if(found==false){
+      if (target == tableau[i]) {
+        target.classList.add("selected");
+        found = true;
+      }
+      else{
+        elem.classList.add("past");
+        console.log("DANS LE ELSE")
+      }
+    }
+  }
+
+
+  if(target == tableau[0]){
+    Dimensions();
+  }
+  else if(target == tableau[1]){
+    Gammes();
+  }
+  else if(target == tableau[2]){
+    Materiaux();
+  }
+  else if(target == tableau[3]){
+    Couleurs();
+  }
+  else if(target == tableau[4]){
+    MiseEnSituation();
+  }
+  else if(target == tableau[5]){
+    Recapitulatif();
+  }
+}
+
+function bulleDimension(){
+
 }
 
 
@@ -106,14 +159,8 @@ function Dimensions() {
   var div = document.getElementById("boxDimensions");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("numDimensions");
-    div.style.border = "2px solid #000000";
-    bulleDimension(40, 40, 3, "#FFFFFF",40,"#FFFFFF", "#A0445D");
-    bulleGamme(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9");
-    bulleMateriau(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleCouleur(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleSituation(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleRecap(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
+    bulleDimension()
+
   } else {
     div.style.display = "none";
   }
@@ -140,7 +187,6 @@ function Dimensions() {
   div.innerHTML = "Redimensionnez votre fenêtre !"
 
   desafficherPhoto()
-  borderViewer("none")
 }
 
 function Gammes() {
@@ -148,14 +194,6 @@ function Gammes() {
   var div = document.getElementById("boxGammes");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("numGammes");
-    div.style.border = "2px solid #000000";
-    bulleDimension(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleGamme(40, 40, 3, "#FFFFFF",40,"#FFFFFF", "#A0445D")
-    bulleMateriau(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleCouleur(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleSituation(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleRecap(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
   } else {
     div.style.display = "none";
   }
@@ -182,21 +220,12 @@ function Gammes() {
   div.innerHTML = "Choisissez votre gamme et votre type de pose !"
   
   desafficherPhoto()
-  borderViewer("none")
 }
 
 function Materiaux() {
   var div = document.getElementById("boxMateriaux");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("numMateriaux");
-    div.style.border = "2px solid #000000";
-    bulleDimension(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleGamme(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleMateriau(40, 40, 3, "#FFFFFF",40,"#FFFFFF", "#A0445D")
-    bulleCouleur(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleSituation(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleRecap(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
   } else {
     div.style.display = "none";
   }
@@ -223,21 +252,13 @@ function Materiaux() {
   div.innerHTML = "Personnalisez votre fenêtre !"
 
   desafficherPhoto()
-  borderViewer("3px solid #ffffff")
+
 }
 
 function Couleurs() {
   var div = document.getElementById("boxCouleurs");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("numCouleurs");
-    div.style.border = "2px solid #000000";
-    bulleDimension(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleGamme(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleMateriau(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleCouleur(40, 40, 3, "#FFFFFF",40,"#FFFFFF", "#A0445D")
-    bulleSituation(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
-    bulleRecap(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
   } else {
     div.style.display = "none";
   }
@@ -264,7 +285,7 @@ function Couleurs() {
   div.innerHTML = "Personnalisez votre fenêtre !"
 
   desafficherPhoto()
-  borderViewer("3px solid #ffffff")
+
 }
 
 function MiseEnSituation() {
@@ -272,14 +293,6 @@ function MiseEnSituation() {
   var div = document.getElementById("boxSituation");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("numSituation");
-    div.style.border = "2px solid #000000";
-    bulleDimension(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleGamme(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleMateriau(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleCouleur(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleSituation(40, 40, 3, "#FFFFFF",40,"#FFFFFF", "#A0445D")
-    bulleRecap(30, 30, 2, "#EEEEEE", 30, "#EEEEEE", "#FFD4B9")
   } else {
     div.style.display = "none";
   }
@@ -306,7 +319,6 @@ function MiseEnSituation() {
   div.innerHTML = "Testez la mise en situation de votre fenêtre !"
 
   desafficherPhoto()
-  borderViewer("none")
 }
 
 function Recapitulatif() {
@@ -314,14 +326,6 @@ function Recapitulatif() {
   var div = document.getElementById("boxRecap");
   if (div.style.display === "none") {
     div.style.display = "block";
-    div = document.getElementById("numRecapitulatif");
-    div.style.border = "2px solid #000000";
-    bulleDimension(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleGamme(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleMateriau(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleCouleur(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleSituation(30, 30, 2, "#FFFFFF", 30, "#FFFFFF","#E6896B")
-    bulleRecap(40, 40, 3, "#FFFFFF",40,"#FFFFFF", "#A0445D")
   } else {
     div.style.display = "none";
   }
@@ -348,7 +352,6 @@ function Recapitulatif() {
   div.innerHTML = "Récapitulatif"
 
   desafficherPhoto()
-  borderViewer("none")
 }
 
 // Cette fonction gère le changement de matériau

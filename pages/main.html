@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://itc-dev.kbmax.com/embed.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -20,107 +23,43 @@
     <div id="mainDiv">
 
       <!-- LE MENU DU FIL D'ARIANNE-->
-<!-- 
 
-      <div class="menu">
-        <ul class="filArianne">
+    <div class="menu">
+      <div id="childMenu">
+        <div class="titreMenu">
+          <h1 id="titre"></h1>
+        </div>
+        <div class="Arianne">
+        <ul class="filArianne" id="fil">
           <li class="listeArianne" id="Dimensions">
-            <img
-              src="../Images/icon_dimension.png"
-              alt="Dimensions"
-              onclick="Dimensions()"
-              id="DimensionsImg"
-            />
+            <div class="numero" id="numDimensions" onclick="ChangerArianne(event)"> 1 </div>
             <label id="titreArianne">Dimensions</label>
           </li>
-          <li class="listeArianne" id="Gammes">
-            <img
-              src="../Images/isolant1.png"
-              alt="Gammes"
-              onclick="Gammes()"
-              id="GammesImg"
-            />
+          <li class="listeArianne" id="Gammes" >
+            <div class="numero" id="numGammes" onclick="ChangerArianne(event)"> 2 </div>
             <label id="titreArianne">Gamme</label>
           </li>
           <li class="listeArianne" id="Materiaux">
-            <img
-              src="../Images/wood05_col_256.jpg"
-              alt="Matériaux"
-              onclick="Materiaux()"
-              id="MateriauImg"
-            />
+            <div class="numero" id="numMateriaux" onclick="ChangerArianne(event)"> 3 </div>
             <label id="titreArianne">Matériau</label>
           </li>
           <li class="listeArianne" id="Couleurs">
-            <img
-              src="../Images/iconCouleurs.png"
-              alt="Couleurs"
-              onclick="Couleurs()"
-              id="CouleurImg"
-            />
+            <div class="numero" id="numCouleurs" onclick="ChangerArianne(event)"> 4 </div>
             <label id="titreArianne">Couleur</label>
           </li>
-          <li class="listeArianne" id="Situation">
-                    <img 
-                    src="../Images/Maison1.png" 
-                    alt="Mise en situation" 
-                    onclick="MiseEnSituation()" 
-                    id="SituationImg"
-                    />
-                    <label id="titreArianne">Mise en situation</label>
-                </li>
-          <li class="listeArianne" id="Recapitulatif">
-            <img
-              src="../Images/menu.png"
-              alt="Récapitulatif"
-              onclick="Recapitulatif()"
-              id="RecapImg"
-            />
+          <li class="listeArianne" id="Situation" >
+            <div class="numero" id="numSituation" onclick="ChangerArianne(event)"> 5 </div>      
+            <label id="titreArianne">Mise en situation</label>
+          </li>
+          <li class="listeArianne" id="Recapitulatif" >
+            <div class="numero" id="numRecapitulatif" onclick="ChangerArianne(event)"> 6 </div>
             <label id="titreArianne">Recapitulatif</label>
           </li>
         </ul>
+        </div>
       </div>
--->
-
-    <div class="menu">
-      <div class="titreMenu">
-        <h1 id="titre"></h1>
-      </div>
-      <div class="Arianne">
-      <ul class="filArianne" id="fil">
-        <li class="listeArianne" id="Dimensions" onclick="Dimensions()">
-          <div class="numero" id="numDimensions"> 1 </div>
-          <label id="titreArianne">Dimensions</label>
-        </li>
-        <li class="listeArianne" id="Gammes" onclick="Gammes()">
-          <div class="numero" id="numGammes"> 2 </div>
-          <label id="titreArianne">Gamme</label>
-        </li>
-        <li class="listeArianne" id="Materiaux" onclick="Materiaux()">
-          <div class="numero" id="numMateriaux"> 3 </div>
-          <label id="titreArianne">Matériau</label>
-        </li>
-        <li class="listeArianne" id="Couleurs" onclick="Couleurs()">
-          <div class="numero" id="numCouleurs"> 4 </div>
-          <label id="titreArianne">Couleur</label>
-        </li>
-        <li class="listeArianne" id="Situation" onclick="MiseEnSituation()">
-          <div class="numero" id="numSituation"> 5 </div>      
-          <label id="titreArianne">Mise en situation</label>
-        </li>
-        <li class="listeArianne" id="Recapitulatif" onclick="Recapitulatif()">
-          <div class="numero" id="numRecapitulatif"> 6 </div>
-          <label id="titreArianne">Recapitulatif</label>
-        </li>
-      </ul>
-    </div>
     </div>
     
-
-
-
-
-
 
       <!-- FIN DU MENU -->
 
@@ -207,25 +146,31 @@
         <!-- CONTAINER GAMMES -->
 
         <div class="box" id="boxGammes">
-          <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"> <b>Gamme Économique :</b><br> Le dormant de la gamme économique offre une solution budgétaire <br>compétitive tout en assurant une isolation thermique. C'est un choix judicieux pour <br>ceux qui recherchent une option économique sans compromettre la qualité essentielle.<br><br>
+
+          <!-- <div class="boxTitre"><span>Gamme</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme" id="texteGammes1"> <b>Gamme Économique :</b><br> Le dormant de la gamme économique offre une solution budgétaire <br>compétitive tout en assurant une isolation thermique. C'est un choix judicieux pour <br>ceux qui recherchent une option économique sans compromettre la qualité essentielle.<br><br>
                                                                                                                                           <b>Gamme Confort :</b><br> Le dormant de la gamme confort offre des caractéristiques supplémentaires<br> pour améliorer l'efficacité énergétique. Son isolation renforcée offre une expérience<br> plus agréable tout en maintenant une bon rapport qualité/prix.<br><br>
                                                                                                                                           <b>Gamme Luxe :</b><br> Le dormant de la gamme luxe représente le summum de la qualité et de la<br> sophistication. Il est fabriqué à partir de matériaux haut de gamme, offrant<br> des performances supérieures en termes d'isolation thermique, d'insonorisation et<br> de durabilité. En plus de ses caractéristiques techniques avancées, il offre<br> souvent des designs personnalisés et une esthétique haut de gamme pour répondre<br> aux attentes des clients les plus exigeants.</div></div></div>
+           -->
+           
+          <div class="boxTitre">
+            <span>Gamme</span>
+            <div id="survol">
+              <img id="imgInfo" src="../Images/info.png"/>
+              <div class="tooltipGamme" id="texteGammes1"></div>
+            </div>
+          </div>
           <select
             name="Gamme"
             onChange="recapManager.updateDormant(this.value)"
             multiple
             class="GammeBox"
-            
           >
             <option id="economique" value="Économique" class="label" selected>Économique</option>
             <option id="confort" value="Confort" class="label" >Confort</option>
             <option id="luxe" value="Luxe" class="label" >Luxe</option>
           </select>
 
-          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme"><b>La pose en Rénovation :</b><br> Les parties ouvrantes de l'ancienne menuiserie sont démontées.<br> Un nouveau cadre est installé par dessus l'ancien dormant.<br><br>
-                                                                                                                                                                  <b>La pose en neuf :</b><br> La menuiserie est posée contre le mur intérieur de la maçonnerie.<br> La fenêtre est intégrée à l'isolant intérieur de votre mur.<br><br>
-                                                                                                                                                                  <b>La dépose totale :</b> <br>Consiste à enlever entièrement le dormant existant.<br> L’ancienne menuiserie est donc complètement retirée<br> pour poser une nouvelle menuiserie sur les maçonneries.
-          </div></div></div>
+          <div class="boxSousTitre" id="typePose"><span>Type de pose</span><div id="survol"><img id="imgInfo" src="../Images/info.png"/><div class="tooltipGamme" id="textePose1"></div></div></div>
           <select
             name="Gamme"
             onChange="recapManager.updatePose(this.value)"

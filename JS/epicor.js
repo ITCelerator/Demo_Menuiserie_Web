@@ -14,9 +14,17 @@ document.addEventListener("DOMContentLoaded", function() {
         parameters: {"param1":"Particulier", "Web":"oui", "Camera":"Perspective"},
     });
 
-    // config.getFields((fields) => {
-         //console.log(fields);
-    // });
+    config.getFields((fields) => {
+        console.log(fields);
+        var dormantDesc = fields.fDormantDesc
+        var div = document.getElementById("texteGammes1");
+        div.innerHTML = dormantDesc;
+
+        var poseDesc = fields.fPoseDesc
+        var div = document.getElementById("textePose1");
+        div.textContent = poseDesc;
+
+    });
     
 });
 

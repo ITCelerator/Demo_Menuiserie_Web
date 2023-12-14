@@ -1,12 +1,15 @@
 html {
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: #EDEDE9;
   height: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
   height: 100% !important;
+  width: 100%;
+  padding: 0;
+  margin:0;
 }
 
 #viewer {
@@ -34,7 +37,7 @@ body{
 #containerViewer2{ /* contour du 2ème viewer */
   display: inline-block;
   border-radius: 50px;
-  border: 3px solid #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .leftDiv iframe {
@@ -71,62 +74,45 @@ body{
   border: solid 2px rgb(255, 254, 254);
 }
 
-/*
-.menu {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(auto, auto);
-  grid-column: 1/4;
-  grid-row: 2;
-}
-
-
-.titreMenu{
-  z-index: 1;
-}
-
-
-#titre {
-  font-family: "effra-cc", sans-serif;
-  font-size: 40px;
-  color: rgb(255, 255, 255);
-  z-index: 1;
-  position: absolute;
-  top: 1%;
-  left: 1%;
-  width: auto;
-  padding: 5px;
-  left: 50%
-}
-*/
-
 .menu {
   z-index: 1;
   width: 100%;
   height: auto;
   position: absolute;
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+#childMenu{
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  width: 65%;
+  border-radius: 15px;
+  overflow: hidden;
+}
 
 #titre {
-  font-family: "effra-cc", sans-serif;
+  font-weight: 300;
   font-size: 40px;
-  color: rgb(255, 255, 255);
+  color: #000000;
   z-index: 1;
-  width: 65%;
+  width: 100%;
   padding-left: 0;
   padding-right: 0;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-  background-color: #E6896B;
+  background-color: #FFFFFF;
   margin-left: auto;
   margin-right: auto;
-  border-top: 4px solid #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
+
+  /* border-top: 4px solid #FFFFFF;
   border-left: 4px solid #FFFFFF;
-  border-right: 4px solid #FFFFFF;
+  border-right: 4px solid #FFFFFF; */
 }
 
 @media screen and (max-width: 1200px) {
@@ -158,14 +144,14 @@ margin: 0;
   padding-bottom: 10px;
   padding-left: 0;
   padding-right: 0;
-  width: 65%;
-  background-color: #FFBE98;
+  width: 100%;
+  background-color: #FFFFFF;
   margin-left: auto;
   margin-right: auto;
   /*margin-top: -27px; */
-  border-bottom: 4px solid #FFFFFF;
+  /* border-bottom: 4px solid #FFFFFF;
   border-left: 4px solid #FFFFFF;
-  border-right: 4px solid #FFFFFF;
+  border-right: 4px solid #FFFFFF; */
 }
 
 .listeArianne {
@@ -194,10 +180,28 @@ font-size: 30px;
 width: 30px;
 height: 30px;
 text-align: center;
-background-color: #ffffff;
-font-family: 'Bebas Neue', sans-serif;
-
+background-color: #e3d5ca;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #FFFFFF;
 }
+
+.numero.selected{
+  border: 3px solid #000000;
+  height: 40px;
+  width: 40px;
+  background-color: #b2967d;
+  font-size: 40px;
+  color: #FFFFFF;
+}
+
+.numero.past{
+  background-color: #a7601a;
+}
+
+
+
 
 /* -------------FIN CSS fil d'arianne --------------*/
 
@@ -208,12 +212,12 @@ font-family: 'Bebas Neue', sans-serif;
   left: 50%;
   /* transform: translate(1vw); */
   padding-bottom: 10px;
-  border: 3px solid rgb(255, 255, 255);
   text-align: center;
-  font-family: "effra-cc", sans-serif;
   border-radius: 15px;
   margin-top: 50px;
-  background-color: #FFBE98;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  overflow: hidden;
 }
 
 .boxTitre {
@@ -225,15 +229,13 @@ font-family: 'Bebas Neue', sans-serif;
   padding-bottom: 5px;
   margin-bottom: 1vh;
   text-align: center;
-  font-family: "effra-cc", sans-serif;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF !important; /* Couleur dorée */
-  background-color: #E6896B;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  color: #000000 !important; /* Couleur dorée */
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .boxSousTitre {
@@ -248,13 +250,12 @@ font-family: 'Bebas Neue', sans-serif;
   padding-left: 0px;
   width: 100%;
   text-align: center;
-  font-family: "effra-cc", sans-serif;
   font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF !important; /* Couleur dorée */
-  background-color: #E6896B;
+  color: #000000 !important; /* Couleur dorée */
+  background-color: #FFFFFF;
 
 }
 
@@ -269,10 +270,9 @@ font-family: 'Bebas Neue', sans-serif;
   position: relative;
   width: 100%;
   text-align: center;
-  font-family: "effra-cc", sans-serif;
   font-size: 20px;
-  color: #ffffff !important; /* Couleur dorée */
-  background-color: #E6896B;
+  color: #000000 !important; /* Couleur dorée */
+  background-color: #FFFFFF;
 }
 
 #MatPvc {
@@ -280,7 +280,7 @@ font-family: 'Bebas Neue', sans-serif;
 }
 
 #MatBois {
-  border: solid 4px #A0445D;
+  border: solid 2px #444444;
 }
 
 #MatAlu {
@@ -327,8 +327,6 @@ font-family: 'Bebas Neue', sans-serif;
 }
 
 label {
-  font-family: "Gill Sans", sans-serif;
-  font-weight: bold;
 }
 
 .recapContainer {
@@ -387,13 +385,13 @@ select:focus {
 
 
 .GammeBox{
-  background-color: #FFBE98;
+  background-color: #FFFFFF;
 }
 
 /* Style pour l'option sélectionnée */
 .GammeBox option:checked {
-  background-color: #A0445D; /* Couleur de fond de l'option sélectionnée */
-  color: #FFFFFF; /* Couleur du texte de l'option sélectionnée */
+  background-color: #b2967d; /* Couleur de fond de l'option sélectionnée */
+  color: #000000; /* Couleur du texte de l'option sélectionnée */
 }
 
 
@@ -409,16 +407,17 @@ select:focus {
 }
 
 #titreArianne{
-  color: white;
+  color: #000000;
   font-size: 20px;
+  font-weight: 200;
 }
 
 .label{
-  color: white;
+  color: #000000;
 }
 
 .recapTitle,.recapContainer{
-  color: white;
+  color: #000000;
 }
 
 /* TOGGLE */
@@ -500,10 +499,10 @@ input:checked + .slider:before {
   color: #fff;
   padding: 5px;
   border-radius: 5px;
-  white-space: nowrap;
   top: 100%;
   left: 50%;
   transform: translateX(-60%);
+  z-index: 2;
 }
 
 #survol:hover .tooltip {
@@ -517,12 +516,12 @@ input:checked + .slider:before {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
-  white-space: nowrap;
   top: 100%;
   left: 50%;
   transform: translateX(-60%);
   font-size: 15px;
   z-index: 2;
+  min-width: 300px;
 }
 
 #survol:hover .tooltipGamme {
@@ -658,7 +657,7 @@ input[type="range"]::-ms-thumb {
 
 .label-file {
   cursor: pointer;
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
   border: #A0445D;
   border-radius: 20px;
@@ -690,7 +689,7 @@ input[type="range"]::-ms-thumb {
 }
 
 #texteToggle1{
-  color: white;
+  color: black;
 }
 
 
@@ -699,7 +698,7 @@ input[type="range"]::-ms-thumb {
   width: 38%;
   background-color: transparent;
   border: 1px solid #FFFFFF;
-  color: white;
+  color: black;
   margin-right: 10px;
   margin-left: auto;
 }
@@ -712,35 +711,4 @@ input[type="range"]::-ms-thumb {
   margin-top: 10px;
 }
 
-
-
-/*
-
-
-#leftArrow{
-height: 50px;
-width: 50px;
-
-}
-
-
-#rightArrow{
-  height: 50px;
-  width: 50px;
-}
-
-
-
-
-#left{
-  z-index: 2;
-  left: 1px;
-}
-
-#right{
-  z-index: 2;
-  right: 0px;
-}
-
-
-*/
+.
