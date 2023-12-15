@@ -28,7 +28,24 @@
           loadStyle: "none",
           parameters: { param1: "Particulier", Web: "oui", Camera: "Accueil" },
         });
+
+        function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configurateur KBMax
+          if(fieldName == "fTable_Texture"){ config.setFields({ "fTable_Texture" : fieldValue });}
+          else if (fieldName == "fChoix_Mat_poignee"){ config.setFields({ "fChoix_Mat_poignee" : fieldValue });}
+          else if (fieldName == "fChoix_Mat"){ config.setFields({ "fChoix_Mat" : fieldValue });}
+        }
+
+        setConfig("fChoix_Mat", "ALU");
+        setConfig("fTable_Texture", "#71a1d2");
+        setConfig("fChoix_Mat_poignee", "Laiton");
       });
+
+
+
+
+
+
+
     </script>
 
     <div id="viewer"></div>
