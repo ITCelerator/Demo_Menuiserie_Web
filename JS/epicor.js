@@ -89,9 +89,12 @@ function jEvents(){
     $("#PvcPvc").click(function(){ setConfig("fChoix_Mat_poignee", "Pvc"); });
 
     // Boutons des matériaux
-    $("#MatPvc").click(function(){ setConfig("fChoix_Mat", "PVC"); });
-    $("#MatBois").click(function(){ setConfig("fChoix_Mat", "BOIS"); });
-    $("#MatAlu").click(function(){ setConfig("fChoix_Mat", "ALU"); });
+    $("#MatPvc").click(function(){ setConfig("fChoix_Mat", "PVC"); setConfig("fTable_Texture", "#395878"); setConfig("fChoix_Mat_poignee", "Laiton");});
+    $("#MatBois").click(function(){ setConfig("fChoix_Mat", "BOIS"); setConfig("fTable_Texture", "#ffd1a3"); setConfig("fChoix_Mat_poignee", "Pvc");});
+    $("#MatAlu").click(function(){ setConfig("fChoix_Mat", "ALU"); setConfig("fTable_Texture", "#71a1d2"); setConfig("fChoix_Mat_poignee", "Laiton");});
+    //bouton d'alerte au dimensions
+    $("#AlertAlu").click(function(){ setConfig("fChoix_Mat", "ALU"); setConfig("fTable_Texture", "#71a1d2"); setConfig("fChoix_Mat_poignee", "Laiton"); });
+    $("#AlertPvc").click(function(){ setConfig("fChoix_Mat", "PVC"); setConfig("fTable_Texture", "#395878"); setConfig("fChoix_Mat_poignee", "Laiton"); });
 
     // Texte Dormant
     $("#economique").click(function(){ setConfig("fDormant", "Eco"); });
@@ -217,7 +220,6 @@ sliderLength.oninput = function() {
 sliderWidthInput.addEventListener("change", function() {
     config.getFields((fields) => {
         var Mat = fields.fChoix_Mat
-        console.log(Mat)
         if (Mat == "BOIS"){
             updateSliderValue(sliderWidth, sliderWidthInput, "", 1000, 1500);
         }
@@ -234,14 +236,22 @@ sliderWidthInput.addEventListener("change", function() {
 sliderWidth.oninput = function() {
     config.getFields((fields) => {
         var alert = document.getElementById("AlertLargeur")
+        var btnPVC = document.getElementById("AlertPvc")
+        var btnALU = document.getElementById("AlertAlu")
 
         var Mat = fields.fChoix_Mat
-        console.log(Mat)
         if (Mat == "BOIS"){
            if(sliderWidthInput.value>1500){
             sliderWidthInput.value = 1500;
             sliderWidth.value = 1500;
             alert.textContent = "La largeur doit être inférieur à 1500mm avec du bois"
+            btnPVC.style.display = "inline-block";
+            btnALU.style.display = "inline-block";
+           }
+           else{
+            alert.textContent = "";
+            btnPVC.style.display = "none";
+            btnALU.style.display = "none";
            }
         }
         else if (Mat == "ALU"){
@@ -249,7 +259,12 @@ sliderWidth.oninput = function() {
                 sliderWidthInput.value = 1550;
                 sliderWidth.value = 1550;
                 alert.textContent = "La largeur doit être inférieur à 1550mm avec de l'ALU"
+                btnPVC.style.display = "inline-block";
             }
+            else{
+                alert.textContent = "";
+                btnPVC.style.display = "none";
+               }
         }
         else if (Mat == "PVC"){
             if(sliderWidthInput.value>1600){
@@ -257,6 +272,9 @@ sliderWidth.oninput = function() {
                 sliderWidth.value = 1600;
                 alert.textContent = "La largeur doit être inférieur à 1600mm avec du PVC"
             }
+            else{
+                alert.textContent = "";
+               }
         }
     });
 

@@ -455,11 +455,11 @@ select:focus {
 }
 
 input:checked + .slider {
-  background-color: #e3d5ca;
+  background-color: #9c5e6f;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #e3d5ca;
+  box-shadow: 0 0 1px #9c5e6f;
 }
 
 input:checked + .slider:before {
@@ -664,10 +664,10 @@ input[type="range"]::-ms-thumb {
 
 .label-file {
   cursor: pointer;
-  color: #000000;
-  border: #e3d5ca;
+  color: #FFFFFF;
+  border: #FFFFFF;
   border-radius: 20px;
-  background-color: #e3d5ca;
+  background-color: #9c5e6f;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -679,7 +679,7 @@ input[type="range"]::-ms-thumb {
 
 .label-file:hover {
   color: #ffffff;
-  background-color: #b3a8a1;
+  background-color: #915364;
   cursor: pointer;
 }
 
@@ -719,4 +719,22 @@ input[type="range"]::-ms-thumb {
 
 hr {
   border: 1px solid #eeeeee;
+}
+
+.boutonAlert{
+  border: #0000008f;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #9c5e6f;
+  color: white;
+  display: none;
+}
+
+.boutonAlert:hover{
+  background-color: #9c5e6f;
+  color: white;
+  cursor: pointer;
 }

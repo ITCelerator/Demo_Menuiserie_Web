@@ -4,9 +4,6 @@ var poseValide;
 var materiauValide;
 var couleurValide;
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const finitions = document.querySelectorAll(".finition");
   finitions.forEach((finition) => {
@@ -28,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
   Dimensions();
   Dimensions();
   document.getElementById("numDimensions").classList.add("selected");
@@ -36,6 +32,43 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("Bleu5012").classList.add("matSelected");
   document.getElementById("LaitonAlu").classList.add("matSelected");
 });
+
+function alertMat(event){
+  const couleurDiv_PVC = document.getElementById("CouleurPVC");
+  const couleurDiv_Bois = document.getElementById("CouleurBois");
+  const couleurDiv_Alu = document.getElementById("CouleurAlu");
+  couleurDiv_Alu.style.display = "none";
+  couleurDiv_Bois.style.display = "none";
+  couleurDiv_PVC.style.display = "none";
+
+  if(event.target == document.getElementById("AlertPvc")){
+    document.getElementById("MatPvc").classList.add("matSelected");
+    document.getElementById("MatAlu").classList.remove("matSelected");
+    document.getElementById("MatBois").classList.remove("matSelected");
+    couleurDiv_PVC.style.display = "block";
+    document.getElementById("Bleu").classList.add("matSelected");
+    document.getElementById("LaitonPvc").classList.add("matSelected");
+    //visibility button
+    document.getElementById("AlertPvc").style.display = "none";
+    document.getElementById("AlertAlu").style.display = "none";
+    document.getElementById("AlertLargeur").style.display = "none";
+  }
+  else if(event.target == document.getElementById("AlertAlu")){
+    document.getElementById("MatAlu").classList.add("matSelected");
+    document.getElementById("MatBois").classList.remove("matSelected");
+    document.getElementById("MatPvc").classList.remove("matSelected");
+    couleurDiv_Alu.style.display = "block";
+    document.getElementById("Bleu5012").classList.add("matSelected");
+    document.getElementById("LaitonAlu").classList.add("matSelected");
+        //visibility button
+        document.getElementById("AlertAlu").style.display = "none";
+        document.getElementById("AlertPvc").style.display = "none";
+        document.getElementById("AlertLargeur").style.display = "none";
+  }
+}
+
+
+
 
 // Cette fonction gère le changement de matériau
 function Choix_Mat(mat, event) {
@@ -50,21 +83,26 @@ function Choix_Mat(mat, event) {
     case "pvc":
       couleurDiv_PVC.style.display = "block";
       recapManager.updateMat("PVC", "../Images/pvc_blanc.png");
+      document.getElementById("Bleu").classList.add("matSelected");
+      document.getElementById("LaitonPvc").classList.add("matSelected");
       break;
 
     case "bois":
       couleurDiv_Bois.style.display = "block";
       recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg");
+      document.getElementById("CheneNaturel").classList.add("matSelected");
+      document.getElementById("PvcBois").classList.add("matSelected");
       break;
 
     case "alu":
       couleurDiv_Alu.style.display = "block";
       recapManager.updateMat("Aluminium", "../Images/texture_alu.jpg");
+      document.getElementById("Bleu5012").classList.add("matSelected");
+      document.getElementById("LaitonAlu").classList.add("matSelected");
       break;
   }
   changeBorderMat(event)
 }
-
 
 
 tabPoignee = [];
@@ -96,11 +134,6 @@ function changeBorderPoignee(event){
   }
 
 }
-
-
-
-
-
 
 
 tabMat = [];
