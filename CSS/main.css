@@ -641,14 +641,14 @@ input[type="range"]::-ms-thumb {
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #a0445d;
+  background-color: #9c5e6f;
   color: white;
   width: 100%;
   margin: 12px 8px 0 8px;
 }
 
 .boutonSituation:hover {
-  background-color: #913b52;
+  background-color: #915364;
   color: white;
   cursor: pointer;
 }
