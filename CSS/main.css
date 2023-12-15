@@ -96,7 +96,7 @@ body {
 }
 
 #titre {
-  font-weight: 300;
+  /* font-weight: 300;
   font-size: 40px;
   color: #000000;
   z-index: 1;
@@ -109,7 +109,11 @@ body {
   background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: 1px solid #eeeeee; */
+  text-align: center;
   border-bottom: 1px solid #eeeeee;
+  background-color: white;
+  padding: 10px;
 
   /* border-top: 4px solid #FFFFFF;
   border-left: 4px solid #FFFFFF;
@@ -170,31 +174,39 @@ ul {
 }
 
 .numero {
-  border: 2px solid #77716b;
+  /* border: 2px solid #77716b; */
   border-radius: 50%;
   padding: 10px;
   font-size: 30px;
   width: 30px;
   height: 30px;
   text-align: center;
-  background-color: #e3d5ca;
+  background-color: #dbced2;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #ffffff;
 }
 
+.numero:hover {
+  background-color: #ceb9bf;
+}
+
 .numero.selected {
-  border: 3px solid #77716b;
+  /* border: 1px solid #464646; */
   height: 40px;
   width: 40px;
-  background-color: #b2967d;
+  background-color: #a0445d;
   font-size: 40px;
   color: #ffffff;
 }
 
 .numero.past {
-  background-color: #77716b;
+  background-color: #bd7e8f;
+}
+
+.numero.past:hover {
+  background-color: #b17182;
 }
 
 /* -------------FIN CSS fil d'arianne --------------*/
@@ -361,9 +373,19 @@ select:focus {
   background-color: #ffffff;
 }
 
+.GammeBox option {
+  background-color: white;
+  padding: 4px 0;
+}
+
+.GammeBox option:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
 /* Style pour l'option sélectionnée */
 .GammeBox option:checked {
-  background-color: #b2967d; /* Couleur de fond de l'option sélectionnée */
+  background-color: green; /* Couleur de fond de l'option sélectionnée */
   color: #000000; /* Couleur du texte de l'option sélectionnée */
 }
 
@@ -467,14 +489,15 @@ input:checked + .slider:before {
 .tooltip {
   display: none;
   position: absolute;
-  background: #e3d5ca;
-  color: #000000;
+  background: #0e0e0ec4;
+  color: #ffffff;
   padding: 5px;
   border-radius: 5px;
   top: 100%;
   left: 50%;
   transform: translateX(-60%);
   z-index: 2;
+  white-space: pre-line;
 }
 
 #survol:hover .tooltip {
@@ -484,8 +507,8 @@ input:checked + .slider:before {
 .tooltipGamme {
   display: none;
   position: absolute;
-  background: #e3d5ca;
-  color: #000000;
+  background: #0e0e0ec4;
+  color: #ffffff;
   padding: 10px;
   border-radius: 5px;
   top: 100%;
@@ -494,6 +517,7 @@ input:checked + .slider:before {
   font-size: 15px;
   z-index: 2;
   min-width: 500px;
+  white-space: pre-line;
 }
 
 #survol:hover .tooltipGamme {
@@ -538,7 +562,7 @@ input[type="range"] {
 /* Styles pour la piste (track) */
 input[type="range"]::-webkit-slider-runnable-track {
   height: 10px;
-  background: #e3d5ca;
+  background: #d19dab;
   border-radius: 5px;
 }
 
@@ -547,9 +571,14 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: #b2967d;
+  background: #a0445d;
   border-radius: 50%;
   margin-top: -5px;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #913b52;
+  cursor: pointer;
 }
 
 /* Styles pour Firefox */
@@ -607,17 +636,19 @@ input[type="range"]::-ms-thumb {
 
 .boutonSituation {
   border: #0000008f;
-  border-radius: 20px;
+  border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: #e3d5ca;
-  color: black;
+  background-color: #a0445d;
+  color: white;
+  width: 100%;
+  margin: 12px 8px 0 8px;
 }
 
 .boutonSituation:hover {
-  background-color: #b3a8a1;
+  background-color: #913b52;
   color: white;
   cursor: pointer;
 }

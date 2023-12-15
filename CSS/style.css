@@ -18,8 +18,8 @@ body {
 
 #formAccueil {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 55%;
   transform: translate(0%, -50%);
   z-index: 1;
   padding: 20px;
@@ -74,9 +74,11 @@ input:focus {
 button {
   background-color: #9c5e6f;
   border: none;
-  height: 32px;
+  height: 36px;
   border-radius: 8px;
   color: white;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 button:hover {
@@ -146,12 +148,12 @@ button:hover {
   margin-top: 20px;
   padding: 20px;
   box-sizing: border-box;
-  width: 50%;
+  width: 60%;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   border: 1px solid rgb(211, 211, 211);
 }
@@ -164,10 +166,4 @@ h1 {
 h2 {
   margin: 0;
   margin-bottom: 24px;
-}
-
-#titre {
-}
-
-.menu {
 }
