@@ -63,6 +63,16 @@ input:focus {
   border: 1px solid white;
 }
 
+input[type="text"]:valid,
+input[type="email"]:valid {
+  outline: 2px solid rgb(103, 165, 103);
+  border: 1px solid white;
+}
+
+.asterisk {
+  color: red;
+}
+
 .radioGroup {
   display: flex;
   align-items: center;
