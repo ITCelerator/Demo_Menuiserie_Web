@@ -653,6 +653,11 @@ input[type="range"]::-ms-thumb {
   cursor: pointer;
 }
 
+#appliqueDimensions {
+  width: auto;
+  margin: 0;
+}
+
 #boutonSituation1 {
   display: none;
 }
