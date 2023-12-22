@@ -385,8 +385,8 @@ select:focus {
 
 /* Style pour l'option sélectionnée */
 .GammeBox option:checked {
-  background-color: green; /* Couleur de fond de l'option sélectionnée */
-  color: #000000; /* Couleur du texte de l'option sélectionnée */
+  background-color: #9c5e6f; /* Couleur de fond de l'option sélectionnée */
+  color: #FFFFFF; /* Couleur du texte de l'option sélectionnée */
 }
 
 .ImageMainson {
