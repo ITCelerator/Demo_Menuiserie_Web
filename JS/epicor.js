@@ -131,9 +131,11 @@ function jEvents(){
 function setInfoBulleTXT(){
     config.getFields((fields) => {
         console.log(fields);
+        console.log("DESC DORMANT : ")
+        console.log(fields.fDormantDesc);
         var dormantDesc = fields.fDormantDesc
         var div = document.getElementById("texteGammes1");
-        div.innerHTML = dormantDesc;
+        div.textContent = dormantDesc;
 
         var poseDesc = fields.fPoseDesc
         var div = document.getElementById("textePose1");
@@ -233,9 +235,11 @@ sliderWidthInput.addEventListener("change", function() {
 });
 
 // Mettre à jour la valeur du texte de la largeur lorsque le slider change
-sliderWidth.oninput = function() {
+sliderWidth.onchange = function() {
     config.getFields((fields) => {
-        var alert = document.getElementById("AlertLargeur")
+        var alertBois = document.getElementById("AlertLargeurBois")
+        var alertAlu = document.getElementById("AlertLargeurAlu")
+        var alertPvc = document.getElementById("AlertLargeurPvc")
         var btnPVC = document.getElementById("AlertPvc")
         var btnALU = document.getElementById("AlertAlu")
 
@@ -244,7 +248,8 @@ sliderWidth.oninput = function() {
            if(sliderWidthInput.value>1500){
             sliderWidthInput.value = 1500;
             sliderWidth.value = 1500;
-            alert.textContent = "La largeur doit être inférieur à 1500mm avec du bois"
+            alertBois.style.display = "block";
+            alertAlu.style.display = "none";
             btnPVC.style.display = "inline-block";
             btnALU.style.display = "inline-block";
            }
@@ -258,7 +263,8 @@ sliderWidth.oninput = function() {
             if(sliderWidthInput.value>1550){
                 sliderWidthInput.value = 1550;
                 sliderWidth.value = 1550;
-                alert.textContent = "La largeur doit être inférieur à 1550mm avec de l'ALU"
+                alertAlu.style.display = "block";
+                alertBois.style.display = "none";
                 btnPVC.style.display = "inline-block";
             }
             else{
@@ -270,7 +276,7 @@ sliderWidth.oninput = function() {
             if(sliderWidthInput.value>1600){
                 sliderWidthInput.value = 1600;
                 sliderWidth.value = 1600;
-                alert.textContent = "La largeur doit être inférieur à 1600mm avec du PVC"
+                alertPvc.style.display = "block";
             }
             else{
                 alert.textContent = "";

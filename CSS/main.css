@@ -738,3 +738,8 @@ hr {
   color: white;
   cursor: pointer;
 }
+
+
+#AlertLargeurBois, #AlertLargeurAlu, #AlertLargeurPvc{
+  display: none;
+}

@@ -51,7 +51,8 @@ function alertMat(event){
     //visibility button
     document.getElementById("AlertPvc").style.display = "none";
     document.getElementById("AlertAlu").style.display = "none";
-    document.getElementById("AlertLargeur").style.display = "none";
+    document.getElementById("AlertLargeurBois").style.display = "none";
+    document.getElementById("AlertLargeurAlu").style.display = "none";
   }
   else if(event.target == document.getElementById("AlertAlu")){
     document.getElementById("MatAlu").classList.add("matSelected");
@@ -63,7 +64,8 @@ function alertMat(event){
         //visibility button
         document.getElementById("AlertAlu").style.display = "none";
         document.getElementById("AlertPvc").style.display = "none";
-        document.getElementById("AlertLargeur").style.display = "none";
+        document.getElementById("AlertLargeurBois").style.display = "none";
+        document.getElementById("AlertLargeurAlu").style.display = "none";
   }
 }
 
