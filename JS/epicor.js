@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         kbmaxUrl: "https://itc-dev.kbmax.com",
         elementId: "viewer2",
         configuratorId: 575,
+        sceneId: 240,
         showHeader: false,
         showDrawer: false,
         showMove: false,
@@ -36,7 +37,7 @@ function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configur
     else if (fieldName == "fChoix_Mat"){ config.setFields({ "fChoix_Mat" : fieldValue }); config2.setFields({ "fChoix_Mat" : fieldValue });}
     else if (fieldName == "fHauteur"){ config.setFields({ "fHauteur" : fieldValue }); config2.setFields({ "fHauteur" : fieldValue });}
     else if (fieldName == "fLargeur"){ config.setFields({ "fLargeur" : fieldValue }); config2.setFields({ "fLargeur" : fieldValue });}
-    else if (fieldName == "fPose/depose"){ config.setFields({ "fPose/depose" : fieldValue }); config2.setFields({ "fPose/depose" : fieldValue });}
+    else if (fieldName == "fPose_depose"){ config.setFields({ "fPose_depose" : fieldValue }); config2.setFields({ "fPose_depose" : fieldValue });}
     else if (fieldName == "fDormant"){ config.setFields({ "fDormant" : fieldValue }); config2.setFields({ "fDormant" : fieldValue });}
     else if (fieldName == "fAfficherPhoto"){ config.setFields({ "fAfficherPhoto" : fieldValue }); config2.setFields({ "fAfficherPhoto" : fieldValue });}
     else if (fieldName == "fTexturePhoto"){ config.setFields({ "fTexturePhoto" : fieldValue }); config2.setFields({ "fTexturePhoto" : fieldValue });}
@@ -102,9 +103,9 @@ function jEvents(){
     $("#luxe").click(function(){ setConfig("fDormant", "Luxe"); });
 
     // Texte Type de pose
-    $("#renovation").click(function(){ setConfig("fPose/depose", "R"); });
-    $("#totale").click(function(){ setConfig("fPose/depose", "T"); });
-    $("#neuf").click(function(){ setConfig("fPose/depose", "N"); });
+    $("#renovation").click(function(){ setConfig("fPose_depose", "R"); });
+    $("#totale").click(function(){ setConfig("fPose_depose", "T"); });
+    $("#neuf").click(function(){ setConfig("fPose_depose", "N"); });
 
     // Texte Type de pose
     $("#oui").click(function(){ setConfig("fAfficherPhoto", true);  });
@@ -130,9 +131,9 @@ function jEvents(){
 
 function setInfoBulleTXT(){
     config.getFields((fields) => {
-        console.log(fields);
-        console.log("DESC DORMANT : ")
-        console.log(fields.fDormantDesc);
+        //console.log(fields);
+        //console.log("DESC DORMANT : ")
+        //console.log(fields.fDormantDesc);
         var dormantDesc = fields.fDormantDesc
         var div = document.getElementById("texteGammes1");
         div.textContent = dormantDesc;
@@ -183,7 +184,7 @@ function handleFileSelect(event){
     var input = event.target;
     setConfig("fUpload", input.files);
     config.getFields((fields) => {
-        console.log(fields);
+        //console.log(fields);
     });
 
     //console.log("JE SUIS DEDANS")
@@ -310,7 +311,7 @@ function updateSliderValue(slider, input, unit, minValue, maxValue) {
 
 
 function fieldsConf(){
-    console.log("Je suis dans le click")
+    //console.log("Je suis dans le click")
     config.runAction("getFields")
     getFieldsConf()
 }
@@ -318,10 +319,10 @@ function fieldsConf(){
 
 function getFieldsConf(){
     config.getFields((fields) => {
-        console.log(fields)
-        console.log("LAAAAAAAAA DANS VSCODE : ")
-        console.log(fields.fJSONFields);
-        console.log("FIN VSCODE : ")
+        //console.log(fields)
+        //console.log("LAAAAAAAAA DANS VSCODE : ")
+        //console.log(fields.fJSONFields);
+        //console.log("FIN VSCODE : ")
         var JSONFields = fields.fJSONFields;
     });
 }
