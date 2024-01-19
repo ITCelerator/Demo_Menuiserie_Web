@@ -48,7 +48,7 @@ function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configur
 
     
     //console.log(fieldName);
-    //console.log(fieldValue);
+    console.log(fieldValue);
 }
 
 
@@ -113,10 +113,10 @@ function jEvents(){
 
     //Mise en situation
     //bouton afficher photo
-    $('#checkbox').click(affichePhoto())
+    $('#checkbox').click(function(){ affichePhoto()})
 
     //bouton redimmensionner la fenêtre
-    $('#appliquerDimensions').click(redimFenetre())
+    $('#appliquerDimensions').click(function(){redimFenetre()})
 
     //Choix de la photo
     $('#Maison1').click(function(){ setConfig("fTexturePhoto", "Maison_1");})
@@ -153,6 +153,7 @@ function affichePhoto(){
         setConfig("fChoixCamera", "CameraPhoto") //à changer pour un runaction
         var div = document.getElementById("part2");
         div.style.display = "block";
+
     }
     else{
         setConfig("fAfficherPhoto", false);
@@ -192,9 +193,16 @@ function handleFileSelect(event){
 }
 
 
+    $(numDimensions).click(function(){ affichePhoto();});
+    $(numGammes).click(function(){ affichePhoto();});
+    $(numMateriaux).click(function(){ affichePhoto();});
+    $(numCouleurs).click(function(){ affichePhoto();});
+    $(numRecapitulatif).click(function(){ affichePhoto();});
+
+
 
 $(document).ready(function(){ jEvents();});
-$(document).click(function(){ jEvents();});
+//$(document).click(function(){ jEvents();});
 
 
 // Déclarer des variables globales pour stocker les valeurs des sliders

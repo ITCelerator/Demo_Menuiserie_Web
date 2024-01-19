@@ -743,3 +743,7 @@ hr {
 #AlertLargeurBois, #AlertLargeurAlu, #AlertLargeurPvc{
   display: none;
 }
+
+#part2{
+  display: none;
+}
