@@ -2,7 +2,7 @@ var config;
 var config2;
 document.addEventListener("DOMContentLoaded", function() {
     config = new kbmax.ConfiguratorEmbed({
-        kbmaxUrl: "https://itc-dev.kbmax.com",
+        kbmaxUrl: "https://itc.kbmax.com",
         elementId: "viewer",
         configuratorId: 575,
         sceneId: 240,
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     config2 = new kbmax.ConfiguratorEmbed({
-        kbmaxUrl: "https://itc-dev.kbmax.com",
+        kbmaxUrl: "https://itc.kbmax.com",
         elementId: "viewer2",
         configuratorId: 575,
         sceneId: 240,
