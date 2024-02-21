@@ -2,7 +2,7 @@ var config;
 var config2;
 document.addEventListener("DOMContentLoaded", function() {
     config = new kbmax.ConfiguratorEmbed({
-        kbmaxUrl: "https://itc.kbmax.com",
+        kbmaxUrl: "https://itc-dev.kbmax.com",
         elementId: "viewer",
         configuratorId: 575,
         sceneId: 240,
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     config2 = new kbmax.ConfiguratorEmbed({
-        kbmaxUrl: "https://itc.kbmax.com",
+        kbmaxUrl: "https://itc-dev.kbmax.com",
         elementId: "viewer2",
         configuratorId: 575,
         sceneId: 240,
@@ -153,7 +153,6 @@ function affichePhoto(){
         setConfig("fChoixCamera", "CameraPhoto") //à changer pour un runaction
         var div = document.getElementById("part2");
         div.style.display = "block";
-
     }
     else{
         setConfig("fAfficherPhoto", false);
@@ -161,6 +160,7 @@ function affichePhoto(){
         var div = document.getElementById("part2");
         div.style.display = "none";
         document.getElementById("appliquerDimensions").checked=false;
+        setConfig("fREDIM", false);
     }
 }
 
@@ -342,3 +342,25 @@ document.addEventListener("DOMContentLoaded", function () {
     setConfig("fChoix_Mat_poignee", "Laiton");
 });
 
+
+
+window.addEventListener("resize", responsive);
+document.addEventListener("DOMContentLoaded", responsive);
+
+function responsive() {
+    if (window.innerWidth <= 600) { 
+        //console.log("Vous êtes sur un appareil mobile !");
+        config.getFields((fields) => {
+            if(fields.fChoixCamera != "CameraMobile"){
+                config.runAction("SetCameraMobile")
+                console.log("RunAction fait")
+            }
+            else{
+                console.log("RunAction pas fait")
+            }
+        });
+    }
+    else if(window.innerWidth > 600){
+        config.runAction("SetCameraPerspective")
+    }
+}

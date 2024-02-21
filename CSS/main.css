@@ -25,13 +25,26 @@ body {
 #viewer2 {
   height: 450px;
   width: 300px;
-  top: 0px;
-  left: 0px;
   position: relative;
   z-index: 0;
   display: none;
   border-radius: 50px;
 }
+
+@media screen and (max-width: 1350px) {
+  #viewer2 {
+    height: 350px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #viewer2 {
+    height: 0px;
+    width: 0px;
+  }
+}
+
 
 #containerViewer2 {
   /* contour du 2ème viewer */
@@ -61,14 +74,25 @@ body {
   display: none;
 }
 
+.boxMateriaux{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.boxPoignee{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .materiaux {
   position: relative;
   z-index: 1;
-  margin-right: 1em;
-  margin-bottom: 5px;
+  /* margin-right: 1em; 
+  margin-bottom: 5px;*/
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  margin: 5px;
+  
 }
 
 .materiaux.matSelected {
@@ -370,7 +394,10 @@ select:focus {
 }
 
 .GammeBox {
-  background-color: #ffffff;
+  background-color: #9c5e6f;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .GammeBox option {
@@ -387,6 +414,10 @@ select:focus {
 .GammeBox option:checked {
   background-color: #9c5e6f; /* Couleur de fond de l'option sélectionnée */
   color: #FFFFFF; /* Couleur du texte de l'option sélectionnée */
+}
+
+#dormantBox{
+  margin-bottom: 10px;
 }
 
 .ImageMainson {
@@ -542,6 +573,8 @@ input:checked + .slider:before {
 #boxDimensions {
   display: flex;
 }
+
+
 
 .custom-slider-container {
   position: relative;
@@ -746,4 +779,68 @@ hr {
 
 #part2{
   display: none;
+}
+
+
+
+/* navbar mobile */
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.navbar a {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  background-color: #efefef;
+  color: #a0445d;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background-color: #efefef;
+}
+.navbar.responsive a {
+  display: block;
+}
+.icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .navbar a.icon {
+      display: block;
+      background-color: none;
+  }
+  .navbar.responsive {
+      display: block;
+      box-shadow: 4px 4px 17px 10px rgba(0,0,0,0.1);
+      border-bottom-right-radius: 15px;
+  }
+  .navbar.responsive a {
+      display: block;
+      
+  }
+  .navbar:not(.responsive) a:not(:first-child) {
+      display: none;
+  }
+  .menu{
+    display: none;
+  }
+  .navbar a {
+    background-color: #efefef;
+  }
+
+  .box{
+    width: 90%;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    margin-left: 25px;
+    margin-right: 20px;
+  }
+
+
 }
