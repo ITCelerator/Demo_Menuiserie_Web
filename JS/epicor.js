@@ -322,6 +322,8 @@ function fieldsConf(){
     //console.log("Je suis dans le click")
     config.runAction("getFields")
     getFieldsConf()
+
+    config.runAction("SaveQuote")
 }
 
 
@@ -329,7 +331,7 @@ function getFieldsConf(){
     config.getFields((fields) => {
         //console.log(fields)
         //console.log("LAAAAAAAAA DANS VSCODE : ")
-        //console.log(fields.fJSONFields);
+        console.log(fields.fJSONFields);
         //console.log("FIN VSCODE : ")
         var JSONFields = fields.fJSONFields;
     });
@@ -348,7 +350,7 @@ window.addEventListener("resize", responsive);
 document.addEventListener("DOMContentLoaded", responsive);
 
 function responsive() {
-    if (window.innerWidth <= 600) { 
+    if (window.innerWidth <= 800) { 
         //console.log("Vous êtes sur un appareil mobile !");
         config.getFields((fields) => {
             if(fields.fChoixCamera != "CameraMobile"){
@@ -360,7 +362,7 @@ function responsive() {
             }
         });
     }
-    else if(window.innerWidth > 600){
+    else if(window.innerWidth > 800){
         config.runAction("SetCameraPerspective")
     }
 }

@@ -146,10 +146,10 @@ body {
 
 @media screen and (max-width: 1200px) {
   #titre {
-    width: 90%;
+
   }
   #fil {
-    width: 90%;
+    
   }
 }
 
@@ -517,6 +517,7 @@ input:checked + .slider:before {
   display: inline-block;
 }
 
+/*
 .tooltip {
   display: none;
   position: absolute;
@@ -534,6 +535,7 @@ input:checked + .slider:before {
 #survol:hover .tooltip {
   display: block;
 }
+*/
 
 .tooltipGamme {
   display: none;
@@ -794,7 +796,7 @@ hr {
 }
 .navbar a {
   display: none;
-  text-align: center;
+  text-align: left;
   padding: 10px;
   background-color: #efefef;
   color: #a0445d;
@@ -809,7 +811,7 @@ hr {
 .icon {
   display: none;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .navbar a.icon {
       display: block;
       background-color: none;
@@ -838,9 +840,34 @@ hr {
     position: absolute;
     top: 65%;
     left: 0;
-    margin-left: 25px;
+    margin-left: 20px;
     margin-right: 20px;
+    overflow-y: scroll;
+    max-height: 180px;
   }
+  .box::-webkit-scrollbar {
+    display: none;
+}
+}
 
+@media screen and (max-width: 600px) and (min-height: 800px) {
+  .box{
+    width: 90%;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow-y: scroll;
+    max-height: 220px;
+    padding-bottom: 10px;
+  }
+  .box::-webkit-scrollbar {
+    display: none;
+}
+}
+
+
+@media screen and (max-width: 1300px) {
 
 }
