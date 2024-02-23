@@ -1,24 +1,6 @@
 var config;
 var config2;
 
-// Récupération des valeurs du formulaire d'accueuil dans le localstorage
-const particulierName =
-  localStorage.getItem("ITCMenuiserie_Nom") == null
-    ? ""
-    : localStorage.getItem("ITCMenuiserie_Nom");
-const particulierSociete =
-  localStorage.getItem("ITCMenuiserie_Societe") == null
-    ? ""
-    : localStorage.getItem("ITCMenuiserie_Societe");
-const particulierMail =
-  localStorage.getItem("ITCMenuiserie_Mail") == null
-    ? ""
-    : localStorage.getItem("ITCMenuiserie_Mail");
-
-console.log(
-  `localStorage items.\nNom: ${particulierName}\nSociété: ${particulierSociete}\nMail: ${particulierMail}`
-);
-
 document.addEventListener("DOMContentLoaded", function () {
   config = new kbmax.ConfiguratorEmbed({
     kbmaxUrl: "https://itc-dev.kbmax.com",
@@ -32,9 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadStyle: "none",
     parameters: { param1: "Particulier", Web: "oui", Camera: "Perspective" },
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   config2 = new kbmax.ConfiguratorEmbed({
     kbmaxUrl: "https://itc-dev.kbmax.com",
     elementId: "viewer2",
@@ -46,6 +26,27 @@ document.addEventListener("DOMContentLoaded", function () {
     bindToFormSelector: "",
     loadStyle: "none",
     parameters: { param1: "Particulier", Web: "oui", Camera: "Zoom" },
+  });
+
+  // Récupération des valeurs du formulaire d'accueuil dans le localstorage
+  const particulierName =
+    localStorage.getItem("ITCMenuiserie_Nom") == null
+      ? ""
+      : localStorage.getItem("ITCMenuiserie_Nom");
+  const particulierSociete =
+    localStorage.getItem("ITCMenuiserie_Societe") == null
+      ? ""
+      : localStorage.getItem("ITCMenuiserie_Societe");
+  const particulierMail =
+    localStorage.getItem("ITCMenuiserie_Mail") == null
+      ? ""
+      : localStorage.getItem("ITCMenuiserie_Mail");
+
+  // Assigner les valeurs du formulaire d'accueuil dans le configurateur actuel
+  config.onLoaded(() => {
+    setConfig("fName", particulierName);
+    setConfig("fMail", particulierMail);
+    setConfig("fSociete", particulierSociete);
   });
 });
 
