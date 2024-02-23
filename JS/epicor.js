@@ -350,7 +350,7 @@ window.addEventListener("resize", responsive);
 document.addEventListener("DOMContentLoaded", responsive);
 
 function responsive() {
-    if (window.innerWidth <= 800) { 
+    if (window.innerWidth <= 900) { 
         //console.log("Vous êtes sur un appareil mobile !");
         config.getFields((fields) => {
             if(fields.fChoixCamera != "CameraMobile"){
@@ -362,7 +362,7 @@ function responsive() {
             }
         });
     }
-    else if(window.innerWidth > 800){
+    else if(window.innerWidth > 900){
         config.runAction("SetCameraPerspective")
     }
 }
