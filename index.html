@@ -15,6 +15,7 @@
   <body>
     <script src="https://itc.kbmax.com/embed.min.js"></script>
     <script>
+
       document.addEventListener("DOMContentLoaded", function () {
         var config = new kbmax.ConfiguratorEmbed({
           kbmaxUrl: "https://itc.kbmax.com",
@@ -43,7 +44,29 @@
         setConfig("fChoix_Mat", "ALU");
         setConfig("fTable_Texture", "#71a1d2");
         setConfig("fChoix_Mat_poignee", "Laiton");
+
+        function responsive() {
+          console.log("responsive");
+          if (window.innerWidth <= 900) {
+            console.log("Vous êtes sur un appareil mobile !");
+            config.getFields((fields) => {
+              if (fields.fChoixCamera != "CameraMobile") {
+                config.runAction("SetCameraMobile");
+                console.log("RunAction fait");
+              } else {
+                console.log("RunAction pas fait");
+              }
+            });
+          } else if (window.innerWidth > 900) {
+            config.runAction("SetCameraAccueil");
+          }
+        }
+
+        window.addEventListener("resize", responsive);
+        document.addEventListener("DOMContentLoaded", responsive);
       });
+
+
     </script>
 
     <div id="viewer"></div>
@@ -54,6 +77,7 @@
       </div>
     </div>
 
+    <div class="containerForm">
     <div id="formAccueil">
       <h2>Identifiez-vous</h2>
       <form id="myForm" action="/pages/main.html">
@@ -99,5 +123,13 @@
         <!-- <input type="submit" id="button" value="Confirmer" /> -->
       </form>
     </div>
+  </div>
   </body>
+
+<script>
+  
+
+</script>
+
+
 </html>
