@@ -24,28 +24,26 @@
           showHeader: false,
           showDrawer: false,
           showMove: false,
-          bindToFormSelector: "",
+          bindToFormSelector: "#myForm",
           loadStyle: "none",
           parameters: { param1: "Particulier", Web: "oui", Camera: "Accueil" },
         });
 
-        function setConfig(fieldName, fieldValue){ // Pour communniquer avec le configurateur KBMax
-          if(fieldName == "fTable_Texture"){ config.setFields({ "fTable_Texture" : fieldValue });}
-          else if (fieldName == "fChoix_Mat_poignee"){ config.setFields({ "fChoix_Mat_poignee" : fieldValue });}
-          else if (fieldName == "fChoix_Mat"){ config.setFields({ "fChoix_Mat" : fieldValue });}
+        function setConfig(fieldName, fieldValue) {
+          // Pour communniquer avec le configurateur KBMax
+          if (fieldName == "fTable_Texture") {
+            config.setFields({ fTable_Texture: fieldValue });
+          } else if (fieldName == "fChoix_Mat_poignee") {
+            config.setFields({ fChoix_Mat_poignee: fieldValue });
+          } else if (fieldName == "fChoix_Mat") {
+            config.setFields({ fChoix_Mat: fieldValue });
+          }
         }
 
         setConfig("fChoix_Mat", "ALU");
         setConfig("fTable_Texture", "#71a1d2");
         setConfig("fChoix_Mat_poignee", "Laiton");
       });
-
-
-
-
-
-
-
     </script>
 
     <div id="viewer"></div>
@@ -61,25 +59,36 @@
       <form id="myForm" action="/pages/main.html">
         <div class="inputGroup">
           <label for="societe">Société <span class="asterisk">*</span></label>
-          <input type="text" id="societe" name="societe" placeholder="" />
+          <input type="text" id="societe" name="fSociete" placeholder="" />
           <div class="error"></div>
         </div>
 
         <div class="inputGroup">
-          <label for="nom">Nom et Prénom <span class="asterisk">*</span></label>
-          <input type="text" id="nom" name="nom" placeholder="" />
+          <label for="fName"
+            >Nom et Prénom <span class="asterisk">*</span></label
+          >
+          <input type="text" id="nom" name="fName" placeholder="" />
           <div class="error"></div>
         </div>
+
+        <!-- <div class="inputGroup">
+          <label for="departement"
+            >Département <span class="asterisk">*</span></label
+          >
+          <select name="fDepartement" id="departement">
+            <option value="Rhin"></option>
+          </select>
+        </div> -->
 
         <div class="inputGroup">
           <label for="email">Email <span class="asterisk">*</span></label>
-          <input type="text" id="email" name="email" placeholder="" />
+          <input type="text" id="email" name="fMail" placeholder="" />
           <div class="error"></div>
         </div>
 
         <div class="radioGroup">
-          <input type="radio" id="RGPD" name="RGPD" value="oui" />
-          <label for="consent"
+          <input type="radio" id="RGPD" name="fRGPD" value="oui" />
+          <label for="RGPD"
             >Je consens à l'utilisation de mes données personnelles.
             <span class="asterisk">*</span>
           </label>

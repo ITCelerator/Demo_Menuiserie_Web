@@ -65,6 +65,9 @@ const handleSubmit = () => {
   }
 
   if (!errors) {
+    localStorage.setItem("ITCMenuiserie_Nom", nameInput.value);
+    localStorage.setItem("ITCMenuiserie_Societe", societeInput.value);
+    localStorage.setItem("ITCMenuiserie_Mail", emailInput.value);
     window.location.href = "./pages/main.html";
   }
 };
