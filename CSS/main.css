@@ -845,12 +845,6 @@ hr {
   width: 100%;
   bottom: 5%;
 }
-
-#survol{
-  display: none;
-}
-
-
 }
 
 @media screen and (max-width: 600px) and (min-height: 900px) {
@@ -963,40 +957,4 @@ font-size: 25px;
   .box::-webkit-scrollbar {
     display: none;
 }
-}
-
-/* Ajoutez ces styles spécifiques pour les appareils mobiles */
-@media only screen and (max-width: 600px) {
-  .survol-mobile {
-    position: relative;
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    margin-left: 10px;
-  }
-  
-  .survol-mobile .imgInfo {
-    width: 20px; /* ajustez la taille de l'icône selon vos besoins */
-    height: auto; /* assurez-vous que l'icône conserve son aspect ratio */
-  }
-  
-  .survol-mobile .tooltipGamme {
-    display: none;
-    position: absolute;
-    background: #0e0e0ec4;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-60%);
-    font-size: 15px;
-    z-index: 2;
-    min-width: 200px; /* ajustez la largeur pour s'adapter à votre design mobile */
-    white-space: pre-line;
-  }
-  
-  .survol-mobile.tapped .tooltipGamme {
-    display: block;
-  }
 }

@@ -175,10 +175,10 @@
                                                                                                                                           <b>Gamme Luxe :</b><br> Le dormant de la gamme luxe représente le summum de la qualité et de la<br> sophistication. Il est fabriqué à partir de matériaux haut de gamme, offrant<br> des performances supérieures en termes d'isolation thermique, d'insonorisation et<br> de durabilité. En plus de ses caractéristiques techniques avancées, il offre<br> souvent des designs personnalisés et une esthétique haut de gamme pour répondre<br> aux attentes des clients les plus exigeants.</div></div></div>
            -->
            
-           <div class="boxTitre">
+          <div class="boxTitre">
             <span>Gamme</span>
-            <div class="survol-mobile">
-              <img class="imgInfo" src="../Images/infoNoir.png"/>
+            <div id="survol">
+              <img id="imgInfo" src="../Images/infoNoir.png"/>
               <div class="tooltipGamme" id="texteGammes1"></div>
             </div>
           </div>
@@ -192,11 +192,11 @@
             <option id="confort" value="Confort" class="label" >Confort</option>
             <option id="luxe" value="Luxe" class="label" >Luxe</option>
           </select>
-          
+
           <div class="boxSousTitre" id="typePose">
             <span>Type de pose</span>
-            <div class="survol-mobile">
-              <img class="imgInfo" src="../Images/infoNoir.png"/>
+            <div id="survol">
+              <img id="imgInfo" src="../Images/infoNoir.png"/>
               <div class="tooltipGamme" id="textePose1"></div>
             </div>
           </div>
@@ -209,6 +209,7 @@
             <option id="totale" value="Totale" class="label" >Totale</option>
             <option id="neuf" value="Neuf" class="label" >Neuf</option>
           </select>
+        </div>
 
 
         <!-- CONTAINER DU CHOIX DES MATERIAUX -->
@@ -705,47 +706,6 @@
           x.className = "navbar";
       }
   }
-
-// Activation du tap pour afficher l'infobulle sur mobile
-const survolesMobile = document.querySelectorAll('.survol-mobile');
-survolesMobile.forEach(survol => {
-  let isTapped = false;
-  survol.addEventListener('touchstart', function(event) {
-    event.stopPropagation(); // Empêche la propagation de l'événement touchstart à d'autres éléments
-    isTapped = !isTapped;
-    if (isTapped) {
-      // Si l'infobulle n'est pas déjà affichée, affiche-la
-      const tooltip = survol.querySelector('.tooltipGamme');
-      const tooltips = document.querySelectorAll('.tooltipGamme');
-      tooltips.forEach(t => t.style.display = 'none');
-      tooltip.style.display = 'block';
-    } else {
-      // Si l'infobulle est déjà affichée, masque-la
-      const tooltip = survol.querySelector('.tooltipGamme');
-      tooltip.style.display = 'none';
-    }
-  });
-});
-
-// Fermeture de l'infobulle lorsque l'utilisateur clique en dehors de celle-ci
-document.addEventListener("click", function(event) {
-  const tooltips = document.querySelectorAll('.tooltipGamme');
-  tooltips.forEach(tooltip => {
-    if (!tooltip.contains(event.target)) {
-      const survoles = document.querySelectorAll('.survol-mobile');
-      survoles.forEach(s => {
-        s.classList.remove('tapped');
-        const tooltip = s.querySelector('.tooltipGamme');
-        tooltip.style.display = 'none';
-      });
-    }
-  });
-});
-
-
-
-
-
 </script>
 
 </html>

@@ -366,4 +366,3 @@ function responsive() {
         config.runAction("SetCameraPerspective")
     }
 }
-
