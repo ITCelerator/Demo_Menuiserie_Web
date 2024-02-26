@@ -845,6 +845,9 @@ hr {
   width: 100%;
   bottom: 5%;
 }
+#survol{
+  display: none;
+}
 }
 
 @media screen and (max-width: 600px) and (min-height: 900px) {
