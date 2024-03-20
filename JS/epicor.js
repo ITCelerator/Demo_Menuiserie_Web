@@ -3,7 +3,7 @@ var config2;
 
 document.addEventListener("DOMContentLoaded", function () {
   config = new kbmax.ConfiguratorEmbed({
-    kbmaxUrl: "https://itc-dev.kbmax.com",
+    kbmaxUrl: "https://itc.kbmax.com",
     elementId: "viewer",
     configuratorId: 575,
     sceneId: 240,
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   config2 = new kbmax.ConfiguratorEmbed({
-    kbmaxUrl: "https://itc-dev.kbmax.com",
+    kbmaxUrl: "https://itc.kbmax.com",
     elementId: "viewer2",
     configuratorId: 575,
     sceneId: 240,
@@ -473,33 +473,31 @@ function responsive() {
   }
 }
 
-function correctHauteur(hauteur){
-  console.log("*****")
-  console.log(hauteur)
-if(hauteur > 2200){
-  hauteur = 2200;
-}
-recapManager.updateHauteur(hauteur);
+function correctHauteur(hauteur) {
+  console.log("*****");
+  console.log(hauteur);
+  if (hauteur > 2200) {
+    hauteur = 2200;
+  }
+  recapManager.updateHauteur(hauteur);
 }
 
-function correctLargeur(_largeur){
-  console.log(_largeur)
+function correctLargeur(_largeur) {
+  console.log(_largeur);
   config.getFields((fields) => {
-    console.log(_largeur)
+    console.log(_largeur);
     var Mat = fields.fChoix_Mat;
-    console.log(Mat)
-    if(Mat == "PVC"){
-      if(_largeur > 1600){
+    console.log(Mat);
+    if (Mat == "PVC") {
+      if (_largeur > 1600) {
         _largeur = 1600;
       }
-    }
-    else if(Mat == "ALU"){
-      if(_largeur > 1550){
+    } else if (Mat == "ALU") {
+      if (_largeur > 1550) {
         _largeur = 1550;
       }
-    }
-    else if(Mat == "BOIS"){
-      if(_largeur > 1500){
+    } else if (Mat == "BOIS") {
+      if (_largeur > 1500) {
         _largeur = 1500;
       }
     }
@@ -507,5 +505,4 @@ function correctLargeur(_largeur){
     console.log("================================");
     recapManager.updateLargeur(_largeur);
   });
-
-  }
+}
