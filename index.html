@@ -15,10 +15,9 @@
   <body>
     <script src="https://itc.kbmax.com/embed.min.js"></script>
     <script>
-
       document.addEventListener("DOMContentLoaded", function () {
         var config = new kbmax.ConfiguratorEmbed({
-          kbmaxUrl: "https://itc.kbmax.com",
+          kbmaxUrl: "https://itc-dev.kbmax.com",
           elementId: "viewer",
           configuratorId: 575,
           sceneId: 240,
@@ -65,8 +64,6 @@
         window.addEventListener("resize", responsive);
         document.addEventListener("DOMContentLoaded", responsive);
       });
-
-
     </script>
 
     <div id="viewer"></div>
@@ -78,24 +75,24 @@
     </div>
 
     <div class="containerForm">
-    <div id="formAccueil">
-      <h2>Identifiez-vous</h2>
-      <form id="myForm" action="/pages/main.html">
-        <div class="inputGroup">
-          <label for="societe">Société <span class="asterisk">*</span></label>
-          <input type="text" id="societe" name="fSociete" placeholder="" />
-          <div class="error"></div>
-        </div>
+      <div id="formAccueil">
+        <h2>Identifiez-vous</h2>
+        <form id="myForm" action="/pages/main.html">
+          <div class="inputGroup">
+            <label for="societe">Société <span class="asterisk">*</span></label>
+            <input type="text" id="societe" name="fSociete" placeholder="" />
+            <div class="error"></div>
+          </div>
 
-        <div class="inputGroup">
-          <label for="fName"
-            >Nom et Prénom <span class="asterisk">*</span></label
-          >
-          <input type="text" id="nom" name="fName" placeholder="" />
-          <div class="error"></div>
-        </div>
+          <div class="inputGroup">
+            <label for="fName"
+              >Nom et Prénom <span class="asterisk">*</span></label
+            >
+            <input type="text" id="nom" name="fName" placeholder="" />
+            <div class="error"></div>
+          </div>
 
-        <!-- <div class="inputGroup">
+          <!-- <div class="inputGroup">
           <label for="departement"
             >Département <span class="asterisk">*</span></label
           >
@@ -104,32 +101,27 @@
           </select>
         </div> -->
 
-        <div class="inputGroup">
-          <label for="email">Email <span class="asterisk">*</span></label>
-          <input type="text" id="email" name="fMail" placeholder="" />
-          <div class="error"></div>
-        </div>
+          <div class="inputGroup">
+            <label for="email">Email <span class="asterisk">*</span></label>
+            <input type="text" id="email" name="fMail" placeholder="" />
+            <div class="error"></div>
+          </div>
 
-        <div class="radioGroup">
-          <input type="radio" id="RGPD" name="fRGPD" value="oui" />
-          <label for="RGPD"
-            >Je consens à l'utilisation de mes données personnelles.
-            <span class="asterisk">*</span>
-          </label>
-        </div>
-        <div class="error radioError"></div>
+          <div class="radioGroup">
+            <input type="radio" id="RGPD" name="fRGPD" value="oui" />
+            <label for="RGPD"
+              >Je consens à l'utilisation de mes données personnelles.
+              <span class="asterisk">*</span>
+            </label>
+          </div>
+          <div class="error radioError"></div>
 
-        <button type="submit">Confirmer</button>
-        <!-- <input type="submit" id="button" value="Confirmer" /> -->
-      </form>
+          <button type="submit">Confirmer</button>
+          <!-- <input type="submit" id="button" value="Confirmer" /> -->
+        </form>
+      </div>
     </div>
-  </div>
   </body>
 
-<script>
-  
-
-</script>
-
-
+  <script></script>
 </html>
