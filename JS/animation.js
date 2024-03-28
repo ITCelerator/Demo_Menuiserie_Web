@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("LaitonAlu").classList.add("matSelected");
 });
 
-function alertMat(event){
+function alertMat(event) {
   const couleurDiv_PVC = document.getElementById("CouleurPVC");
   const couleurDiv_Bois = document.getElementById("CouleurBois");
   const couleurDiv_Alu = document.getElementById("CouleurAlu");
@@ -41,7 +41,7 @@ function alertMat(event){
   couleurDiv_Bois.style.display = "none";
   couleurDiv_PVC.style.display = "none";
 
-  if(event.target == document.getElementById("AlertPvc")){
+  if (event.target == document.getElementById("AlertPvc")) {
     document.getElementById("MatPvc").classList.add("matSelected");
     document.getElementById("MatAlu").classList.remove("matSelected");
     document.getElementById("MatBois").classList.remove("matSelected");
@@ -53,24 +53,20 @@ function alertMat(event){
     document.getElementById("AlertAlu").style.display = "none";
     document.getElementById("AlertLargeurBois").style.display = "none";
     document.getElementById("AlertLargeurAlu").style.display = "none";
-  }
-  else if(event.target == document.getElementById("AlertAlu")){
+  } else if (event.target == document.getElementById("AlertAlu")) {
     document.getElementById("MatAlu").classList.add("matSelected");
     document.getElementById("MatBois").classList.remove("matSelected");
     document.getElementById("MatPvc").classList.remove("matSelected");
     couleurDiv_Alu.style.display = "block";
     document.getElementById("Bleu5012").classList.add("matSelected");
     document.getElementById("LaitonAlu").classList.add("matSelected");
-        //visibility button
-        document.getElementById("AlertAlu").style.display = "none";
-        document.getElementById("AlertPvc").style.display = "none";
-        document.getElementById("AlertLargeurBois").style.display = "none";
-        document.getElementById("AlertLargeurAlu").style.display = "none";
+    //visibility button
+    document.getElementById("AlertAlu").style.display = "none";
+    document.getElementById("AlertPvc").style.display = "none";
+    document.getElementById("AlertLargeurBois").style.display = "none";
+    document.getElementById("AlertLargeurAlu").style.display = "none";
   }
 }
-
-
-
 
 // Cette fonction gère le changement de matériau
 function Choix_Mat(mat, event) {
@@ -103,172 +99,150 @@ function Choix_Mat(mat, event) {
       document.getElementById("LaitonAlu").classList.add("matSelected");
       break;
   }
-  changeBorderMat(event)
+  changeBorderMat(event);
 }
 
-
 tabPoignee = [];
-tabPoignee.push(document.getElementById('LaitonPvc'));
-tabPoignee.push(document.getElementById('InoxPvc'));
-tabPoignee.push(document.getElementById('PvcPvc'));
-tabPoignee.push(document.getElementById('LaitonBois'));
-tabPoignee.push(document.getElementById('InoxBois'));
-tabPoignee.push(document.getElementById('PvcBois'));
-tabPoignee.push(document.getElementById('LaitonAlu'));
-tabPoignee.push(document.getElementById('InoxAlu'));
-tabPoignee.push(document.getElementById('PvcAlu'));
+tabPoignee.push(document.getElementById("LaitonPvc"));
+tabPoignee.push(document.getElementById("InoxPvc"));
+tabPoignee.push(document.getElementById("PvcPvc"));
+tabPoignee.push(document.getElementById("LaitonBois"));
+tabPoignee.push(document.getElementById("InoxBois"));
+tabPoignee.push(document.getElementById("PvcBois"));
+tabPoignee.push(document.getElementById("LaitonAlu"));
+tabPoignee.push(document.getElementById("InoxAlu"));
+tabPoignee.push(document.getElementById("PvcAlu"));
 
-
-function changeBorderPoignee(event){
+function changeBorderPoignee(event) {
   var found = false;
   const target = event.target;
-  
+
   for (var i = 0; i < tabPoignee.length; i++) {
     var elem = tabPoignee[i];
     elem.classList.remove("matSelected");
 
-    if(found==false){
+    if (found == false) {
       if (target == tabPoignee[i]) {
         target.classList.add("matSelected");
         found = true;
       }
     }
   }
-
 }
 
-
 tabMat = [];
-tabMat.push(document.getElementById('MatPvc'));
-tabMat.push(document.getElementById('MatBois'));
-tabMat.push(document.getElementById('MatAlu'));
+tabMat.push(document.getElementById("MatPvc"));
+tabMat.push(document.getElementById("MatBois"));
+tabMat.push(document.getElementById("MatAlu"));
 
-function changeBorderMat(event){
+function changeBorderMat(event) {
   var found = false;
   const target = event.target;
-  
+
   for (var i = 0; i < tabMat.length; i++) {
     var elem = tabMat[i];
     elem.classList.remove("matSelected");
 
-    if(found==false){
+    if (found == false) {
       if (target == tabMat[i]) {
         target.classList.add("matSelected");
         found = true;
       }
     }
   }
-
 }
-
 
 var tabColor = [];
 
+tabColor.push(document.getElementById("Blanc"));
+tabColor.push(document.getElementById("Bordeaux"));
+tabColor.push(document.getElementById("Noir"));
+tabColor.push(document.getElementById("Bleu"));
+tabColor.push(document.getElementById("Vert"));
+tabColor.push(document.getElementById("CheneNaturel"));
+tabColor.push(document.getElementById("NoyerFonce"));
+tabColor.push(document.getElementById("MerisierFonce"));
+tabColor.push(document.getElementById("Vert6018"));
+tabColor.push(document.getElementById("Bleu5010"));
+tabColor.push(document.getElementById("Orange2004"));
+tabColor.push(document.getElementById("Gris7035"));
+tabColor.push(document.getElementById("Gris7016"));
+tabColor.push(document.getElementById("Noir9005"));
+tabColor.push(document.getElementById("Bleu5012"));
+tabColor.push(document.getElementById("Bleu5002"));
+tabColor.push(document.getElementById("VertFonceAlu"));
+tabColor.push(document.getElementById("Vert6005"));
+tabColor.push(document.getElementById("OrangeAlu"));
+tabColor.push(document.getElementById("Jaune1018"));
 
-tabColor.push(document.getElementById('Blanc'));
-tabColor.push(document.getElementById('Bordeaux'));
-tabColor.push(document.getElementById('Noir'));
-tabColor.push(document.getElementById('Bleu'));
-tabColor.push(document.getElementById('Vert'));
-tabColor.push(document.getElementById('CheneNaturel'));
-tabColor.push(document.getElementById('NoyerFonce'));
-tabColor.push(document.getElementById('MerisierFonce'));
-tabColor.push(document.getElementById('Vert6018'));
-tabColor.push(document.getElementById('Bleu5010'));
-tabColor.push(document.getElementById('Orange2004'));
-tabColor.push(document.getElementById('Gris7035'));
-tabColor.push(document.getElementById('Gris7016'));
-tabColor.push(document.getElementById('Noir9005'));
-tabColor.push(document.getElementById('Bleu5012'));
-tabColor.push(document.getElementById('Bleu5002'));
-tabColor.push(document.getElementById('VertFonceAlu'));
-tabColor.push(document.getElementById('Vert6005'));
-tabColor.push(document.getElementById('OrangeAlu'));
-tabColor.push(document.getElementById('Jaune1018'));
-
-function changeBorderColor(event){
+function changeBorderColor(event) {
   var found = false;
   const target = event.target;
-  
+
   for (var i = 0; i < tabColor.length; i++) {
     var elem = tabColor[i];
     elem.classList.remove("matSelected");
 
-    if(found==false){
+    if (found == false) {
       if (target == tabColor[i]) {
         target.classList.add("matSelected");
         found = true;
       }
     }
   }
-
 }
-
 
 var tabArianne = [];
 // Récupération des éléments par leur ID et ajout au bulleArianne
-tabArianne.push(document.getElementById('numDimensions'));
-tabArianne.push(document.getElementById('numGammes'));
-tabArianne.push(document.getElementById('numMateriaux'));
-tabArianne.push(document.getElementById('numCouleurs'));
-tabArianne.push(document.getElementById('numSituation'));
-tabArianne.push(document.getElementById('numRecapitulatif'));
+tabArianne.push(document.getElementById("numDimensions"));
+tabArianne.push(document.getElementById("numGammes"));
+tabArianne.push(document.getElementById("numMateriaux"));
+tabArianne.push(document.getElementById("numCouleurs"));
+tabArianne.push(document.getElementById("numSituation"));
+tabArianne.push(document.getElementById("numRecapitulatif"));
 
-
-
-function ChangerArianne(event){
+function ChangerArianne(event) {
   var found = false;
   const target = event.target;
-  
+
   for (var i = 0; i < tabArianne.length; i++) {
     var elem = tabArianne[i];
     elem.classList.remove("selected", "past");
 
-    if(found==false){
+    if (found == false) {
       if (target == tabArianne[i]) {
         target.classList.add("selected");
         found = true;
-      }
-      else{
+      } else {
         elem.classList.add("past");
-        console.log("DANS LE ELSE")
+        console.log("DANS LE ELSE");
       }
     }
   }
 
-
-  if(target == tabArianne[0]){
+  if (target == tabArianne[0]) {
     Dimensions();
-  }
-  else if(target == tabArianne[1]){
+  } else if (target == tabArianne[1]) {
     Gammes();
-  }
-  else if(target == tabArianne[2]){
+  } else if (target == tabArianne[2]) {
     Materiaux();
-  }
-  else if(target == tabArianne[3]){
+  } else if (target == tabArianne[3]) {
     Couleurs();
-  }
-  else if(target == tabArianne[4]){
+  } else if (target == tabArianne[4]) {
     MiseEnSituation();
-  }
-  else if(target == tabArianne[5]){
+  } else if (target == tabArianne[5]) {
     Recapitulatif();
   }
 }
 
-function bulleDimension(){
-
-}
-
+function bulleDimension() {}
 
 function Dimensions() {
   // Vous pouvez ajouter d'autres actions à exécuter ici
   var div = document.getElementById("boxDimensions");
   if (div.style.display === "none") {
     div.style.display = "block";
-    bulleDimension()
-
+    bulleDimension();
   } else {
     div.style.display = "none";
   }
@@ -292,9 +266,9 @@ function Dimensions() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Redimensionnez votre fenêtre !"
+  div.innerHTML = "Redimensionnez votre fenêtre !";
 
-  desafficherPhoto()
+  desafficherPhoto();
 }
 
 function Gammes() {
@@ -325,9 +299,9 @@ function Gammes() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Choisissez votre gamme et votre type de pose !"
-  
-  desafficherPhoto()
+  div.innerHTML = "Choisissez votre gamme et votre type de pose !";
+
+  desafficherPhoto();
 }
 
 function Materiaux() {
@@ -357,10 +331,9 @@ function Materiaux() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Personnalisez votre fenêtre !"
+  div.innerHTML = "Personnalisez votre fenêtre !";
 
-  desafficherPhoto()
-
+  desafficherPhoto();
 }
 
 function Couleurs() {
@@ -390,10 +363,9 @@ function Couleurs() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Personnalisez votre fenêtre !"
+  div.innerHTML = "Personnalisez votre fenêtre !";
 
-  desafficherPhoto()
-
+  desafficherPhoto();
 }
 
 function MiseEnSituation() {
@@ -424,9 +396,9 @@ function MiseEnSituation() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Testez la mise en situation de votre fenêtre !"
+  div.innerHTML = "Testez la mise en situation de votre fenêtre !";
 
-  desafficherPhoto()
+  desafficherPhoto();
 }
 
 function Recapitulatif() {
@@ -457,12 +429,10 @@ function Recapitulatif() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Récapitulatif"
+  div.innerHTML = "Récapitulatif";
 
-  desafficherPhoto()
+  desafficherPhoto();
 }
-
-
 
 // Module lié au récap des choix utilisateur. Toutes les méthodes et intéractions avec la partie récap se trouvent à l'intérieur.
 const recapManager = (() => {
@@ -528,37 +498,36 @@ const recapManager = (() => {
   };
 })();
 
-function desafficherPhoto(){
-  document.getElementById("appliquerDimensions").checked=false
-  document.getElementById("checkbox").checked=false
+function desafficherPhoto() {
+  document.getElementById("appliquerDimensions").checked = false;
+  document.getElementById("checkbox").checked = false;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
-  recapManager.updateDormant("Économique", )
-  recapManager.updatePose("Rénovation")
-  recapManager.updateLargeur(1200)
-  recapManager.updateHauteur(1600)
-  recapManager.updateMat("ALU", "../Images/alu_blanc.jpg")
-  recapManager.updateFinition("Bleu 5012", "../Images/alu_bleu_clair.png")
-  recapManager.updateQuincaillerie("Laiton", "../Images/laiton.jpg")
-
+  recapManager.updateDormant("Économique");
+  recapManager.updatePose("Rénovation");
+  recapManager.updateLargeur(1200);
+  recapManager.updateHauteur(1600);
+  recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
+  recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
+  recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.getElementById('sliderLength');
-  const customThumb = document.getElementById('custom-thumb');
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("sliderLength");
+  const customThumb = document.getElementById("custom-thumb");
 
-  slider.addEventListener('input', function () {
+  slider.addEventListener("input", function () {
     updateCustomThumbPosition();
   });
 
   // Met à jour la position du curseur personnalisé en fonction de la valeur du curseur de plage
   function updateCustomThumbPosition() {
-    const percent = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+    const percent =
+      ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     const thumbWidth = parseFloat(getComputedStyle(customThumb).width);
     const thumbPosition = (percent / 100) * (slider.offsetWidth - thumbWidth);
-    customThumb.style.left = thumbPosition + 'px';
+    customThumb.style.left = thumbPosition + "px";
   }
 
   // Met à jour la position initiale du curseur personnalisé
