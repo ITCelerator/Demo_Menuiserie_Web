@@ -509,7 +509,7 @@ const pageManager = (() => {
 
   const toggle = () => {
     showingEndPannel = !showingEndPannel;
-    endPannelContainer.style.display = showingEndPannel ? "block" : "none";
+    endPannelContainer.style.display = showingEndPannel ? "flex" : "none";
     mainContent.style.display = showingEndPannel ? "none" : "grid";
   };
 
