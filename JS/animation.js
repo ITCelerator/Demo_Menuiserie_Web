@@ -80,21 +80,21 @@ function Choix_Mat(mat, event) {
   switch (mat) {
     case "pvc":
       couleurDiv_PVC.style.display = "block";
-      recapManager.updateMat("PVC", "../Images/pvc_blanc.png");
+      recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
       document.getElementById("Bleu").classList.add("matSelected");
       document.getElementById("LaitonPvc").classList.add("matSelected");
       break;
 
     case "bois":
       couleurDiv_Bois.style.display = "block";
-      recapManager.updateMat("Bois", "../Images/wood05_col_256.jpg");
+      recapManager.updateMat("Bois", "./Images/wood05_col_256.jpg");
       document.getElementById("CheneNaturel").classList.add("matSelected");
       document.getElementById("PvcBois").classList.add("matSelected");
       break;
 
     case "alu":
       couleurDiv_Alu.style.display = "block";
-      recapManager.updateMat("Aluminium", "../Images/texture_alu.jpg");
+      recapManager.updateMat("Aluminium", "./Images/texture_alu.jpg");
       document.getElementById("Bleu5012").classList.add("matSelected");
       document.getElementById("LaitonAlu").classList.add("matSelected");
       break;
@@ -495,6 +495,33 @@ const recapManager = (() => {
     updatePose,
     updateHauteur,
     updateLargeur,
+  };
+})();
+
+const pageManager = (() => {
+  const endPannelContainer = document.querySelector(".containerForm");
+  const mainContent = document.getElementById("mainDiv");
+  const endForm = document.getElementById("endForm");
+  const endMessage = document.getElementById("endMessage");
+  endPannelContainer.style.display = "none";
+  endMessage.style.display = "none";
+  var showingEndPannel = false;
+
+  const toggle = () => {
+    showingEndPannel = !showingEndPannel;
+    endPannelContainer.style.display = showingEndPannel ? "block" : "none";
+    mainContent.style.display = showingEndPannel ? "none" : "grid";
+  };
+
+  const showMessage = () => {
+    console.log("Show message");
+    endForm.style.display = "none";
+    endMessage.style.display = "block";
+  };
+
+  return {
+    toggle,
+    showMessage,
   };
 })();
 

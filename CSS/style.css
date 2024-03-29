@@ -19,7 +19,7 @@ body {
 #formAccueil {
   position: absolute;
   top: 40%;
-  left: 55%;
+  right: 8%;
   transform: translate(0%, -50%);
   z-index: 1;
   padding: 20px;
@@ -29,6 +29,11 @@ body {
   border: 1px solid rgb(211, 211, 211);
   background-color: white;
   width: 460px;
+}
+
+#endForm {
+  width: 100%;
+  height: 100%;
 }
 
 form {
@@ -43,7 +48,7 @@ form {
   width: 100%;
 }
 
-input {
+.endFormInput {
   width: 100%;
   box-sizing: border-box;
   height: 36px;
@@ -58,19 +63,19 @@ input {
   font-weight: 300;
 }
 
-input:focus {
+.endFormInput:focus {
   outline: 2px solid #9c5e6f;
   border: 1px solid white;
 }
 
-input[type="text"].valid,
-input[type="email"].valid {
+.endFormInput[type="text"].valid,
+.endFormInput[type="email"].valid {
   outline: 2px solid rgb(103, 165, 103);
   border: 1px solid white;
 }
 
-input[type="text"].invalid,
-input[type="email"].invalid {
+.endFormInput[type="text"].invalid,
+.endFormInput[type="email"].invalid {
   border: 1px solid transparent;
   outline: 2px solid red;
 }
@@ -192,30 +197,29 @@ h2 {
   margin-bottom: 24px;
 }
 
-
 @media screen and (max-width: 900px) {
   #formAccueil {
     position: relative;
     top: 65%;
     left: 0;
-    transform:none;
+    transform: none;
     width: 90%;
     max-height: 220px;
     overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
   }
-  .titreWidth{
-    display:none;
+  .titreWidth {
+    display: none;
   }
   #formAccueil::-webkit-scrollbar {
     display: none;
-}
-.containerForm{
-  position: absolute;
-  width: 100%;
-  bottom: 5%;
-}
+  }
+  .containerForm {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+  }
 }
 
 @media screen and (max-width: 600px) and (min-height: 900px) {
@@ -223,70 +227,62 @@ h2 {
     position: relative;
     top: 65%;
     left: 0;
-    transform:none;
+    transform: none;
     width: 90%;
     max-height: 220px;
     overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
   }
-  .titreWidth{
-    display:none;
+  .titreWidth {
+    display: none;
   }
   #formAccueil::-webkit-scrollbar {
     display: none;
+  }
+  .containerForm {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+  }
 }
-.containerForm{
-  position: absolute;
-  width: 100%;
-  bottom: 5%;
-}
-}
-
 
 @media screen and (max-width: 1300px) {
   #formAccueil {
     position: relative;
     top: 65%;
     left: 0;
-    transform:none;
+    transform: none;
     width: 90%;
     max-height: 220px;
     overflow-y: scroll;
     margin-left: auto;
     margin-right: auto;
   }
-  .titreWidth{
-    display:none;
+  .titreWidth {
+    display: none;
   }
   #formAccueil::-webkit-scrollbar {
     display: none;
-}
-.containerForm{
-  position: absolute;
-  width: 100%;
-  bottom: 5%;
-}
+  }
+  .containerForm {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+  }
 }
 
 @media screen and (max-width: 1100px) {
-
 }
-
 
 @media screen and (max-width: 600px) {
-
-
 }
 
-@media screen and (min-width: 901px) and (max-width: 1700px){
-
+@media screen and (min-width: 901px) and (max-width: 1700px) {
 }
 
-@media screen and (max-height: 900px) and (min-width: 900px){
-
+@media screen and (max-height: 900px) and (min-width: 900px) {
 }
 
-@media screen and (max-height: 800px) and (min-width: 900px){
-
+@media screen and (max-height: 800px) and (min-width: 900px) {
 }

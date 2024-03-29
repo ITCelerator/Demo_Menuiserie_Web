@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
@@ -672,30 +673,60 @@
           </div>
           <hr />
           <div class="recapContainer">
-            <input type="button" id="envoyerQuote" class="boutonSituation" value="Envoyer" onclick="fieldsConf()"></button>
+            <!-- <input type="button" id="envoyerQuote" class="boutonSituation" value="Confirmer" onclick="fieldsConf()"></button> -->
+            <input type="button" id="envoyerQuote" class="boutonSituation" value="Confirmer" onclick="pageManager.toggle()"></button>
           </div>
         </div>
       </div>
     </div>
 
-
+    <div class="containerForm">
+      <div id="formAccueil">
+        <div id="endForm">
+          <h2>Vos informations</h2>
+          <form id="myForm">
+            <div class="inputGroup">
+              <label for="fName"
+                >Nom et Prénom <span class="asterisk">*</span></label
+              >
+              <input class="endFormInput" type="text" id="nom" name="fName" placeholder="" />
+              <div class="error"></div>
+            </div>
+  
+            <div class="inputGroup">
+              <label for="email">Email <span class="asterisk">*</span></label>
+              <input class="endFormInput" type="text" id="email" name="fMail" placeholder="" />
+              <div class="error"></div>
+            </div>
+  
+            <div class="radioGroup">
+              <input class="endFormInput" type="radio" id="RGPD" name="fRGPD" value="oui" />
+              <label for="RGPD"
+                >Je consens à l'utilisation de mes données personnelles.
+                <span class="asterisk">*</span>
+              </label>
+            </div>
+            <div class="error radioError"></div>
+  
+            <button type="submit">Envoyer</button>
+          </form>
+        </div>
+        <div id="endMessage">
+          <h2>Merci d'avoir testé notre simulateur de menuiserie sur itcelerator.fr !</h2>
+          <p>Si vous avez effectué seul cette démonstration, un commercial de ITCelerator prendra contact avec vous dans les plus brefs délais. Dans le cas contraire, poursuivons notre démonstration par la conversion de ce lead en devis, sans ressaisie, dans l'interface web du CPQ.</p>
+          <b>Merci de l'intérêt porté à ITCelerator, cabinet de conseil & intégrateur CPQ.</b>
+        </div>
+      </div>
+    </div>
 
   </body>
-  <!--
-  <div id="left">
-    <img src="./Images/left-arrow.png" id="leftArrow">
-  </div>
-  <div id="right">
-    <img src="./Images/right-arrow.png" id="rightArrow">
-  </div>
-  -->
-
 
 
   <!-- IMPORT DES SCRIPTS -->
 
   <script src="./JS/epicor.js"></script>
   <script src="./JS/animation.js"></script>
+  <script src="./JS/formulaire.js"></script>
 
   <script>
     function myFunction() {

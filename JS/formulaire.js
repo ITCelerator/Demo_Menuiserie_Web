@@ -6,25 +6,14 @@ form.addEventListener("submit", (evt) => {
   handleSubmit();
 });
 
-const societeInput = document.getElementById("societe");
-const societeError = document.querySelector("#societe + .error");
 const nameInput = document.getElementById("nom");
 const nameError = document.querySelector("#nom + .error");
 const emailInput = document.getElementById("email");
 const emailError = document.querySelector("#email + .error");
 const dataInput = document.getElementById("RGPD");
 const dataError = document.querySelector(".radioError");
-const handleSubmit = () => {
+const handleSubmit = (callBack) => {
   var errors = false;
-  if (societeInput.value.length == 0) {
-    societeError.textContent = "Ce champ ne peut pas être vide.";
-    societeInput.classList.add("invalid");
-    errors = true;
-  } else {
-    societeError.textContent = "";
-    societeInput.classList.remove("invalid");
-  }
-
   if (nameInput.value.length == 0) {
     nameError.textContent = "Ce champ ne peut pas être vide.";
     nameInput.classList.add("invalid");
@@ -65,15 +54,18 @@ const handleSubmit = () => {
   }
 
   if (!errors) {
+    // On sauvegarde les données du forumulaire d'accueuil dans le localStorage pour les récupérer dans la page main ensuite.
     localStorage.setItem("ITCMenuiserie_Nom", nameInput.value);
-    localStorage.setItem("ITCMenuiserie_Societe", societeInput.value);
     localStorage.setItem("ITCMenuiserie_Mail", emailInput.value);
-    window.location.href = "./pages/main.html";
+    //window.location.href = "./pages/main.html";
+    //pageManager.sendConf();
+    fieldsConf();
+    pageManager.showMessage();
   }
 };
 
-const inputs = [societeInput, nameInput, emailInput];
-const errors = [societeError, nameError, emailError];
+const inputs = [nameInput, emailInput];
+const errors = [nameError, emailError];
 
 for (let i = 0; i < inputs.length; i++) {
   const input = inputs[i];
@@ -84,4 +76,3 @@ for (let i = 0; i < inputs.length; i++) {
     }
   });
 }
-
