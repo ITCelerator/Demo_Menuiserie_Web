@@ -12,7 +12,7 @@ const emailInput = document.getElementById("email");
 const emailError = document.querySelector("#email + .error");
 const dataInput = document.getElementById("RGPD");
 const dataError = document.querySelector(".radioError");
-const handleSubmit = (callBack) => {
+const handleSubmit = () => {
   var errors = false;
   if (nameInput.value.length == 0) {
     nameError.textContent = "Ce champ ne peut pas être vide.";
@@ -54,11 +54,8 @@ const handleSubmit = (callBack) => {
   }
 
   if (!errors) {
-    // On sauvegarde les données du forumulaire d'accueuil dans le localStorage pour les récupérer dans la page main ensuite.
-    localStorage.setItem("ITCMenuiserie_Nom", nameInput.value);
-    localStorage.setItem("ITCMenuiserie_Mail", emailInput.value);
-    //window.location.href = "./pages/main.html";
-    //pageManager.sendConf();
+    setConfig("fName", nameInput.value);
+    setConfig("fMail", emailInput.value);
     fieldsConf();
     pageManager.showMessage();
   }

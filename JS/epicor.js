@@ -27,27 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadStyle: "none",
     parameters: { param1: "Particulier", Web: "oui", Camera: "Zoom" },
   });
-
-  // Récupération des valeurs du formulaire d'accueuil dans le localstorage
-  const particulierName =
-    localStorage.getItem("ITCMenuiserie_Nom") == null
-      ? ""
-      : localStorage.getItem("ITCMenuiserie_Nom");
-  const particulierSociete =
-    localStorage.getItem("ITCMenuiserie_Societe") == null
-      ? ""
-      : localStorage.getItem("ITCMenuiserie_Societe");
-  const particulierMail =
-    localStorage.getItem("ITCMenuiserie_Mail") == null
-      ? ""
-      : localStorage.getItem("ITCMenuiserie_Mail");
-
-  // Assigner les valeurs du formulaire d'accueuil dans le configurateur actuel
-  config.onLoaded(() => {
-    setConfig("fName", particulierName);
-    setConfig("fMail", particulierMail);
-    setConfig("fSociete", particulierSociete);
-  });
 });
 
 function setConfig(fieldName, fieldValue) {
