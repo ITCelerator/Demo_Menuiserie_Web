@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Print environment variable
-        run: echo $PROD_URL
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: test
 
       - name: Replace values in js file
         run: |
@@ -34,7 +34,7 @@ jobs:
           git add .
           git commit -m "Github Action - URL prod"
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
+      - name: Push changes to test
+        run: git push origin test
+        env:
           github-token: ${{ secrets.GITHUB_TOKEN }}
