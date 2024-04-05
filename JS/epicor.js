@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   config = new kbmax.ConfiguratorEmbed({
     kbmaxUrl: kbmax_url,
     elementId: "viewer",
-    configuratorId: 575,
+    configuratorId: conf_id,
     sceneId: 240,
     showHeader: false,
     showDrawer: false,
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   config2 = new kbmax.ConfiguratorEmbed({
     kbmaxUrl: kbmax_url,
     elementId: "viewer2",
-    configuratorId: 575,
+    configuratorId: conf_id,
     sceneId: 240,
     showHeader: false,
     showDrawer: false,
