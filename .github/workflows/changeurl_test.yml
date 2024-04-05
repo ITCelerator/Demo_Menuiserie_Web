@@ -1,4 +1,4 @@
-name: CD - Change URL
+name: CD - Change URL for the test environment
 
 on:
   push:
