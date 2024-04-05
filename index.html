@@ -185,13 +185,13 @@
           </div>
           <select
             name="Gamme"
-            onChange="recapManager.updateDormant(this.value), setInfoBulleTXT()"
+            onChange="Choix_Gamme(this.value, this.options[this.selectedIndex].label), setInfoBulleTXT()"
             class="GammeBox"
             id="dormantBox"
           >
-            <option id="economique" value="Économique" class="label" selected>Économique</option>
-            <option id="confort" value="Confort" class="label" >Confort</option>
-            <option id="luxe" value="Luxe" class="label" >Luxe</option>
+            <option id="economique" value="Eco" class="label" label="Économique" selected>Économique</option>
+            <option id="confort" value="Conf" class="label" label="Confort" >Confort</option>
+            <option id="luxe" value="Luxe" class="label" label="Luxe" >Luxe</option>
           </select>
 
           <div class="boxSousTitre" id="typePose">
@@ -203,12 +203,12 @@
           </div>
           <select
             name="Gamme"
-            onChange="recapManager.updatePose(this.value), setInfoBulleTXT()"
+            onChange="Choix_TypePose(this.value, this.options[this.selectedIndex].label), setInfoBulleTXT()"
             class="GammeBox"
           >
-            <option id="renovation" value="Rénovation" class="label" selected>Rénovation</option>
-            <option id="totale" value="Totale" class="label" >Totale</option>
-            <option id="neuf" value="Neuf" class="label" >Neuf</option>
+            <option id="renovation" value="R" class="label" label="Rénovation" selected>Rénovation</option>
+            <option id="totale" value="T" class="label" label="Totale">Totale</option>
+            <option id="neuf" value="N" class="label" label="Neuf">Neuf</option>
           </select>
         </div>
 

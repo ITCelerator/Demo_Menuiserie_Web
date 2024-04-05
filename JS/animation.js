@@ -68,6 +68,16 @@ function alertMat(event) {
   }
 }
 
+function Choix_Gamme(gamme, label) {
+  recapManager.updateDormant(label);
+  setConfig("fDormant", gamme);
+}
+
+function Choix_TypePose(type, label) {
+  recapManager.updatePose(label);
+  setConfig("fPose_depose", type);
+}
+
 // Cette fonction gère le changement de matériau
 function Choix_Mat(mat, event) {
   const couleurDiv_PVC = document.getElementById("CouleurPVC");
