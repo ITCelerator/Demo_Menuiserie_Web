@@ -1,0 +1,40 @@
+name: CD - Change URL
+
+on:
+  push:
+    branches: ["test"]
+  pull_request:
+    branches: ["test"]
+
+  workflow_dispatch:
+
+env:
+  PROD_URL: "https://itc-test.kbmax.com"
+  CONF_ID: 575
+
+jobs:
+  change_var:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Print environment variable
+        run: echo $PROD_URL
+
+      - name: Replace values in js file
+        run: |
+          sed -i "s#const kbmax_url = \".*\";#const kbmax_url = \"$PROD_URL\";#" ./JS/variables.js
+          sed -i "s#const conf_id = [0-9]*;#const conf_id = $CONF_ID;#" ./JS/variables.js
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actionbot@github.com"
+          git config --local user.name "Github Action"
+          git add .
+          git commit -m "Github Action - URL prod"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
