@@ -10,6 +10,7 @@ on:
 
 env:
   PROD_URL: "https://itc.kbmax.com"
+  CONF_ID: 575
 
 jobs:
   change_var:
@@ -21,9 +22,10 @@ jobs:
       - name: Print environment variable
         run: echo $PROD_URL
 
-      - name: Replace value in js file
+      - name: Replace values in js file
         run: |
           sed -i "s#const kbmax_url = \".*\";#const kbmax_url = \"$PROD_URL\";#" ./JS/variables.js
+          sed -i "s#const conf_id = \".*\";#const conf_id = $CONF_ID;#" ./JS/variables.js
 
       - name: Commit changes
         run: |

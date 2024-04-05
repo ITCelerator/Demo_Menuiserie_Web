@@ -54,6 +54,10 @@ const handleSubmit = () => {
   }
 
   if (!errors) {
+    const prenomNom = nameInput.value.split(" ");
+    setConfig("fNomClient", prenomNom[0]);
+    setConfig("fPrenomClient", prenomNom[1]);
+    setConfig("fEmailClient", emailInput.value);
     setConfig("fName", nameInput.value);
     setConfig("fMail", emailInput.value);
     fieldsConf();
