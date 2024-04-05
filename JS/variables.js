@@ -1,2 +1,2 @@
-const kbmax_url = "https://itc.kbmax.com";
-const conf_id = 575;
+const kbmax_url = "https://itc-dev.kbmax.com";
+const conf_id = 709;
