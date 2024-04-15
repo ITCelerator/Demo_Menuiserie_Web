@@ -747,8 +747,8 @@ input[type="range"]::-ms-thumb {
 
 hr {
   border: 1px solid #eeeeee;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .boutonAlert{
