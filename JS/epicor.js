@@ -141,18 +141,18 @@ function jEvents() {
   // Boutons des matériaux
   $("#MatPvc").click(function () {
     setConfig("fChoix_Mat", "PVC");
-    // setConfig("fTable_Texture", "#395878");
-    // setConfig("fChoix_Mat_poignee", "Laiton");
+    setConfig("fTable_Texture", "#395878");
+    setConfig("fChoix_Mat_poignee", "Laiton");
   });
   $("#MatBois").click(function () {
     setConfig("fChoix_Mat", "BOIS");
-    // setConfig("fTable_Texture", "#ffd1a3");
-    // setConfig("fChoix_Mat_poignee", "Pvc");
+    setConfig("fTable_Texture", "#ffd1a3");
+    setConfig("fChoix_Mat_poignee", "Pvc");
   });
   $("#MatAlu").click(function () {
     setConfig("fChoix_Mat", "ALU");
-    // setConfig("fTable_Texture", "#71a1d2");
-    // setConfig("fChoix_Mat_poignee", "Laiton");
+    setConfig("fTable_Texture", "#71a1d2");
+    setConfig("fChoix_Mat_poignee", "Laiton");
   });
   //bouton d'alerte au dimensions
   $("#AlertAlu").click(function () {
@@ -342,7 +342,7 @@ sliderWidthInput.addEventListener("change", function () {
 });
 
 // Mettre à jour la valeur du texte de la largeur lorsque le slider change
-sliderWidth.onchange = function () {
+sliderWidth.oninput = function () {
   config.getFields((fields) => {
     var alertBois = document.getElementById("AlertLargeurBois");
     var alertAlu = document.getElementById("AlertLargeurAlu");
@@ -351,6 +351,7 @@ sliderWidth.onchange = function () {
     var btnALU = document.getElementById("AlertAlu");
 
     var Mat = fields.fChoix_Mat;
+    console.log(Mat);
     if (Mat == "BOIS") {
       if (sliderWidthInput.value > 1500) {
         sliderWidthInput.value = 1500;
@@ -483,5 +484,7 @@ function correctLargeur(_largeur) {
     console.log(_largeur);
     console.log("================================");
     recapManager.updateLargeur(_largeur);
+    recapManager.updateMat();
+    recapManager.updateFinition();
   });
 }
