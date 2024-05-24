@@ -249,7 +249,7 @@ ul {
   padding-bottom: 5px;
   margin-bottom: 1vh;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,7 +272,7 @@ ul {
   padding-left: 0px;
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -291,7 +291,7 @@ ul {
   position: relative;
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   color: #000000 !important; /* Couleur dorée */
   background-color: #ffffff;
 }
@@ -340,6 +340,7 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  font-size: 14px;
 }
 
 .recapIcon {
@@ -355,8 +356,9 @@ ul {
 }
 
 .recapTitle {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-weight: bold;
+  font-size: 15px;
 }
 
 /* Select de gammes */
@@ -507,7 +509,6 @@ input:checked + .slider:before {
   position: relative;
   display: inline-block;
 }
-
 /*
 .tooltip {
   display: none;
@@ -526,8 +527,8 @@ input:checked + .slider:before {
 #survol:hover .tooltip {
   display: block;
 }
-*/
 
+*/
 .tooltipGamme {
   display: none;
   position: absolute;
@@ -670,7 +671,7 @@ input[type="range"]::-ms-thumb {
   background-color: #9c5e6f;
   color: white;
   width: 100%;
-  margin: 12px 8px 0 8px;
+  margin: 4px 8px 0 8px;
 }
 
 .boutonSituation:hover {
@@ -745,6 +746,8 @@ input[type="range"]::-ms-thumb {
 
 hr {
   border: 1px solid #eeeeee;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .boutonAlert{

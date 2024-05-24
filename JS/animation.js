@@ -53,6 +53,9 @@ function alertMat(event) {
     document.getElementById("AlertAlu").style.display = "none";
     document.getElementById("AlertLargeurBois").style.display = "none";
     document.getElementById("AlertLargeurAlu").style.display = "none";
+    recapManager.updateMat("PVC", "./Images/pvc_blanc.png")
+    recapManager.updateFinition("Bleu", "./Images/pvc_bleu.png");
+    recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
   } else if (event.target == document.getElementById("AlertAlu")) {
     document.getElementById("MatAlu").classList.add("matSelected");
     document.getElementById("MatBois").classList.remove("matSelected");
@@ -65,6 +68,9 @@ function alertMat(event) {
     document.getElementById("AlertPvc").style.display = "none";
     document.getElementById("AlertLargeurBois").style.display = "none";
     document.getElementById("AlertLargeurAlu").style.display = "none";
+    recapManager.updateMat("ALU", "./Images/alu_blanc.jpg")
+    recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
+    recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
   }
 }
 
@@ -92,21 +98,27 @@ function Choix_Mat(mat, event) {
       couleurDiv_PVC.style.display = "block";
       recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
       document.getElementById("Bleu").classList.add("matSelected");
+      recapManager.updateFinition("Bleu", "./Images/pvc_bleu.png");
       document.getElementById("LaitonPvc").classList.add("matSelected");
+      recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
       break;
 
     case "bois":
       couleurDiv_Bois.style.display = "block";
       recapManager.updateMat("Bois", "./Images/wood05_col_256.jpg");
       document.getElementById("CheneNaturel").classList.add("matSelected");
+      recapManager.updateFinition("Chêne naturel", "./Images/wood05_col_256.jpg")
       document.getElementById("PvcBois").classList.add("matSelected");
+      recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
       break;
 
     case "alu":
       couleurDiv_Alu.style.display = "block";
       recapManager.updateMat("Aluminium", "./Images/texture_alu.jpg");
       document.getElementById("Bleu5012").classList.add("matSelected");
+      recapManager.updateFinition("Bleu5012", "./Images/alu_bleu_clair.png")
       document.getElementById("LaitonAlu").classList.add("matSelected");
+      recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
       break;
   }
   changeBorderMat(event);
@@ -488,12 +500,14 @@ const recapManager = (() => {
   // Hauteur
   const hauteurRecapDiv = document.getElementById("recapHeight");
   const updateHauteur = (hauteur) => {
+    console.log(hauteur)
     hauteurRecapDiv.textContent = hauteur + " mm";
   };
 
   // Largeur
   const largeurRecapDiv = document.getElementById("recapWidth");
   const updateLargeur = (largeur) => {
+    console.log(largeur)
     largeurRecapDiv.textContent = largeur + " mm";
   };
 
