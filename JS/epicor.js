@@ -221,6 +221,12 @@ function jEvents() {
     setConfig("fTexturePhoto", "Maison_4");
   });
 
+  //set le champs par rapport à la page actuelle
+  $("#numSituation").click(function () {
+    setConfig("fSelectedPage", "WebMiseEnSituation");
+  });
+  
+
   //bouton appliquer les dimensions
   $("#appliqueDimensions").click(function () {
     setConfig("fChoixAppliqueDimensions", "Oui");
