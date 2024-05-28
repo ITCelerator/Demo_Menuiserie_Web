@@ -21,7 +21,7 @@ const handleSubmit = () => {
     nameInput.classList.add("invalid");
     errors = true;
   } else {
-    const reg = new RegExp("^[A-Za-z]");
+    const reg = new RegExp("^[A-Za-z]+$");
     if (!reg.test(nameInput.value)) {
       nameError.textContent = "Le format n'est pas valide.";
       nameInput.classList.add("invalid");
@@ -37,7 +37,7 @@ const handleSubmit = () => {
     prenomInput.classList.add("invalid");
     errors = true;
   } else {
-    const reg = new RegExp("^[A-Za-z]");
+    const reg = new RegExp("^[A-Za-z]+$");
     if (!reg.test(prenomInput.value)) {
       prenomError.textContent = "Le format n'est pas valide.";
       prenomInput.classList.add("invalid");
