@@ -6,6 +6,8 @@ form.addEventListener("submit", (evt) => {
   handleSubmit();
 });
 
+const prenomInput = document.getElementById("prenom");
+const prenomError = document.querySelector("#prenom + .error");
 const nameInput = document.getElementById("nom");
 const nameError = document.querySelector("#nom + .error");
 const emailInput = document.getElementById("email");
@@ -19,7 +21,7 @@ const handleSubmit = () => {
     nameInput.classList.add("invalid");
     errors = true;
   } else {
-    const reg = new RegExp("^[A-Za-z]+ [A-Za-z]+$");
+    const reg = new RegExp("^[A-Za-z]+$");
     if (!reg.test(nameInput.value)) {
       nameError.textContent = "Le format n'est pas valide.";
       nameInput.classList.add("invalid");
@@ -27,6 +29,22 @@ const handleSubmit = () => {
     } else {
       nameError.textContent = "";
       nameInput.classList.remove("invalid");
+    }
+  }
+
+  if (prenomInput.value.length == 0) {
+    prenomError.textContent = "Ce champ ne peut pas être vide.";
+    prenomInput.classList.add("invalid");
+    errors = true;
+  } else {
+    const reg = new RegExp("^[A-Za-z]+$");
+    if (!reg.test(prenomInput.value)) {
+      prenomError.textContent = "Le format n'est pas valide.";
+      prenomInput.classList.add("invalid");
+      errors = true;
+    } else {
+      prenomError.textContent = "";
+      prenomInput.classList.remove("invalid");
     }
   }
 
@@ -54,11 +72,12 @@ const handleSubmit = () => {
   }
 
   if (!errors) {
-    const prenomNom = nameInput.value.split(" ");
-    setConfig("fNomClient", prenomNom[0]);
-    setConfig("fPrenomClient", prenomNom[1]);
+    //const prenomNom = nameInput.value.split(" ");
+    setConfig("fNomClient", nameInput.value);
+    setConfig("fPrenomClient", prenomInput.value);
     setConfig("fEmailClient", emailInput.value);
     setConfig("fName", nameInput.value);
+    setConfig("fPrenom", prenomInput.value);
     setConfig("fMail", emailInput.value);
     fieldsConf();
     pageManager.showMessage();
