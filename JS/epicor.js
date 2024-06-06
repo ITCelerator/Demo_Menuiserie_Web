@@ -511,6 +511,7 @@ function awsImgae() {
     var CleSecrete = fields.fCleSecreteAWS;
     console.log(Cle);
     console.log(CleSecrete);
+    var env = fields.fEnvironnement;
 
     // Configuration de AWS SDK
     AWS.config.update({
@@ -520,7 +521,7 @@ function awsImgae() {
     });
 
     var s3 = new AWS.S3({
-      params: { Bucket: "stockageimage/Epicor/dev" },
+      params: { Bucket: "stockageimage/Epicor/" + env },
     });
 
     function uploadImage() {
