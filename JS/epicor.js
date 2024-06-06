@@ -550,6 +550,7 @@ function awsImgae() {
           //set le champs epicor avec l'url
           setConfig("fImageUrl", fileUrl);
           setConfig("fImagePerso", true);
+          document.getElementById("imagePerso").checked = true;
         }
       });
     }
