@@ -497,44 +497,49 @@ function correctLargeur(_largeur) {
 //************************************************************ */
 // Envoie d'une image sur aws
 
-config.getFields((fields) => {
-  var Cle = fields.fCleAWS;
-  var CleSecrete = fields.fCleSecreteAWS;
+function awsImgae() {
+  config.getFields((fields) => {
+    var Cle = fields.fCleAWS;
+    var CleSecrete = fields.fCleSecreteAWS;
+    console.log(Cle);
+    console.log(CleSecrete);
 
-  // Configuration de AWS SDK
-  AWS.config.update({
-    accessKeyId: Cle,
-    secretAccessKey: CleSecrete,
-    region: "eu-west-1",
-  });
-
-  var s3 = new AWS.S3({
-    params: { Bucket: "stockageimage" },
-  });
-
-  function uploadImage() {
-    var fileInput = document.getElementById("boutonSituation1");
-    var file = fileInput.files[0];
-    if (!file) {
-      alert("Please select a file to upload");
-      return;
-    }
-
-    var params = {
-      Key: file.name,
-      ContentType: file.type,
-      Body: file,
-      ACL: "public-read", // Vous pouvez ajuster les permissions ici
-    };
-
-    s3.upload(params, function (err, data) {
-      if (err) {
-        console.error("Error uploading data: ", err);
-        alert("Error uploading file: " + err.message);
-      } else {
-        console.log("Successfully uploaded file.", data);
-        alert("Successfully uploaded file.");
-      }
+    // Configuration de AWS SDK
+    AWS.config.update({
+      accessKeyId: Cle,
+      secretAccessKey: CleSecrete,
+      region: "eu-west-1",
     });
-  }
-});
+
+    var s3 = new AWS.S3({
+      params: { Bucket: "stockageimage" },
+    });
+
+    function uploadImage() {
+      var fileInput = document.getElementById("boutonSituation1");
+      var file = fileInput.files[0];
+      if (!file) {
+        alert("Please select a file to upload");
+        return;
+      }
+
+      var params = {
+        Key: file.name,
+        ContentType: file.type,
+        Body: file,
+        ACL: "public-read", // Vous pouvez ajuster les permissions ici
+      };
+
+      s3.upload(params, function (err, data) {
+        if (err) {
+          console.error("Error uploading data: ", err);
+          alert("Error uploading file: " + err.message);
+        } else {
+          console.log("Successfully uploaded file.", data);
+          alert("Successfully uploaded file.");
+        }
+      });
+    }
+  });
+  uploadImage();
+}
