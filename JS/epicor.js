@@ -536,6 +536,12 @@ function awsImgae() {
         } else {
           console.log("Successfully uploaded file.", data);
           alert("Successfully uploaded file.");
+          //récpération de l'url de l'image
+          var fileUrl = data.Location;
+          console.log(fileUrl);
+          //set le champs epicor avec l'url
+          setConfig("fImageUrl", fileUrl);
+          setConfig("fImagePerso", true);
         }
       });
     }
