@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://itc-dev.kbmax.com/embed.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Personnalisation</title>
   </head>
@@ -609,7 +610,7 @@
           <div class="boxSousTitre">Télécharger votre photo</div>
           <div class="interBox">
             <label for="boutonSituation1" class="label-file">Choisir une image</label>
-            <input type="file" id="boutonSituation1" class="boutonSituation" name="photo" accept="image/png, image/jpeg" onchange="handleFileSelect(event)"/>
+            <input type="file" id="boutonSituation1" class="boutonSituation" name="photo" accept="image/png, image/jpeg" onchange="uploadImage()"/> <!--handleFileSelect(event)-->
           </div>
           <div class="boxSousTitre">Redimensionner votre fenêtre</div>
           <div class="flexboxSituation"> 
