@@ -206,6 +206,14 @@ function jEvents() {
   $("#appliquerDimensions").click(function () {
     redimFenetre();
   });
+  //bouton afficher image perso
+  $("#imagePerso").click(function () {
+    if (document.getElementById("imagePerso").checked == false) {
+      setConfig("fImagePerso", true);
+    } else {
+      setConfig("fImagePerso", false);
+    }
+  });
 
   //Choix de la photo
   $("#Maison1").click(function () {
