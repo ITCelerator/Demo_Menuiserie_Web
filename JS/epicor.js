@@ -527,7 +527,6 @@ function awsImgae() {
         Key: file.name,
         ContentType: file.type,
         Body: file,
-        ACL: "public-read", // Vous pouvez ajuster les permissions ici
       };
 
       s3.upload(params, function (err, data) {
