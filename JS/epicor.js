@@ -520,7 +520,7 @@ function awsImgae() {
     });
 
     var s3 = new AWS.S3({
-      params: { Bucket: "stockageimage" },
+      params: { Bucket: "stockageimage/Epicor/dev" },
     });
 
     function uploadImage() {
