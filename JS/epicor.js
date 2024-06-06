@@ -209,9 +209,9 @@ function jEvents() {
   //bouton afficher image perso
   $("#imagePerso").click(function () {
     if (document.getElementById("imagePerso").checked == false) {
-      setConfig("fImagePerso", true);
-    } else {
       setConfig("fImagePerso", false);
+    } else {
+      setConfig("fImagePerso", true);
     }
   });
 
