@@ -206,6 +206,14 @@ function jEvents() {
   $("#appliquerDimensions").click(function () {
     redimFenetre();
   });
+  //bouton afficher image perso
+  $("#imagePerso").click(function () {
+    if (document.getElementById("imagePerso").checked == false) {
+      setConfig("fImagePerso", false);
+    } else {
+      setConfig("fImagePerso", true);
+    }
+  });
 
   //Choix de la photo
   $("#Maison1").click(function () {
@@ -225,7 +233,6 @@ function jEvents() {
   $("#numSituation").click(function () {
     setConfig("fSelectedPage", "WebMiseEnSituation");
   });
-  
 
   //bouton appliquer les dimensions
   $("#appliqueDimensions").click(function () {
@@ -492,5 +499,62 @@ function correctLargeur(_largeur) {
     recapManager.updateLargeur(_largeur);
     recapManager.updateMat();
     recapManager.updateFinition();
+  });
+}
+
+//************************************************************ */
+// Envoie d'une image sur aws
+
+function awsImgae() {
+  config.getFields((fields) => {
+    var Cle = fields.fCleAWS;
+    var CleSecrete = fields.fCleSecreteAWS;
+    console.log(Cle);
+    console.log(CleSecrete);
+    var env = fields.fEnvironnement;
+
+    // Configuration de AWS SDK
+    AWS.config.update({
+      accessKeyId: Cle,
+      secretAccessKey: CleSecrete,
+      region: "eu-west-1",
+    });
+
+    var s3 = new AWS.S3({
+      params: { Bucket: "stockageimage/Epicor/" + env },
+    });
+
+    function uploadImage() {
+      var fileInput = document.getElementById("boutonSituation1");
+      var file = fileInput.files[0];
+      if (!file) {
+        alert("Please select a file to upload");
+        return;
+      }
+
+      var params = {
+        Key: file.name,
+        ContentType: file.type,
+        Body: file,
+      };
+
+      s3.upload(params, function (err, data) {
+        if (err) {
+          console.error("Error uploading data: ", err);
+          alert("Error uploading file: " + err.message);
+        } else {
+          console.log("Successfully uploaded file.", data);
+          alert("Successfully uploaded file.");
+          //récpération de l'url de l'image
+          var fileUrl = data.Location;
+          console.log(fileUrl);
+          //set le champs epicor avec l'url
+          setConfig("fImageUrl", fileUrl);
+          setConfig("fImagePerso", true);
+          document.getElementById("imagePerso").checked = true;
+        }
+      });
+    }
+    uploadImage();
   });
 }
