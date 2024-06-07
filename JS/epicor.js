@@ -509,8 +509,6 @@ function awsImgae() {
   config.getFields((fields) => {
     var Cle = fields.fCleAWS;
     var CleSecrete = fields.fCleSecreteAWS;
-    console.log(Cle);
-    console.log(CleSecrete);
     var env = fields.fEnvironnement;
 
     // Configuration de AWS SDK
@@ -547,7 +545,7 @@ function awsImgae() {
           alert("Successfully uploaded file.");
           //récpération de l'url de l'image
           var fileUrl = data.Location;
-          console.log(fileUrl);
+          //console.log(fileUrl);
           //set le champs epicor avec l'url
           setConfig("fImageUrl", fileUrl);
           setConfig("fImagePerso", true);
