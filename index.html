@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +16,9 @@
       // Détection de la langue du navigateur
       const userLang = navigator.language || navigator.userLanguage;
 
+      // Change dynamiquement la langue de la page
+      document.documentElement.lang = userLang.startsWith('en') ? 'en' : 'fr';
+
       // Chargement du fichier JSON de traduction en fonction de la langue détectée
       const loadTranslations = (lang) => {
         fetch(`${lang}.json`)
@@ -26,7 +29,7 @@
               element.textContent = translations[key] || element.textContent;
             });
           });
-      }
+      };
 
       // Chargement de la langue en fonction de la détection
       if (userLang.startsWith('en')) {
