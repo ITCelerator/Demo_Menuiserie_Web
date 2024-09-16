@@ -99,12 +99,12 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <img src="./Images/menuBurger.png" style="height: 20px; width: 20px;">
         </a>
-        <a id="numDimensions" onclick="Dimensions()"> Dimensions </a>
-        <a id="numGammes" onclick="Gammes() ,setInfoBulleTXT()"> Gamme </a>
-        <a id="numMateriaux" onclick="Materiaux()">Matériaux</a>
-        <a id="numCouleurs" onclick="Couleurs()">Couleur</a>
-        <a id="numSituation" onclick="MiseEnSituation()">Mise en situation</a>
-        <a id="numRecapitulatif" onclick="Recapitulatif()">Récapitulatif</a>
+        <a id="numDimensions" onclick="Dimensions()" data-translate="titleArianne1"> Dimensions </a>
+        <a id="numGammes" onclick="Gammes() ,setInfoBulleTXT()" data-translate="titleArianne2"> Gamme </a>
+        <a id="numMateriaux" onclick="Materiaux()" data-translate="titleArianne3">Matériaux</a>
+        <a id="numCouleurs" onclick="Couleurs()" data-translate="titleArianne4">Couleur</a>
+        <a id="numSituation" onclick="MiseEnSituation()" data-translate="titleArianne5">Mise en situation</a>
+        <a id="numRecapitulatif" onclick="Recapitulatif()" data-translate="titleArianne6">Récapitulatif</a>
       </div>
       
 
@@ -137,11 +137,11 @@
         <!-- CONTAINER DIMENSION -->
 
         <div class="box" id="boxDimensions">
-          <div class="boxTitre">Dimensions Fenêtre</div>
+          <div class="boxTitre" data-translate="BoxDimensionTitle">Dimensions Fenêtre</div>
           <div class="boxDimensions">
             <form id="myFormHauteur">
               <div class="dimensionContainer">
-                <label for="sliderLength" class="label">Hauteur (mm) :</label>
+                <label for="sliderLength" class="label" data-translate="BoxDimensionheight">Hauteur (mm) :</label>
                 <input
                 type="text"
                 id="sliderLengthInput"
@@ -164,7 +164,7 @@
               </div>
           
               <div class="dimensionContainer">
-                <label for="sliderWidth" class="label">Largeur (mm) :</label>
+                <label for="sliderWidth" class="label" data-translate="BoxDimensionWidthé">Largeur (mm) :</label>
                 <input
                 type="text"
                 id="sliderWidthInput"
@@ -185,11 +185,11 @@
                 </div>
               </div>
             </form>
-              <div class="alerte" id="AlertLargeurBois">La largeur doit être inférieur à 1500mm avec du bois</div>
-              <div class="alerte" id="AlertLargeurAlu">La largeur doit être inférieur à 1550mm avec de l'ALU</div>
-              <div class="alerte" id="AlertLargeurPvc">La largeur doit être inférieur à 1600mm avec du PVC</div>
-              <button id="AlertPvc" class="boutonAlert" onclick="alertMat(event)">PVC</button>
-              <button id="AlertAlu" class="boutonAlert" onclick="alertMat(event)">Aluminuim</button>
+              <div class="alerte" id="AlertLargeurBois" data-translate="BoxDimensionAlertLargeurBois">La largeur doit être inférieur à 1500mm avec du bois</div>
+              <div class="alerte" id="AlertLargeurAlu" data-translate="BoxDimensionAlertLargeurALU">La largeur doit être inférieur à 1550mm avec de l'ALU</div>
+              <div class="alerte" id="AlertLargeurPvc" data-translate="BoxDimensionAlertLargeurPVC">La largeur doit être inférieur à 1600mm avec du PVC</div>
+              <button id="AlertPvc" class="boutonAlert" onclick="alertMat(event)" data-translate="AlertPVC">PVC</button>
+              <button id="AlertAlu" class="boutonAlert" onclick="alertMat(event)" data-translate="AlertALU">Aluminuim</button>
           </div>
         </div>
 
@@ -204,7 +204,7 @@
            -->
            
           <div class="boxTitre">
-            <span>Gamme</span>
+            <span data-translate="BoxRangeTitle1">Gamme</span>
             <div id="survol">
               <img id="imgInfo" src="./Images/infoNoir.png"/>
               <div class="tooltipGamme" id="texteGammes1"></div>
@@ -216,13 +216,13 @@
             class="GammeBox"
             id="dormantBox"
           >
-            <option id="economique" value="Eco" class="label" label="Économique" selected>Économique</option>
-            <option id="confort" value="Conf" class="label" label="Confort" >Confort</option>
-            <option id="luxe" value="Luxe" class="label" label="Luxe" >Luxe</option>
+            <option id="economique" value="Eco" class="label" label="Économique" data-translate="BoxRangeEco" selected>Économique</option>
+            <option id="confort" value="Conf" class="label" label="Confort" data-translate="BoxRangeConfort" >Confort</option>
+            <option id="luxe" value="Luxe" class="label" label="Luxe" data-translate="BoxRangeLuxe" >Luxe</option>
           </select>
 
           <div class="boxSousTitre" id="typePose">
-            <span>Type de pose</span>
+            <span data-translate="BoxRangeTitle2">Type de pose</span>
             <div id="survol">
               <img id="imgInfo" src="./Images/infoNoir.png"/>
               <div class="tooltipGamme" id="textePose1"></div>
@@ -233,9 +233,9 @@
             onChange="Choix_TypePose(this.value, this.options[this.selectedIndex].label), setInfoBulleTXT()"
             class="GammeBox"
           >
-            <option id="renovation" value="R" class="label" label="Rénovation" selected>Rénovation</option>
-            <option id="totale" value="T" class="label" label="Totale">Totale</option>
-            <option id="neuf" value="N" class="label" label="Neuf">Neuf</option>
+            <option id="renovation" value="R" class="label" label="Rénovation" data-translate="BoxRangeRenovation" selected>Rénovation</option>
+            <option id="totale" value="T" class="label" label="Totale" data-translate="BoxRangeTotal">Totale</option>
+            <option id="neuf" value="N" class="label" label="Neuf" data-translate="BoxRangeNew">Neuf</option>
           </select>
         </div>
 
@@ -244,7 +244,7 @@
 
 
         <div class="box" id="boxMateriaux">
-          <div class="boxTitre">Type de matériaux</div>
+          <div class="boxTitre" data-translate="BoxTypeMaterial">Type de matériaux</div>
           <div class="boxMateriaux">
             <div id="survol">
             <input
@@ -254,7 +254,7 @@
               src="./Images/pvc_blanc.png"
               onclick="Choix_Mat('pvc',event)"
             />
-            <div class="tooltip">PVC</div>
+            <div class="tooltip" data-translate="BoxMateriauPVC">PVC</div>
             </div>
             <div id="survol">
               <input
@@ -264,7 +264,7 @@
                 src="./Images/wood05_col_256.jpg"
                 onclick="Choix_Mat('bois', event)"
               />
-              <div class="tooltip">Bois</div>
+              <div class="tooltip" data-translate="BoxMateriauWood">Bois</div>
             </div>
             <div id="survol">
               <input
@@ -274,7 +274,7 @@
                 src="./Images/alu_blanc.jpg"
                 onclick="Choix_Mat('alu',event)"
               />
-              <div class="tooltip">Aluminium</div>
+              <div class="tooltip" data-translate="BoxMateriauALU">Aluminium</div>
             </div>
           </div>
         </div>
@@ -288,7 +288,7 @@
         <!-- CONTAINER COULEUR PVC -->
 
           <div class="box" id="CouleurPVC">
-            <div class="boxTitre">Couleur PVC</div>
+            <div class="boxTitre" data-translate="BoxColorPVCTitle">Couleur PVC</div>
             <div class="boxMateriaux">
               <div id="survol">
               <input
@@ -341,7 +341,7 @@
               />
             </div>
             </div>
-            <div class="boxTitrePoignee">Couleur Poignée</div>
+            <div class="boxTitrePoignee" data-translate="BoxHandleTitle">Couleur Poignée</div>
             <div class="boxPoignee">
               <div id="survol">
               <input
@@ -381,7 +381,7 @@
 
 
           <div class="box" id="CouleurBois">
-            <div class="boxTitre">Couleur bois</div>
+            <div class="boxTitre" data-translate="BoxColorWoodTitle">Couleur bois</div>
             <div class="boxMateriaux">
               <div id="survol">
                 <input
@@ -444,7 +444,7 @@
                 />
               </div>
             </div>
-            <div class="boxTitrePoignee">Couleur Poignée</div>
+            <div class="boxTitrePoignee" data-translate="BoxHandleTitle">Couleur Poignée</div>
             <div class="boxPoignee">
               <div id="survol">
                 <input
@@ -484,7 +484,7 @@
 
 
           <div class="box" id="CouleurAlu">
-            <div class="boxTitre">Couleur aluminium</div>
+            <div class="boxTitre" data-translate="BoxColorALUTitle">Couleur aluminium</div>
             <div class="boxMateriaux">
               <div id="survol">
                 <input
@@ -577,7 +577,7 @@
                 />
               </div>
             </div>
-            <div class="boxTitrePoignee">Couleur Poignée</div>
+            <div class="boxTitrePoignee" data-translate="BoxHandleTitle">Couleur Poignée</div>
               <div class="boxPoignee">
               <div id="survol">
                 <input
@@ -616,14 +616,14 @@
         <!-- CONTAINER MISE EN SITUATION -->
 
         <div class="box" id="boxSituation">
-          <div class="boxTitre">Tester avec une photo</div>
+          <div class="boxTitre" data-translate="BoxSituationTitle">Tester avec une photo</div>
           <div class="MaisonSituation" id="MaisonSituation">
             <div id="containerToggle1">
               <label class="switch">
                 <input type="checkbox" id="checkbox">
                 <span class="slider round"></span>
               </label>
-              <div id="texteToggle1">Afficher la photo</div>
+              <div id="texteToggle1" data-translate="BoxSituationToggleDisplay">Afficher la photo</div>
             </div>
             <br>
             <img class="ImageMainson" id="Maison1" src="./Images/Maison1.png" />
@@ -633,24 +633,24 @@
             <img class="ImageMainson" id="Maison4" src="./Images/Maison4.png" />
           </div>
           <div id="part2">
-          <div class="boxSousTitre">Télécharger votre photo</div>
+          <div class="boxSousTitre" data-translate="BoxSituationDownload">Télécharger votre photo</div>
           <div class="interBox">
             <div class="flexboxSituation"> 
             <label class="switch">
               <input type="checkbox" id="imagePerso">
               <span class="slider round"></span>
             </label>
-            <label for="boutonSituation1" class="label-file">Choisir une image</label>
+            <label for="boutonSituation1" class="label-file" data-translate="BoxSituationButton">Choisir une image</label>
             <input type="file" id="boutonSituation1" class="boutonSituation" name="photo" accept="image/png, image/jpeg" onchange="awsImgae()"/> <!--handleFileSelect(event)-->
           </div>
           </div>
-          <div class="boxSousTitre">Redimensionner votre fenêtre</div>
+          <div class="boxSousTitre" data-translate="BoxSituationResize">Redimensionner votre fenêtre</div>
           <div class="flexboxSituation"> 
               <label class="switch">
                 <input type="checkbox" id="appliquerDimensions">
                 <span class="slider round"></span>
               </label>
-              <button id="appliqueDimensions" class="boutonSituation">Appliquer les dimensions</button>
+              <button id="appliqueDimensions" class="boutonSituation" data-translate="BoxSituationApply">Appliquer les dimensions</button>
            </div>
           </div>
         </div>
@@ -660,28 +660,28 @@
 
 
         <div class="box" id="boxRecap">
-          <div class="boxTitre">Récapitulatif</div>
-          <div class="recapTitle">Dimensions</div>
+          <div class="boxTitre" data-translate="BoxSummaryTitle">Récapitulatif</div>
+          <div class="recapTitle" data-translate="BoxSummaryDimensions">Dimensions</div>
           <div class="recapContainer">
-            <div>Hauteur :</div>
+            <div data-translate="BoxSummaryHeight">Hauteur :</div>
             <div id="recapHeight"></div>
           </div>
           <div class="recapContainer">
-            <div>Largeur :</div>
+            <div data-translate="BoxSummaryWidth">Largeur :</div>
             <div id="recapWidth"></div>
           </div>
           <hr />
-          <div class="recapTitle">Dormant</div>
+          <div class="recapTitle" data-translate="BoxSummaryFrame">Dormant</div>
           <div class="recapContainer">
             <div id="recapDormant"></div>
           </div>
           <hr />
-          <div class="recapTitle">Type de pose</div>
+          <div class="recapTitle" data-translate="BoxSummaryTypeInstallation">Type de pose</div>
           <div class="recapContainer">
             <div id="recapPose"></div>
           </div>
           <hr />
-          <div class="recapTitle">Matériau</div>
+          <div class="recapTitle" data-translate="BoxSummaryMaterials">Matériau</div>
           <div class="recapContainer">
             <div id="recapMateriau"></div>
             <div class="recapIcon" id="recapMateriauIcon">
@@ -689,7 +689,7 @@
             </div>
           </div>
           <hr />
-          <div class="recapTitle">Finition</div>
+          <div class="recapTitle" data-translate="BoxSummaryFinishing">Finition</div>
           <div class="recapContainer">
             <div id="recapFinition"></div>
             <div class="recapIcon" id="recapFinitionIcon">
@@ -697,7 +697,7 @@
             </div>
           </div>
           <hr />
-          <div class="recapTitle">Quincaillerie</div>
+          <div class="recapTitle" data-translate="BoxSummaryIronsmith">Quincaillerie</div>
           <div class="recapContainer">
             <div id="recapQuincaillerie"></div>
             <div class="recapIcon" id="recapQuincaillerieIcon">
@@ -716,10 +716,10 @@
     <div class="containerForm">
       <div id="formAccueil">
         <div id="endForm">
-          <h2>Vos informations</h2>
+          <h2 data-translate="BoxInfoTitle">Vos informations</h2>
           <form id="myForm">
             <div class="inputGroup">
-              <label for="fName"
+              <label for="fName" data-translate="BoxInfoName"
                 >Nom<span class="asterisk">*</span></label
               >
               <input class="endFormInput" type="text" id="nom" name="fPrenom" placeholder="" />
@@ -727,7 +727,7 @@
             </div>
 
             <div class="inputGroup">
-              <label for="fPrenom"
+              <label for="fPrenom" data-translate="BoxInfoSurname"
                 >Prénom <span class="asterisk">*</span></label
               >
               <input class="endFormInput" type="text" id="prenom" name="fName" placeholder="" />
@@ -735,27 +735,27 @@
             </div>
   
             <div class="inputGroup">
-              <label for="email">Email <span class="asterisk">*</span></label>
+              <label for="email" data-translate="BoxInfoEmail">Email <span class="asterisk">*</span></label>
               <input class="endFormInput" type="text" id="email" name="fMail" placeholder="" />
               <div class="error"></div>
             </div>
   
             <div class="radioGroup">
               <input class="endFormInput" type="radio" id="RGPD" name="fRGPD" value="oui" />
-              <label for="RGPD"
+              <label for="RGPD" data-translate="BoxInfoRGPD"
                 >Je consens à l'utilisation de mes données personnelles.
                 <span class="asterisk">*</span>
               </label>
             </div>
             <div class="error radioError"></div>
   
-            <button type="submit">Envoyer</button>
+            <button type="submit" data-translate="BoxInfoSend">Envoyer</button>
           </form>
         </div>
         <div id="endMessage">
-          <h2>Merci d'avoir testé notre simulateur de menuiserie sur itcelerator.fr !</h2>
-          <p>Si vous avez effectué seul cette démonstration, un commercial de ITCelerator prendra contact avec vous dans les plus brefs délais. Dans le cas contraire, poursuivons notre démonstration par la conversion de ce lead en devis, sans ressaisie, dans l'interface web du CPQ.</p>
-          <b>Merci de l'intérêt porté à ITCelerator, cabinet de conseil & intégrateur CPQ.</b>
+          <h2 data-translate="BoxInfoEndMessage1">Merci d'avoir testé notre simulateur de menuiserie sur itcelerator.fr !</h2>
+          <p data-translate="BoxInfoEndMessage2">Si vous avez effectué seul cette démonstration, un commercial de ITCelerator prendra contact avec vous dans les plus brefs délais. Dans le cas contraire, poursuivons notre démonstration par la conversion de ce lead en devis, sans ressaisie, dans l'interface web du CPQ.</p>
+          <b data-translate="BoxInfoEndMessage3">Merci de l'intérêt porté à ITCelerator, cabinet de conseil & intégrateur CPQ.</b>
         </div>
       </div>
     </div>
