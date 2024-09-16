@@ -12,6 +12,29 @@
     <script src="https://itc-dev.kbmax.com/embed.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      // Détection de la langue du navigateur
+      const userLang = navigator.language || navigator.userLanguage;
+
+      // Chargement du fichier JSON de traduction en fonction de la langue détectée
+      const loadTranslations = (lang) => {
+        fetch(`${lang}.json`)
+          .then(response => response.json())
+          .then(translations => {
+            document.querySelectorAll('[data-translate]').forEach(element => {
+              const key = element.getAttribute('data-translate');
+              element.textContent = translations[key] || element.textContent;
+            });
+          });
+      }
+
+      // Chargement de la langue en fonction de la détection
+      if (userLang.startsWith('en')) {
+        loadTranslations('en');
+      } else {
+        loadTranslations('fr'); // Par défaut, français
+      }
+    </script>
     <title>Personnalisation</title>
   </head>
   <body>
@@ -35,27 +58,27 @@
         <ul class="filArianne" id="fil">
           <li class="listeArianne" id="Dimensions">
             <div class="numero" id="numDimensions" onclick="ChangerArianne(event)"> 1 </div>
-            <label id="titreArianne">Dimensions</label>
+            <label id="titreArianne" data-translate="titleArianne1">Dimensions</label>
           </li>
           <li class="listeArianne" id="Gammes" >
             <div class="numero" id="numGammes" onclick="ChangerArianne(event), setInfoBulleTXT()"> 2 </div>
-            <label id="titreArianne">Gamme</label>
+            <label id="titreArianne" data-translate="titleArianne2">Gamme</label>
           </li>
           <li class="listeArianne" id="Materiaux">
             <div class="numero" id="numMateriaux" onclick="ChangerArianne(event)"> 3 </div>
-            <label id="titreArianne">Matériaux</label>
+            <label id="titreArianne" data-translate="titleArianne3">Matériaux</label>
           </li>
           <li class="listeArianne" id="Couleurs">
             <div class="numero" id="numCouleurs" onclick="ChangerArianne(event)"> 4 </div>
-            <label id="titreArianne">Couleur</label>
+            <label id="titreArianne" data-translate="titleArianne4">Couleur</label>
           </li>
           <li class="listeArianne" id="Situation" >
             <div class="numero" id="numSituation" onclick="ChangerArianne(event)"> 5 </div>      
-            <label id="titreArianne">Mise en situation</label>
+            <label id="titreArianne" data-translate="titleArianne5">Mise en situation</label>
           </li>
           <li class="listeArianne" id="Recapitulatif" >
             <div class="numero" id="numRecapitulatif" onclick="ChangerArianne(event)"> 6 </div>
-            <label id="titreArianne">Récapitulatif</label>
+            <label id="titreArianne" data-translate="titleArianne6">Récapitulatif</label>
           </li>
         </ul>
         </div>
