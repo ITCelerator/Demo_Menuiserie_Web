@@ -15,7 +15,7 @@
     <script>
       // Détection de la langue du navigateur
       const userLang = navigator.language || navigator.userLanguage;
-
+      console.log(userLang)
       // Change dynamiquement la langue de la page
       document.documentElement.lang = userLang.startsWith('en') ? 'en' : 'fr';
 
