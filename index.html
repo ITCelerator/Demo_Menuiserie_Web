@@ -14,8 +14,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       // Détection de la langue du navigateur
-      const userLang = navigator.language || navigator.userLanguage;
-      console.log(userLang)
+      const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
+      console.log(userLang);
+      console.log('Langue détectée par le navigateur :', navigator.language);
       // Change dynamiquement la langue de la page
       document.documentElement.lang = userLang.startsWith('en') ? 'en' : 'fr';
 
@@ -31,8 +32,7 @@
           });
       };
 
-      // Chargement de la langue en fonction de la détection
-      if (userLang.startsWith('en')) {
+      if (userLang === 'en') {
         loadTranslations('en');
       } else {
         loadTranslations('fr'); // Par défaut, français
