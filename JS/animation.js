@@ -456,8 +456,6 @@ function Recapitulatif() {
   desafficherPhoto();
 }
 
-const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
-
 // Module lié au récap des choix utilisateur. Toutes les méthodes et intéractions avec la partie récap se trouvent à l'intérieur.
 const recapManager = (() => {
   // Matériau
@@ -503,26 +501,14 @@ const recapManager = (() => {
   const hauteurRecapDiv = document.getElementById("recapHeight");
   const updateHauteur = (hauteur) => {
     console.log(hauteur)
-    if(userLang=="fr"){
-      hauteurRecapDiv.textContent = hauteur + " mm";
-    }
-    else if(userLang=="en"){
-      hauteur = hauteur * 0.0393701
-      hauteurRecapDiv.textContent = hauteur + " in";
-    }
+    hauteurRecapDiv.textContent = hauteur + " mm";
   };
 
   // Largeur
   const largeurRecapDiv = document.getElementById("recapWidth");
   const updateLargeur = (largeur) => {
     console.log(largeur)
-    if(userLang=="fr"){
     largeurRecapDiv.textContent = largeur + " mm";
-    }
-    else if(userLang=="en"){
-      largeur = largeur * 0.0393701
-      largeurRecapDiv.textContent = largeur + " in";
-    }
   };
 
   return {
