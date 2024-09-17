@@ -327,7 +327,12 @@ function Gammes() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Choisissez votre gamme et votre type de pose !";
+  if(userLang=="fr"){
+    div.innerHTML = "Choisissez votre gamme et votre type de pose !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Choose your range and your type of installation !";
+  }
 
   desafficherPhoto();
 }
@@ -359,7 +364,13 @@ function Materiaux() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Personnalisez votre fenêtre !";
+
+  if(userLang=="fr"){
+    div.innerHTML = "Personnalisez votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Personalize your window !";
+  }
 
   desafficherPhoto();
 }
@@ -391,7 +402,12 @@ function Couleurs() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Personnalisez votre fenêtre !";
+  if(userLang=="fr"){
+    div.innerHTML = "Personnalisez votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Personalize your window !";
+  }
 
   desafficherPhoto();
 }
@@ -424,8 +440,12 @@ function MiseEnSituation() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Testez la mise en situation de votre fenêtre !";
-
+  if(userLang=="fr"){
+    div.innerHTML = "Testez la mise en situation de votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Test the situation of your window !";
+  }
   desafficherPhoto();
 }
 
@@ -457,8 +477,12 @@ function Recapitulatif() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Récapitulatif";
-
+  if(userLang=="fr"){
+    div.innerHTML = "Récapitulatif";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Summary !";
+  }
   desafficherPhoto();
 }
 
