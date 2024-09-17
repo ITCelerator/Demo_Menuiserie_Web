@@ -27,10 +27,14 @@
           .then(translations => {
             document.querySelectorAll('[data-translate]').forEach(element => {
               const key = element.getAttribute('data-translate');
-              element.textContent = translations[key] || element.textContent;
+              if (element.tagName === 'OPTION') {
+                element.text = translations[key] || element.text; // Pour les options
+              } else {
+                element.textContent = translations[key] || element.textContent; // Pour les autres éléments
+              }
             });
           });
-      };
+      }
 
       if (userLang === 'fr') {
         loadTranslations('fr');
@@ -164,7 +168,7 @@
               </div>
           
               <div class="dimensionContainer">
-                <label for="sliderWidth" class="label" data-translate="BoxDimensionWidthé">Largeur (mm) :</label>
+                <label for="sliderWidth" class="label" data-translate="BoxDimensionWidth">Largeur (mm) :</label>
                 <input
                 type="text"
                 id="sliderWidthInput"
@@ -697,7 +701,7 @@
             </div>
           </div>
           <hr />
-          <div class="recapTitle" data-translate="BoxSummaryIronsmith">Quincaillerie</div>
+          <div class="recapTitle" data-translate="BoxSummaryHardware">Quincaillerie</div>
           <div class="recapContainer">
             <div id="recapQuincaillerie"></div>
             <div class="recapIcon" id="recapQuincaillerieIcon">
