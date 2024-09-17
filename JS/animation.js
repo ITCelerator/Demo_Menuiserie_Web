@@ -531,14 +531,25 @@ const recapManager = (() => {
   const hauteurRecapDiv = document.getElementById("recapHeight");
   const updateHauteur = (hauteur) => {
     console.log(hauteur)
-    hauteurRecapDiv.textContent = hauteur + " mm";
+    if(userLang=="fr"){
+      hauteurRecapDiv.textContent = hauteur + " mm";
+    }
+    else if(userLang=="en"){
+      hauteurRecapDiv.textContent = hauteur*0.0393701 + " in";
+    }
   };
 
   // Largeur
   const largeurRecapDiv = document.getElementById("recapWidth");
   const updateLargeur = (largeur) => {
     console.log(largeur)
-    largeurRecapDiv.textContent = largeur + " mm";
+    if(userLang=="fr"){
+      largeurRecapDiv.textContent = largeur + " mm";
+    }
+    else if(userLang=="en"){
+      largeurRecapDiv.textContent = largeur*0.0393701 + " in";
+    }
+
   };
 
   return {
