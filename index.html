@@ -28,9 +28,10 @@
             document.querySelectorAll('[data-translate]').forEach(element => {
               const key = element.getAttribute('data-translate');
               if (element.tagName === 'OPTION') {
-                element.text = translations[key] || element.text; // Pour les options
+                element.text = translations[key] || element.text;
+                element.parentElement.value = element.parentElement.value; // Forcer la réinitialisation du select
               } else {
-                element.textContent = translations[key] || element.textContent; // Pour les autres éléments
+                element.textContent = translations[key] || element.textContent;
               }
             });
           });
