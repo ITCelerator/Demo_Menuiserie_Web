@@ -3,6 +3,7 @@ var gammeValide;
 var poseValide;
 var materiauValide;
 var couleurValide;
+const userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
 
 document.addEventListener("DOMContentLoaded", function () {
   const finitions = document.querySelectorAll(".finition");
@@ -288,7 +289,13 @@ function Dimensions() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Redimensionnez votre fenêtre !";
+  if(userLang=="fr"){
+    div.innerHTML = "Redimensionnez votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Resize your window !";
+  }
+
 
   desafficherPhoto();
 }
