@@ -789,21 +789,6 @@
   function convertToInches() {
     const mmToInch = 25.4;
   
-    // Convertir les valeurs des sliders
-    let hauteurSlider = document.getElementById("sliderLength");
-    let largeurSlider = document.getElementById("sliderWidth");
-    hauteurSlider.min = (hauteurSlider.min / mmToInch).toFixed(2);
-    hauteurSlider.max = (hauteurSlider.max / mmToInch).toFixed(2);
-    hauteurSlider.value = (hauteurSlider.value / mmToInch).toFixed(2);
-  
-    largeurSlider.min = (largeurSlider.min / mmToInch).toFixed(2);
-    largeurSlider.max = (largeurSlider.max / mmToInch).toFixed(2);
-    largeurSlider.value = (largeurSlider.value / mmToInch).toFixed(2);
-  
-    // Mettre à jour les labels
-    document.getElementById("labelHauteur").textContent = "Hauteur (in) :";
-    document.getElementById("labelLargeur").textContent = "Largeur (in) :";
-  
     // Mettre à jour les champs d'entrée texte
     document.getElementById("sliderLengthInput").value = hauteurSlider.value;
     document.getElementById("sliderWidthInput").value = largeurSlider.value;
