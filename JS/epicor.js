@@ -247,13 +247,25 @@ function setInfoBulleTXT() {
     //console.log(fields);
     //console.log("DESC DORMANT : ")
     //console.log(fields.fDormantDesc);
-    var dormantDesc = fields.fDormantDesc;
+    var dormantDescFr = fields.fDormantDescFr;
+    var dormantDescEn = fields.fDormantDescEn;
     var div = document.getElementById("texteGammes1");
-    div.textContent = dormantDesc;
+    if(userLang=="fr"){
+      div.textContent = dormantDescFr
+    }
+    else{
+      div.textContent = dormantDescEn
+    }
 
-    var poseDesc = fields.fPoseDesc;
+    var poseDescFr = fields.fPoseDescFr;
+    var poseDescEn = fields.fPoseDescEn;
     var div = document.getElementById("textePose1");
-    div.textContent = poseDesc;
+    if(userLang=="fr"){
+      div.textContent = poseDescFr
+    }
+    else{
+      div.textContent = poseDescEn
+    }
   });
 }
 
