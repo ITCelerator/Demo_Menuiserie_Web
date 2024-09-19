@@ -96,29 +96,55 @@ function Choix_Mat(mat, event) {
   switch (mat) {
     case "pvc":
       couleurDiv_PVC.style.display = "block";
-      recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
       document.getElementById("Bleu").classList.add("matSelected");
-      recapManager.updateFinition("Bleu", "./Images/pvc_bleu.png");
       document.getElementById("LaitonPvc").classList.add("matSelected");
-      recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+
+      if(userLang=="fr"){
+        recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
+        recapManager.updateFinition("Bleu", "./Images/pvc_bleu.png");
+        recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+      }
+      else{
+        recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
+        recapManager.updateFinition("Blue", "./Images/pvc_bleu.png");
+        recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg")
+      }
+
       break;
 
     case "bois":
       couleurDiv_Bois.style.display = "block";
-      recapManager.updateMat("Bois", "./Images/wood05_col_256.jpg");
       document.getElementById("CheneNaturel").classList.add("matSelected");
-      recapManager.updateFinition("Chêne naturel", "./Images/wood05_col_256.jpg")
       document.getElementById("PvcBois").classList.add("matSelected");
-      recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
+    
+      if(userLang=="fr"){
+        recapManager.updateMat("Bois", "./Images/wood05_col_256.jpg");
+        recapManager.updateFinition("Chêne naturel", "./Images/wood05_col_256.jpg")
+        recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
+      }
+      else{
+        recapManager.updateMat("Wood", "./Images/wood05_col_256.jpg");
+        recapManager.updateFinition("natural oak", "./Images/wood05_col_256.jpg")
+        recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
+      }
       break;
 
     case "alu":
       couleurDiv_Alu.style.display = "block";
-      recapManager.updateMat("Aluminium", "./Images/texture_alu.jpg");
       document.getElementById("Bleu5012").classList.add("matSelected");
-      recapManager.updateFinition("Bleu5012", "./Images/alu_bleu_clair.png")
       document.getElementById("LaitonAlu").classList.add("matSelected");
-      recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+
+      if(userLang=="fr"){
+        recapManager.updateMat("Aluminium", "./Images/texture_alu.jpg");
+        recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png")
+        recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+      }
+      else{
+        recapManager.updateMat("Aluminum", "./Images/texture_alu.jpg");
+        recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png")
+        recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg")
+
+      }
       break;
   }
   changeBorderMat(event);
@@ -606,8 +632,8 @@ document.addEventListener("DOMContentLoaded", function () {
     recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
   }
   else{
-    recapManager.updateLargeur(62.65);
-    recapManager.updateHauteur(47.37);
+    recapManager.updateLargeur(47.37);
+    recapManager.updateHauteur(62.65);
     recapManager.updateDormant("Economic");
     recapManager.updatePose("Renovation");
     recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png");
