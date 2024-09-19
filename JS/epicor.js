@@ -242,6 +242,23 @@ function jEvents() {
   });
 }
 
+let url = "https://libretranslate.de/translate";
+
+// Fonction pour traduire avec LibreTranslate
+async function traduireEnFrancais(texte) {
+    const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify({
+            q: texte,
+            source: "en",
+            target: "fr",
+        }),
+        headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    return data.translatedText;
+}
+
 function setInfoBulleTXT() {
   config.getFields((fields) => {
     //console.log(fields);
@@ -249,10 +266,23 @@ function setInfoBulleTXT() {
     //console.log(fields.fDormantDesc);
     var dormantDesc = fields.fDormantDesc;
     var div = document.getElementById("texteGammes1");
-    div.textContent = dormantDesc;
+    if(userLang=="fr"){
+      traduireEnFrancais(dormantDesc)
+    }
+    else{
+      div.textContent = dormantDesc;
+    }
+
 
     var poseDesc = fields.fPoseDesc;
     var div = document.getElementById("textePose1");
+    if(userLang=="fr"){
+      traduireEnFrancais(poseDesc)
+    }
+    else{
+      div.textContent = poseDesc;
+    }
+
     div.textContent = poseDesc;
   });
 }
