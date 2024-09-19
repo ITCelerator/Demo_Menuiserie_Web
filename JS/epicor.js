@@ -249,29 +249,23 @@ function setInfoBulleTXT() {
     //console.log(fields.fDormantDesc);
     var dormantDescFr = fields.fDormantDescFr;
     var dormantDescEn = fields.fDormantDescEn;
-    
+    var div = document.getElementById("texteGammes1");
     if(userLang=="fr"){
-      var div = dormantDescFr
+      div.textContent = dormantDescFr
     }
     else{
-      var div = dormantDescEn
+      div.textContent = dormantDescEn
     }
-
-    div.textContent = dormantDesc;
-
 
     var poseDescFr = fields.fPoseDescFr;
     var poseDescEn = fields.fPoseDescEn;
-
+    var div = document.getElementById("textePose1");
     if(userLang=="fr"){
-      var div = poseDescFr
+      div.textContent = poseDescFr
     }
     else{
-      var div = poseDescEn
+      div.textContent = poseDescEn
     }
-
-    div.textContent = poseDesc;
-
   });
 }
 
