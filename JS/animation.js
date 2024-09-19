@@ -4,24 +4,51 @@ var poseValide;
 var materiauValide;
 var couleurValide;
 
+// Fonction pour obtenir la couleur localisée
+function getLocalizedColor(couleurFr, userLang) {
+  // Traduction des couleurs
+  const translations = {
+    'Blanc': 'White',
+    'Bordeaux': 'Burgundy',
+    'Noir': 'Black',
+    'Bleu': 'Blue',
+    'Vert': 'Green',
+    'Chêne Naturel': 'Natural Oak',
+    'Noyer Foncé': 'Dark Walnut',
+    'Merisier Foncé': 'Dark Cherry',
+    'Gris 7035': 'Gray 7035',
+    'Gris 7016': 'Gray 7016',
+    'Noir 9005': 'Black 9005',
+    'Bleu 5012': 'Blue 5012',
+    'Bleu 5002': 'Blue 5002',
+    'Vert Foncé': 'Dark Green',
+    'Vert 6005': 'Green 6005',
+    'Orange': 'Orange',
+    'Jaune 1018': 'Yellow 1018'
+  };
+
+  // Retourner la traduction si la langue est 'en', sinon retourner la couleur originale
+  if (userLang === 'en') {
+    return translations[couleurFr] || couleurFr;
+  } else {
+    return couleurFr;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const finitions = document.querySelectorAll(".finition");
   finitions.forEach((finition) => {
     finition.addEventListener("click", () => {
-      recapManager.updateFinition(
-        finition.getAttribute("couleur"),
-        finition.src
-      );
+      const couleur = getLocalizedColor(finition.getAttribute("couleur"), userLang);
+      recapManager.updateFinition(couleur, finition.src);
     });
   });
 
   const quincailleries = document.querySelectorAll(".quincaillerie");
   quincailleries.forEach((quincaillerie) => {
     quincaillerie.addEventListener("click", () => {
-      recapManager.updateQuincaillerie(
-        quincaillerie.getAttribute("couleur"),
-        quincaillerie.src
-      );
+      const couleur = getLocalizedColor(quincaillerie.getAttribute("couleur"), userLang);
+      recapManager.updateQuincaillerie(couleur, quincaillerie.src);
     });
   });
 
