@@ -535,7 +535,7 @@ const recapManager = (() => {
       hauteurRecapDiv.textContent = hauteur + " mm";
     }
     else if(userLang=="en"){
-      hauteurRecapDiv.textContent = hauteur*0.0393701 + " in";
+      hauteurRecapDiv.textContent = hauteur + " in";
     }
   };
 
@@ -547,7 +547,7 @@ const recapManager = (() => {
       largeurRecapDiv.textContent = largeur + " mm";
     }
     else if(userLang=="en"){
-      largeurRecapDiv.textContent = largeur*0.0393701 + " in";
+      largeurRecapDiv.textContent = largeur + " in";
     }
 
   };
@@ -596,13 +596,25 @@ function desafficherPhoto() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  recapManager.updateDormant("Économique");
-  recapManager.updatePose("Rénovation");
-  recapManager.updateLargeur(1200);
-  recapManager.updateHauteur(1600);
-  recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
-  recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
-  recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
+  if(userLang=="fr"){
+    recapManager.updateLargeur(1200);
+    recapManager.updateHauteur(1600);
+    recapManager.updateDormant("Économique");
+    recapManager.updatePose("Rénovation");
+    recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
+    recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
+    recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
+  }
+  else{
+    recapManager.updateLargeur(62.65);
+    recapManager.updateHauteur(47.37);
+    recapManager.updateDormant("Economic");
+    recapManager.updatePose("Renovation");
+    recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png");
+    recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
+    recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg");
+  }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {

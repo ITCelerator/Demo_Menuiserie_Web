@@ -792,13 +792,19 @@
     // Convertir les valeurs des sliders
     let hauteurSlider = document.getElementById("sliderLength");
     let largeurSlider = document.getElementById("sliderWidth");
+  
+    // Stocker les valeurs actuelles avant conversion
+    let currentHauteurValue = hauteurSlider.value;
+    let currentLargeurValue = largeurSlider.value;
+  
+    // Convertir les min, max et les valeurs actuelles en pouces
     hauteurSlider.min = (hauteurSlider.min / mmToInch).toFixed(2);
     hauteurSlider.max = (hauteurSlider.max / mmToInch).toFixed(2);
-    hauteurSlider.value = (hauteurSlider.value / mmToInch).toFixed(2);
+    hauteurSlider.value = (currentHauteurValue / mmToInch).toFixed(2);
   
     largeurSlider.min = (largeurSlider.min / mmToInch).toFixed(2);
     largeurSlider.max = (largeurSlider.max / mmToInch).toFixed(2);
-    largeurSlider.value = (largeurSlider.value / mmToInch).toFixed(2);
+    largeurSlider.value = (currentLargeurValue / mmToInch).toFixed(2);
   
     // Mettre à jour les champs d'entrée texte
     document.getElementById("sliderLengthInput").value = hauteurSlider.value;
