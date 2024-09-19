@@ -24,7 +24,9 @@ function getLocalizedColor(couleurFr, userLang) {
     'Vert Foncé': 'Dark Green',
     'Vert 6005': 'Green 6005',
     'Orange': 'Orange',
-    'Jaune 1018': 'Yellow 1018'
+    'Jaune 1018': 'Yellow 1018',
+    'Inox' : 'stainless steel',
+    'Laiton' : 'Brass'
   };
 
   // Retourner la traduction si la langue est 'en', sinon retourner la couleur originale
