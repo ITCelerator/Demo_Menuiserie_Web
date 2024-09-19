@@ -242,23 +242,6 @@ function jEvents() {
   });
 }
 
-let url = "https://libretranslate.de/translate";
-
-// Fonction pour traduire avec LibreTranslate
-async function traduireEnFrancais(texte) {
-    const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify({
-            q: texte,
-            source: "en",
-            target: "fr",
-        }),
-        headers: { "Content-Type": "application/json" },
-    });
-    const data = await response.json();
-    return data.translatedText;
-}
-
 function setInfoBulleTXT() {
   config.getFields((fields) => {
     //console.log(fields);
@@ -266,23 +249,18 @@ function setInfoBulleTXT() {
     //console.log(fields.fDormantDesc);
     var dormantDesc = fields.fDormantDesc;
     var div = document.getElementById("texteGammes1");
-    if(userLang=="fr"){
-      traduireEnFrancais(dormantDesc)
-    }
-    else{
-      div.textContent = dormantDesc;
-    }
-
+    div.textContent = dormantDesc;
 
     var poseDesc = fields.fPoseDesc;
-    var div = document.getElementById("textePose1");
+
     if(userLang=="fr"){
-      traduireEnFrancais(poseDesc)
+      var div = "La pose en Rénovation : Les parties ouvrantes de l'ancienne menuiserie sont démontées. Un nouveau cadre est installé par dessus l'ancien dormant. /n La pose en neuf : La menuiserie est posée contre le mur intérieur de la maçonnerie. La fenêtre est intégrée à l'isolant intérieur de votre mur. /n La dépose totale : Consiste à enlever entièrement le dormant existant. L’ancienne menuiserie est donc complètement retirée pour poser une nouvelle menuiserie sur les maçonneries."
     }
     else{
-      div.textContent = poseDesc;
+      var div = document.getElementById("textePose1");
     }
 
+    
     div.textContent = poseDesc;
   });
 }
