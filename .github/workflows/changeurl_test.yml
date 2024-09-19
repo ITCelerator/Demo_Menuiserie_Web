@@ -10,7 +10,7 @@ on:
 
 env:
   PROD_URL: "https://itc-test.kbmax.com"
-  CONF_ID: 575
+  CONF_ID: 774
 
 jobs:
   change_var:
