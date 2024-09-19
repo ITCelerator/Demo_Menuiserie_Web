@@ -4,24 +4,51 @@ var poseValide;
 var materiauValide;
 var couleurValide;
 
+// Fonction pour obtenir la couleur localisée
+function getLocalizedColor(couleurFr, userLang) {
+  // Traduction des couleurs
+  const translations = {
+    'Blanc': 'White',
+    'Bordeaux': 'Burgundy',
+    'Noir': 'Black',
+    'Bleu': 'Blue',
+    'Vert': 'Green',
+    'Chêne Naturel': 'Natural Oak',
+    'Noyer Foncé': 'Dark Walnut',
+    'Merisier Foncé': 'Dark Cherry',
+    'Gris 7035': 'Gray 7035',
+    'Gris 7016': 'Gray 7016',
+    'Noir 9005': 'Black 9005',
+    'Bleu 5012': 'Blue 5012',
+    'Bleu 5002': 'Blue 5002',
+    'Vert Foncé': 'Dark Green',
+    'Vert 6005': 'Green 6005',
+    'Orange': 'Orange',
+    'Jaune 1018': 'Yellow 1018'
+  };
+
+  // Retourner la traduction si la langue est 'en', sinon retourner la couleur originale
+  if (userLang === 'en') {
+    return translations[couleurFr] || couleurFr;
+  } else {
+    return couleurFr;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const finitions = document.querySelectorAll(".finition");
   finitions.forEach((finition) => {
     finition.addEventListener("click", () => {
-      recapManager.updateFinition(
-        finition.getAttribute("couleur"),
-        finition.src
-      );
+      const couleur = getLocalizedColor(finition.getAttribute("couleur"), userLang);
+      recapManager.updateFinition(couleur, finition.src);
     });
   });
 
   const quincailleries = document.querySelectorAll(".quincaillerie");
   quincailleries.forEach((quincaillerie) => {
     quincaillerie.addEventListener("click", () => {
-      recapManager.updateQuincaillerie(
-        quincaillerie.getAttribute("couleur"),
-        quincaillerie.src
-      );
+      const couleur = getLocalizedColor(quincaillerie.getAttribute("couleur"), userLang);
+      recapManager.updateQuincaillerie(couleur, quincaillerie.src);
     });
   });
 
@@ -96,29 +123,55 @@ function Choix_Mat(mat, event) {
   switch (mat) {
     case "pvc":
       couleurDiv_PVC.style.display = "block";
-      recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
       document.getElementById("Bleu").classList.add("matSelected");
-      recapManager.updateFinition("Bleu", "./Images/pvc_bleu.png");
       document.getElementById("LaitonPvc").classList.add("matSelected");
-      recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+
+      if(userLang=="fr"){
+        recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
+        recapManager.updateFinition("Bleu", "./Images/pvc_bleu.png");
+        recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+      }
+      else{
+        recapManager.updateMat("PVC", "./Images/pvc_blanc.png");
+        recapManager.updateFinition("Blue", "./Images/pvc_bleu.png");
+        recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg")
+      }
+
       break;
 
     case "bois":
       couleurDiv_Bois.style.display = "block";
-      recapManager.updateMat("Bois", "./Images/wood05_col_256.jpg");
       document.getElementById("CheneNaturel").classList.add("matSelected");
-      recapManager.updateFinition("Chêne naturel", "./Images/wood05_col_256.jpg")
       document.getElementById("PvcBois").classList.add("matSelected");
-      recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
+    
+      if(userLang=="fr"){
+        recapManager.updateMat("Bois", "./Images/wood05_col_256.jpg");
+        recapManager.updateFinition("Chêne naturel", "./Images/wood05_col_256.jpg")
+        recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
+      }
+      else{
+        recapManager.updateMat("Wood", "./Images/wood05_col_256.jpg");
+        recapManager.updateFinition("natural oak", "./Images/wood05_col_256.jpg")
+        recapManager.updateQuincaillerie("PVC", "./Images/pvc_blanc.png")
+      }
       break;
 
     case "alu":
       couleurDiv_Alu.style.display = "block";
-      recapManager.updateMat("Aluminium", "./Images/texture_alu.jpg");
       document.getElementById("Bleu5012").classList.add("matSelected");
-      recapManager.updateFinition("Bleu5012", "./Images/alu_bleu_clair.png")
       document.getElementById("LaitonAlu").classList.add("matSelected");
-      recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+
+      if(userLang=="fr"){
+        recapManager.updateMat("Aluminium", "./Images/texture_alu.jpg");
+        recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png")
+        recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg")
+      }
+      else{
+        recapManager.updateMat("Aluminum", "./Images/texture_alu.jpg");
+        recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png")
+        recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg")
+
+      }
       break;
   }
   changeBorderMat(event);
@@ -288,7 +341,13 @@ function Dimensions() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Redimensionnez votre fenêtre !";
+  if(userLang=="fr"){
+    div.innerHTML = "Redimensionnez votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Resize your window !";
+  }
+
 
   desafficherPhoto();
 }
@@ -321,7 +380,12 @@ function Gammes() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Choisissez votre gamme et votre type de pose !";
+  if(userLang=="fr"){
+    div.innerHTML = "Choisissez votre gamme et votre type de pose !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Choose your range and your type of installation !";
+  }
 
   desafficherPhoto();
 }
@@ -353,7 +417,13 @@ function Materiaux() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Personnalisez votre fenêtre !";
+
+  if(userLang=="fr"){
+    div.innerHTML = "Personnalisez votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Personalize your window !";
+  }
 
   desafficherPhoto();
 }
@@ -385,7 +455,12 @@ function Couleurs() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Personnalisez votre fenêtre !";
+  if(userLang=="fr"){
+    div.innerHTML = "Personnalisez votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Personalize your window !";
+  }
 
   desafficherPhoto();
 }
@@ -418,8 +493,12 @@ function MiseEnSituation() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Testez la mise en situation de votre fenêtre !";
-
+  if(userLang=="fr"){
+    div.innerHTML = "Testez la mise en situation de votre fenêtre !";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Test the situation of your window !";
+  }
   desafficherPhoto();
 }
 
@@ -451,8 +530,12 @@ function Recapitulatif() {
   div.style.display = "none";
 
   var div = document.getElementById("titre");
-  div.innerHTML = "Récapitulatif";
-
+  if(userLang=="fr"){
+    div.innerHTML = "Récapitulatif";
+  }
+  else if(userLang=="en"){
+    div.innerHTML = "Summary !";
+  }
   desafficherPhoto();
 }
 
@@ -501,14 +584,25 @@ const recapManager = (() => {
   const hauteurRecapDiv = document.getElementById("recapHeight");
   const updateHauteur = (hauteur) => {
     console.log(hauteur)
-    hauteurRecapDiv.textContent = hauteur + " mm";
+    if(userLang=="fr"){
+      hauteurRecapDiv.textContent = hauteur + " mm";
+    }
+    else if(userLang=="en"){
+      hauteurRecapDiv.textContent = hauteur + " in";
+    }
   };
 
   // Largeur
   const largeurRecapDiv = document.getElementById("recapWidth");
   const updateLargeur = (largeur) => {
     console.log(largeur)
-    largeurRecapDiv.textContent = largeur + " mm";
+    if(userLang=="fr"){
+      largeurRecapDiv.textContent = largeur + " mm";
+    }
+    else if(userLang=="en"){
+      largeurRecapDiv.textContent = largeur + " in";
+    }
+
   };
 
   return {
@@ -555,13 +649,25 @@ function desafficherPhoto() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  recapManager.updateDormant("Économique");
-  recapManager.updatePose("Rénovation");
-  recapManager.updateLargeur(1200);
-  recapManager.updateHauteur(1600);
-  recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
-  recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
-  recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
+  if(userLang=="fr"){
+    recapManager.updateLargeur(1200);
+    recapManager.updateHauteur(1600);
+    recapManager.updateDormant("Économique");
+    recapManager.updatePose("Rénovation");
+    recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
+    recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
+    recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
+  }
+  else{
+    recapManager.updateLargeur(47.37);
+    recapManager.updateHauteur(62.65);
+    recapManager.updateDormant("Economic");
+    recapManager.updatePose("Renovation");
+    recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png");
+    recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
+    recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg");
+  }
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
