@@ -347,7 +347,7 @@ function Dimensions() {
     div.innerHTML = "Redimensionnez votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Resize your window !";
+    div.innerHTML = "Custom your own window!";
   }
 
 
@@ -386,7 +386,7 @@ function Gammes() {
     div.innerHTML = "Choisissez votre gamme et votre type de pose !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Choose your range and your type of installation !";
+    div.innerHTML = "Profile style & installation type";
   }
 
   desafficherPhoto();
@@ -424,7 +424,7 @@ function Materiaux() {
     div.innerHTML = "Personnalisez votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Personalize your window !";
+    div.innerHTML = "Custom your own window!";
   }
 
   desafficherPhoto();
@@ -461,7 +461,7 @@ function Couleurs() {
     div.innerHTML = "Personnalisez votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Personalize your window !";
+    div.innerHTML = "Custom your own window!";
   }
 
   desafficherPhoto();
@@ -499,7 +499,7 @@ function MiseEnSituation() {
     div.innerHTML = "Testez la mise en situation de votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Test the situation of your window !";
+    div.innerHTML = "Visualize your project!";
   }
   desafficherPhoto();
 }
@@ -536,7 +536,7 @@ function Recapitulatif() {
     div.innerHTML = "Récapitulatif";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Summary !";
+    div.innerHTML = "Summary";
   }
   desafficherPhoto();
 }
