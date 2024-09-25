@@ -77,6 +77,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+.boxCouleurMat {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 .boxPoignee {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
