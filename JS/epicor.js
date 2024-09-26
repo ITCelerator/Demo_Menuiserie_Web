@@ -570,3 +570,11 @@ function awsImgae() {
     uploadImage();
   });
 }
+
+// Fonction pour convertir une fraction en valeur décimale
+function setLargeur(value){
+    setConfig("fLargeur_Display", value);
+}
+function setHauteur(value){
+  setConfig("fHauteur_Display", value);
+}

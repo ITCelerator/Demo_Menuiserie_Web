@@ -692,3 +692,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Met à jour la position initiale du curseur personnalisé
   updateCustomThumbPosition();
 });
+
+if (userLang=="fr"){
+  document.getElementsById("dimensionEN").style.display = "none"
+}
+else{
+  document.getElementsById("dimensionFR").style.display = "none"
+}
