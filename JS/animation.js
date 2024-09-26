@@ -694,8 +694,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 if (userLang=="fr"){
-  document.getElementsById("dimensionEN").style.display = "none"
+  document.getElementById("dimensionEN").style.display = "none";
 }
 else{
-  document.getElementsById("dimensionFR").style.display = "none"
+  document.getElementById("dimensionFR").style.display = "none";
 }
