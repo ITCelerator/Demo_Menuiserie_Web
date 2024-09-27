@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
     recapManager.updateLargeur(1200);
     recapManager.updateHauteur(1600);
     recapManager.updateDormant("Économique");
-    recapManager.updatePose("Rénovation");
+    recapManager.updatePose("Pocket insert");
     recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
     recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
     recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
@@ -664,7 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
     recapManager.updateLargeur(47.37);
     recapManager.updateHauteur(62.65);
     recapManager.updateDormant("Economic");
-    recapManager.updatePose("Renovation");
+    recapManager.updatePose("Pocket insert");
     recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png");
     recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
     recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg");
