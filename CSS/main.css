@@ -831,6 +831,21 @@ hr {
 .icon {
   display: none;
 }
+
+.btn{
+  background-color: #efefef;
+  color: #a0445d;
+  border-bottom: solid 3px #a0445d;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.btn:hover{
+  background-color: #a0445d;
+  color: #efefef;
+}
+
+
 @media screen and (max-width: 900px) {
   .navbar a.icon {
     display: block;

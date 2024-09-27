@@ -168,8 +168,23 @@
                   />
                   <div id="custom-thumb"></div>
                 </div>
+                <br>
+                <div id="dimensionEN">
+                  <div class="dimensionContainer">
+                    <button class="btn" name="bH1" type="button" value="24.125" onclick="setHauteur(this.value)">24 <sup>1/8"</sup></button>
+                    <button class="btn" name="bH2" type="button" value="28.1875" onclick="setHauteur(this.value)">28 <sup>3/16"</sup></button>
+                    <button class="btn" name="bH3" type="button" value="35.9375" onclick="setHauteur(this.value)">35 <sup>15/16"</sup></button>
+                    <br>
+                    <button class="btn" name="bH4" type="button" value="40.8125" onclick="setHauteur(this.value)">40 <sup>13/16"</sup></button>
+                    <button class="btn" name="bH5" type="button" value="48.125" onclick="setHauteur(this.value)">48<sup>1/8"</sup></button>
+                    <button class="btn" name="bH6" type="button" value="52.8125" onclick="setHauteur(this.value)">52 <sup>13/16"</sup></button>
+                    <br>
+                    <button class="btn" name="bH7" type="button" value="59.0875" onclick="setHauteur(this.value)">59 <sup>7/8"</sup></button>
+                    <button class="btn" name="bH8" type="button" value="64.8125" onclick="setHauteur(this.value)">64 <sup>13/16"</sup></button>
+                    <button class="btn" name="bH9" type="button" value="71.0875" onclick="setHauteur(this.value)">71 <sup>7/8"</sup></button>
+                  </div>
+                </div>
               </div>
-          
               <div class="dimensionContainer">
                 <label for="sliderWidth" class="label" data-translate="BoxDimensionWidth">Largeur (mm) :</label>
                 <input
@@ -190,49 +205,30 @@
                     onchange="recapManager.updateLargeur(this.value)"
                   />
                 </div>
+                <br>
+                <!-- BOUTON-->
+                <div id="dimensionEN">
+                  <div class="dimensionContainer">
+                    <button class="btn" name="bW1" type="button" value="40.8125" onclick="setLargeur(this.value)">40 <sup>13/16"</sup></button>
+                    <button class="btn" name="bW2" type="button" value="48" onclick="setLargeur(this.value)">48"</button>
+                    <button class="btn" name="bW3" type="button" value="52.8125" onclick="setLargeur(this.value)">52 <sup>13/16"</sup></button>
+                    <br>
+                    <button class="btn" name="bW4" type="button" value="59.0875" onclick="setLargeur(this.value)">59 <sup>7/8"</sup></button>
+                    <button class="btn" name="bW5" type="button" value="64.8125" onclick="setLargeur(this.value)">64 <sup>13/16"</sup></button>
+                  </div>
+                </div>
               </div>
           </form>
         </div>
-          <!-- FIN SLIDER -->
-          <!-- BOUTONS PREDEFINIS -->
-          <div id="dimensionEN">
-            <div class="dimensionContainer">
-              <label for="sliderLength" class="label" data-translate="BoxDimensionheight">Hauteur (mm) :</label><br>
-              <button class="btn-largeur" name="bH1" value="24.125" onclick="setHauteur(this.value)">24 <sup>1/8"</sup></button>
-              <button class="btn-largeur" name="bH2" value="28.1875" onclick="setHauteur(this.value)">28 <sup>3/6"</sup></button>
-              <button class="btn-largeur" name="bH3" value="35.9375" onclick="setHauteur(this.value)">35 <sup>15/16"</sup></button>
-              <button class="btn-largeur" name="bH4" value="40.8125" onclick="setHauteur(this.value)">40 <sup>13/16"</sup></button>
-              <button class="btn-largeur" name="bH5" value="48" onclick="setHauteur(this.value)">48</button>
-              <br><br>
-              <button class="btn-largeur" name="bH6" value="52.8125" onclick="setHauteur(this.value)">52 <sup>13/16"</sup></button>
-              <button class="btn-largeur" name="bH7" value="59.0875" onclick="setHauteur(this.value)">59 <sup>7/8"</sup></button>
-              <button class="btn-largeur" name="bH8" value="64.8125" onclick="setHauteur(this.value)">64 <sup>13/16"</sup></button>
-              <button class="btn-largeur" name="bH9" value="71.0875" onclick="setHauteur(this.value)">71 <sup>7/8"</sup></button>
-            </div>
-
-            <div class="dimensionContainer">
-              <label for="sliderWidth" class="label" data-translate="BoxDimensionWidth">Largeur (mm) :</label><br>
-              <button class="btn-largeur" name="bW1" value="24.125" onclick="setLargeur(this.value)">24 <sup>1/8"</sup></button>
-              <button class="btn-largeur" name="bW2" value="28.1875" onclick="setLargeur(this.value)">28 <sup>3/6"</sup></button>
-              <button class="btn-largeur" name="bW3" value="30.25" onclick="setLargeur(this.value)">30 <sup>1/4"</sup></button>
-              <button class="btn-largeur" name="bW4" value="32.3125" onclick="setLargeur(this.value)">32 <sup>5/6"</sup></button>
-              <button class="btn-largeur" name="bW5" value="34.375" onclick="setLargeur(this.value)">34 <sup>3/8"</sup></button>
-              <br><br>
-              <button class="btn-largeur" name="bW6" value="36.4375" onclick="setLargeur(this.value)">36 <sup>7/16"</sup></button>
-              <button class="btn-largeur" name="bW7" value="38.5" onclick="setLargeur(this.value)">38 <sup>1/2"</sup></button>
-              <button class="btn-largeur" name="bW8" value="40.5625" onclick="setLargeur(this.value)">40 <sup>9/16"</sup></button>
-              <button class="btn-largeur" name="bW9" value="42.625" onclick="setLargeur(this.value)">42 <sup>5/8"</sup></button>
-            </div>
-
               <div class="alerte" id="AlertLargeurBois" data-translate="BoxDimensionAlertLargeurBois">La largeur doit être inférieur à 1500mm avec du bois</div>
               <div class="alerte" id="AlertLargeurAlu" data-translate="BoxDimensionAlertLargeurALU">La largeur doit être inférieur à 1550mm avec de l'ALU</div>
               <div class="alerte" id="AlertLargeurPvc" data-translate="BoxDimensionAlertLargeurPVC">La largeur doit être inférieur à 1600mm avec du PVC</div>
               <button id="AlertPvc" class="boutonAlert" onclick="alertMat(event)" data-translate="AlertPVC">PVC</button>
               <button id="AlertAlu" class="boutonAlert" onclick="alertMat(event)" data-translate="AlertALU">Aluminuim</button>
-          </div>
-         </div>
-        <!-- FIN BOUTONS PREDEFINIS -->
+
+
         </div>
+      </div>
 
 
         <!-- CONTAINER GAMMES -->

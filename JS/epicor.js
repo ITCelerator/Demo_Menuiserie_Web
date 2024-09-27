@@ -572,9 +572,13 @@ function awsImgae() {
 }
 
 // Fonction pour convertir une fraction en valeur décimale
-function setLargeur(value){
-    setConfig("fLargeur_Display", value);
+function setLargeur(values){
+    setConfig("fLargeur_Display", values);
+    sliderWidthInput.value = values
+    sliderWidth.value = values
 }
-function setHauteur(value){
-  setConfig("fHauteur_Display", value);
+function setHauteur(values){
+  setConfig("fHauteur_Display", values);
+  sliderLengthInput.value = values
+  sliderLength.value = values
 }
