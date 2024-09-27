@@ -568,3 +568,15 @@ function awsImgae() {
     uploadImage();
   });
 }
+
+// Fonction pour convertir une fraction en valeur décimale
+function setLargeur(values){
+    setConfig("fLargeur_Display", values);
+    sliderWidthInput.value = values
+    sliderWidth.value = values
+}
+function setHauteur(values){
+  setConfig("fHauteur_Display", values);
+  sliderLengthInput.value = values
+  sliderLength.value = values
+}
