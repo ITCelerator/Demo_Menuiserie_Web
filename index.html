@@ -41,7 +41,6 @@
         loadTranslations('fr');
       } else {
         loadTranslations('en');
-        convertToInches()
       }
     </script>
     <title>Personnalisation</title>
@@ -145,7 +144,9 @@
         <div class="box" id="boxDimensions">
           <div class="boxTitre" data-translate="BoxDimensionTitle">Dimensions Fenêtre</div>
           <div class="boxDimensions">
+            <div id="dimensionFR">
             <form id="myFormHauteur">
+              <!-- SLIDER -->
               <div class="dimensionContainer">
                 <label for="sliderLength" class="label" data-translate="BoxDimensionheight">Hauteur (mm) :</label>
                 <input
@@ -167,8 +168,23 @@
                   />
                   <div id="custom-thumb"></div>
                 </div>
+                <br>
+                <div id="dimensionEN">
+                  <div class="dimensionContainer">
+                    <button class="btn" name="bH1" type="button" value="24.125" onclick="setHauteur(this.value)">24 <sup>1/8"</sup></button>
+                    <button class="btn" name="bH2" type="button" value="28.1875" onclick="setHauteur(this.value)">28 <sup>3/16"</sup></button>
+                    <button class="btn" name="bH3" type="button" value="35.9375" onclick="setHauteur(this.value)">35 <sup>15/16"</sup></button>
+                    <br>
+                    <button class="btn" name="bH4" type="button" value="40.8125" onclick="setHauteur(this.value)">40 <sup>13/16"</sup></button>
+                    <button class="btn" name="bH5" type="button" value="48.125" onclick="setHauteur(this.value)">48<sup>1/8"</sup></button>
+                    <button class="btn" name="bH6" type="button" value="52.8125" onclick="setHauteur(this.value)">52 <sup>13/16"</sup></button>
+                    <br>
+                    <button class="btn" name="bH7" type="button" value="59.0875" onclick="setHauteur(this.value)">59 <sup>7/8"</sup></button>
+                    <button class="btn" name="bH8" type="button" value="64.8125" onclick="setHauteur(this.value)">64 <sup>13/16"</sup></button>
+                    <button class="btn" name="bH9" type="button" value="71.0875" onclick="setHauteur(this.value)">71 <sup>7/8"</sup></button>
+                  </div>
+                </div>
               </div>
-          
               <div class="dimensionContainer">
                 <label for="sliderWidth" class="label" data-translate="BoxDimensionWidth">Largeur (mm) :</label>
                 <input
@@ -189,15 +205,30 @@
                     onchange="recapManager.updateLargeur(this.value)"
                   />
                 </div>
+                <br>
+                <!-- BOUTON-->
+                <div id="dimensionEN">
+                  <div class="dimensionContainer">
+                    <button class="btn" name="bW1" type="button" value="40.8125" onclick="setLargeur(this.value)">40 <sup>13/16"</sup></button>
+                    <button class="btn" name="bW2" type="button" value="48" onclick="setLargeur(this.value)">48"</button>
+                    <button class="btn" name="bW3" type="button" value="52.8125" onclick="setLargeur(this.value)">52 <sup>13/16"</sup></button>
+                    <br>
+                    <button class="btn" name="bW4" type="button" value="59.0875" onclick="setLargeur(this.value)">59 <sup>7/8"</sup></button>
+                    <button class="btn" name="bW5" type="button" value="64.8125" onclick="setLargeur(this.value)">64 <sup>13/16"</sup></button>
+                  </div>
+                </div>
               </div>
-            </form>
+          </form>
+        </div>
               <div class="alerte" id="AlertLargeurBois" data-translate="BoxDimensionAlertLargeurBois">La largeur doit être inférieur à 1500mm avec du bois</div>
               <div class="alerte" id="AlertLargeurAlu" data-translate="BoxDimensionAlertLargeurALU">La largeur doit être inférieur à 1550mm avec de l'ALU</div>
               <div class="alerte" id="AlertLargeurPvc" data-translate="BoxDimensionAlertLargeurPVC">La largeur doit être inférieur à 1600mm avec du PVC</div>
               <button id="AlertPvc" class="boutonAlert" onclick="alertMat(event)" data-translate="AlertPVC">PVC</button>
               <button id="AlertAlu" class="boutonAlert" onclick="alertMat(event)" data-translate="AlertALU">Aluminuim</button>
-          </div>
+
+
         </div>
+      </div>
 
 
         <!-- CONTAINER GAMMES -->
@@ -295,7 +326,7 @@
 
           <div class="box" id="CouleurPVC">
             <div class="boxTitre" data-translate="BoxColorPVCTitle">Couleur PVC</div>
-            <div class="boxMateriaux">
+            <div class="boxCouleurMat">
               <div id="survol">
               <input
                 class="materiaux finition"
@@ -388,7 +419,7 @@
 
           <div class="box" id="CouleurBois">
             <div class="boxTitre" data-translate="BoxColorWoodTitle">Couleur bois</div>
-            <div class="boxMateriaux">
+            <div class="boxCouleurMat">
               <div id="survol">
                 <input
                   class="materiaux finition"
@@ -491,7 +522,7 @@
 
           <div class="box" id="CouleurAlu">
             <div class="boxTitre" data-translate="BoxColorALUTitle">Couleur aluminium</div>
-            <div class="boxMateriaux">
+            <div class="boxCouleurMat">
               <div id="survol">
                 <input
                   class="materiaux finition"
@@ -814,6 +845,7 @@
   if (userLang === 'fr') {
   } else {
     convertToInches()
+    document.getElementById("envoyerQuote").value = "Get a quote"
   }
 
 

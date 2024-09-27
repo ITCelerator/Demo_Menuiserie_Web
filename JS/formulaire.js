@@ -17,7 +17,12 @@ const dataError = document.querySelector(".radioError");
 const handleSubmit = () => {
   var errors = false;
   if (nameInput.value.length == 0) {
-    nameError.textContent = "Ce champ ne peut pas être vide.";
+    if(userLang=="fr"){
+      nameError.textContent = "Ce champ ne peut pas être vide.";
+    }
+    else if(userLang=="en"){
+      nameError.textContent = "This field can't be empty";
+    }
     nameInput.classList.add("invalid");
     errors = true;
   } else {
@@ -33,13 +38,23 @@ const handleSubmit = () => {
   }
 
   if (prenomInput.value.length == 0) {
-    prenomError.textContent = "Ce champ ne peut pas être vide.";
+    if(userLang=="fr"){
+      prenomError.textContent = "Ce champ ne peut pas être vide.";
+    }
+    else if(userLang=="en"){
+      prenomError.textContent = "This field can't be empty";
+    }
     prenomInput.classList.add("invalid");
     errors = true;
   } else {
     const reg = new RegExp("^[A-Za-z]+$");
     if (!reg.test(prenomInput.value)) {
-      prenomError.textContent = "Le format n'est pas valide.";
+      if(userLang=="fr"){
+        prenomError.textContent = "Le format n'est pas valide.";
+      }
+      else if(userLang=="en"){
+        prenomError.textContent = "The format isn't valid";
+      }
       prenomInput.classList.add("invalid");
       errors = true;
     } else {
@@ -49,13 +64,23 @@ const handleSubmit = () => {
   }
 
   if (emailInput.value.length == 0) {
-    emailError.textContent = "Ce champ ne peut pas être vide.";
+    if(userLang=="fr"){
+      emailError.textContent = "Ce champ ne peut pas être vide.";
+    }
+    else if(userLang=="en"){
+      emailError.textContent = "This field can't be empty";
+    }
     emailInput.classList.add("invalid");
     errors = true;
   } else {
     const reg = new RegExp("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.(com|fr)");
     if (!reg.test(emailInput.value)) {
-      emailError.textContent = "Merci de renseigner une adresse mail valide.";
+      if(userLang=="fr"){
+        emailError.textContent = "Merci de renseigner une adresse mail valide.";
+      }
+      else if(userLang=="en"){
+        emailError.textContent = "Thanks to give a valid email";
+      }
       emailInput.classList.add("invalid");
       errors = true;
     } else {
@@ -65,7 +90,12 @@ const handleSubmit = () => {
   }
 
   if (!dataInput.checked) {
-    dataError.textContent = "Vous devez cocher cet élément pour continuer.";
+    if(userLang=="fr"){
+      dataError.textContent = "Vous devez cocher cet élément pour continuer.";
+    }
+    else if(userLang=="en"){
+      dataError.textContent = "This field is requiered";
+    }
     errors = true;
   } else {
     dataError.textContent = "";

@@ -347,7 +347,7 @@ function Dimensions() {
     div.innerHTML = "Redimensionnez votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Resize your window !";
+    div.innerHTML = "Custom your own window!";
   }
 
 
@@ -386,7 +386,7 @@ function Gammes() {
     div.innerHTML = "Choisissez votre gamme et votre type de pose !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Choose your range and your type of installation !";
+    div.innerHTML = "Profile style & installation type";
   }
 
   desafficherPhoto();
@@ -424,7 +424,7 @@ function Materiaux() {
     div.innerHTML = "Personnalisez votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Personalize your window !";
+    div.innerHTML = "Custom your own window!";
   }
 
   desafficherPhoto();
@@ -461,7 +461,7 @@ function Couleurs() {
     div.innerHTML = "Personnalisez votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Personalize your window !";
+    div.innerHTML = "Custom your own window!";
   }
 
   desafficherPhoto();
@@ -499,7 +499,7 @@ function MiseEnSituation() {
     div.innerHTML = "Testez la mise en situation de votre fenêtre !";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Test the situation of your window !";
+    div.innerHTML = "Visualize your project!";
   }
   desafficherPhoto();
 }
@@ -536,7 +536,7 @@ function Recapitulatif() {
     div.innerHTML = "Récapitulatif";
   }
   else if(userLang=="en"){
-    div.innerHTML = "Summary !";
+    div.innerHTML = "Summary";
   }
   desafficherPhoto();
 }
@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
     recapManager.updateLargeur(1200);
     recapManager.updateHauteur(1600);
     recapManager.updateDormant("Économique");
-    recapManager.updatePose("Rénovation");
+    recapManager.updatePose("Pocket insert");
     recapManager.updateFinition("Bleu 5012", "./Images/alu_bleu_clair.png");
     recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
     recapManager.updateQuincaillerie("Laiton", "./Images/laiton.jpg");
@@ -664,7 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
     recapManager.updateLargeur(47.37);
     recapManager.updateHauteur(62.65);
     recapManager.updateDormant("Economic");
-    recapManager.updatePose("Renovation");
+    recapManager.updatePose("Pocket insert");
     recapManager.updateFinition("Blue 5012", "./Images/alu_bleu_clair.png");
     recapManager.updateMat("ALU", "./Images/alu_blanc.jpg");
     recapManager.updateQuincaillerie("Brass", "./Images/laiton.jpg");
@@ -692,3 +692,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Met à jour la position initiale du curseur personnalisé
   updateCustomThumbPosition();
 });
+
+if (userLang=="fr"){
+  document.getElementById("dimensionEN").style.display = "none";
+}

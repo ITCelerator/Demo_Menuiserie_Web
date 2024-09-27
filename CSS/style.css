@@ -246,11 +246,6 @@ h2 {
   #formAccueil::-webkit-scrollbar {
     display: none;
   }
-  .containerForm {
-    /* position: absolute;
-    width: 100%;
-    bottom: 5%; */
-  }
 }
 
 @media screen and (max-width: 1300px) {
@@ -266,11 +261,6 @@ h2 {
   }
   #formAccueil::-webkit-scrollbar {
     display: none;
-  }
-  .containerForm {
-    /* position: absolute;
-    width: 100%;
-    bottom: 5%; */
   }
 }
 
