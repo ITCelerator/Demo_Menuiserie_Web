@@ -695,4 +695,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 if (userLang=="fr"){
   document.getElementById("dimensionEN").style.display = "none";
+  document.getElementById("dimensionEN2").style.display = "none";
 }
